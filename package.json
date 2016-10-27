@@ -12,7 +12,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "pages": "cp -v pages/*.html build/ && cp -rv pages/static/ build/static/",
     "test": "react-scripts test --env=jsdom",
+    "deploy": "firebase deploy",
     "eject": "react-scripts eject"
   }
 }
