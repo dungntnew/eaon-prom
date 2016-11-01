@@ -1,5 +1,11 @@
-.canvasView {
-  width: 500px;
-  height: 500px;
-  border: 1px solid red;
+.canvas-container {
+  background-color: green;
+  margin: 0px auto;
+}
+.canvas-wrapper {
+  text-align: center;
+}
+
+#canvas {
+  background-color: red;
 }

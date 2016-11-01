@@ -11,22 +11,41 @@ import './Editor.css'
 
 import EditorToolBox from './EditorToolBox'
 import AppMenu from './AppMenu'
+import Loader from './Loader';
 
 import {fabric} from 'fabric';
 
 class Editor extends Component {
 
+  constructor() {
+    super()
+
+    this.state = {
+      loading: false,
+      loadingMessge: '',
+    }
+    this.showWaitDimmer = this.showWaitDimmer.bind(this)
+    this.hideWaitDimmer = this.hideWaitDimmer.bind(this)
+    this.showError = this.showError.bind(this)
+    this.hideError = this.hideError.bind(this)
+  }
+
   componentDidMount() {
     this.initCanvas()
+    this.forceUpdate()
   }
 
   initCanvas() {
-    this.canvas = new fabric.Canvas('canvas')
+    this.canvas = new fabric.Canvas('canvas', {
+      containerClass: 'canvas-container',
+      backgroundColor: 'white'
+    })
 
     const exportSize = this.exportSize()
     this.canvas.setWidth(exportSize.width, {
       backstoreOnly: true
     })
+
     this.canvas.setHeight(exportSize.height, {
       backstoreOnly: true
     })
@@ -37,8 +56,10 @@ class Editor extends Component {
 
   setViewSize(width, height) {
     if (this.canvas) {
-      this.canvas.setWidth(width)
-      this.canvas.setHeight(height)
+      this.canvas.setWidth(width, {cssOnly: false})
+      this.canvas.setHeight(height, {cssOnly: false})
+      this.canvas.renderAll()
+      console.log('canvas refreshed on resize')
     }
   }
 
@@ -57,6 +78,30 @@ class Editor extends Component {
     }
   }
 
+  showWaitDimmer(message) {
+    return;
+    this.setState({
+      loading: true,
+      loadingMessge: message || 'Loading'
+    })
+  }
+
+  hideWaitDimmer() {
+    return;
+    setTimeout(() => {
+      this.setState({
+        loading: false,
+        loadingMessge: ''
+      })
+    }, EditorConfig.DIMMER_TIMEOUT);
+  }
+
+  showError(error) {
+  }
+
+  hideError() {
+  }
+
   render() {
     const size = this.canvasSize()
     this.setViewSize(size.width, size.height)
@@ -65,26 +110,31 @@ class Editor extends Component {
       size: {
         height: size.height + 'px',
         width: size.width + 'px',
+        margin: '0px auto',
       }
     }
 
     return (
       <Segment padded>
+        <Segment>
+          <div className='ui container canvas-wrapper'>
+             <canvas style={style.size} className='' id="canvas" ref='canvas'/>
+          </div>
+          <Loader
+            active={this.state.loading}
+            message={this.state.loadingMessage}
+          />
+        </Segment>
 
-        <div
-          className='ui container'
-          style={style.size}
-        >
-        <canvas
-           id="canvas"
-           ref='canvas'
-           />
-        </div>
-
-        <EditorToolBox
+         <Divider/>
+         <EditorToolBox
           canvas={this.canvas}
           assets={Assets}
+          onStartProcess={this.showWaitDimmer}
+          onFinishProcess={this.hideWaitDimmer}
+          onError={this.showError}
          />
+
         <Divider/>
         <AppMenu
             onConfirmClick={this.confirmHandler}

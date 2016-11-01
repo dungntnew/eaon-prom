@@ -1,34 +1,34 @@
 import React, {Component} from 'react';
-
-import {
-        Container,
-        Image,
-        List
-} from 'semantic-ui-react';
 import classNames from 'classnames';
+import {fabric} from 'fabric';
+
+import Messages from './Messages';
+import EditorToolConfig from './EditorToolConfig';
+
+console.log(EditorToolConfig);
 
 class ItemList extends Component {
   render() {
     const items = this.props.items.map((item) => {
+      const classes = classNames({
+        'item': true,
+        'active': this.props.activeIndex === item.id
+      })
       return (
-          <List.Item
+          <div className={classes}
                key={item.key}
-               onClick={this.props.onItemClick(item.id)}
-          >
-            <Image
-              width={80}
-              height={80}
-              src={item.src}
-            />
-          </List.Item>
-
+               onClick={this.props.onItemClick(item.id, item.src)}>
+            <div className='tiny image'>
+              <img width={80} height={80} src={item.src} alt=''/>
+            </div>
+          </div>
       )
     })
 
     return (
-      <List horizontal animated>
+      <div className='ui list selection horizontal'>
          {items}
-      </List>
+      </div>
     )
   }
 }
@@ -61,48 +61,118 @@ class Tabs extends Component {
     });
 
     return (
-      <Container>
+      <div className='ui container'>
         <div className='ui top attached tabular menu'>
             {titles}
         </div>
         {contents}
-      </Container>
+      </div>
     )
   }
 }
 
 class BaseTool extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      activeIndex: -1
+    }
+
     this.onItemClick = this.onItemClick.bind(this)
+    this.isLateInitialized = false
   }
 
-  onItemClick(id) {
-    return (env) => {
-      console.log('Item clicked..: ' + id)
+  componentDidUpdate() {
+    if (!this.isLateInitialized) {
+      this.initializeLate()
+      this.isLateInitialized = true
+      this.forceUpdate()
     }
   }
 
-  render() {
+  initializeLate() {
+    console.log('component initialize late')
+  }
 
-    const thumbnais = this.props.resource.thumbnails.map((src, index) =>  {
+  onItemClick(id, src) {
+    return (env) => {
+      console.log('Item clicked..: ' + id + ' => ' + src)
+    }
+  }
+
+  loadImageFrom(src, func) {
+    this.props.onStartProcess(Messages.loading)
+
+    fabric.Image.fromURL(src, (res) => {
+      if (func) {
+        func(res, this.props.onFinishProcess)
+      } else {
+        this.props.onFinishProcess()
+      }
+    }, this.props.onError)
+  }
+
+  resourceImageById(id) {
+    return this.props.resource.images.find(x => x.id === id)
+  }
+
+  render() {
+    const thumbnais = this.props.resource.thumbnails.map((item) =>  {
       return {
-        id: index,
-        key: 'thumbnail-' + index,
-        src: src,
+        id: item.id,
+        key: 'thumbnail-' + item.id,
+        src: item.src,
       }
     })
 
     return (
-      <div><ItemList items={thumbnais} onItemClick={this.onItemClick}/></div>
+      <div>
+        <ItemList
+          activeIndex={this.state.activeIndex}
+          items={thumbnais}
+          onItemClick={this.onItemClick}
+        />
+      </div>
     )
   }
 }
 
 class FaceTool extends BaseTool {
+  constructor(props){
+    super(props)
+    this.state = {
+      activeIndex: -1
+    }
+  }
+
+  initializeLate() {
+    const defaultFace = this.resourceImageById(0)
+    if (defaultFace) {
+      this.setFace(defaultFace.src)
+    }
+  }
+
+  setFace(src) {
+    const canvas = this.props.canvas
+    const faceConfig = EditorToolConfig.faceConfig
+    this.loadImageFrom(src, (image, func) => {
+
+      image.setWidth(faceConfig.size.width)
+      image.setHeight(faceConfig.size.height)
+
+      this.props.canvas.add(image)
+      this.props.canvas.renderAll()
+      if (func) func()
+    })
+  }
+
   onItemClick(id) {
     return (env) => {
-      console.log('Face Item clicked..: ' + id)
+      const image = this.resourceImageById(id)
+      if (image) {
+        this.setFace(image.src)
+      }
     }
   }
 }
@@ -115,10 +185,42 @@ class HairTool extends BaseTool {
   }
 }
 
-class BackgroundTool extends BaseTool {
+class BGTool extends BaseTool {
+  constructor(props){
+    super(props)
+    this.state = {
+      activeIndex: 0
+    }
+  }
+
+  initializeLate() {
+    const defaultImage = this.resourceImageById(0)
+    if (defaultImage) {
+      this.setBackground(defaultImage.src)
+    }
+  }
+
+  setBackground(src) {
+    const canvas = this.props.canvas
+    this.loadImageFrom(src, (image, func) => {
+      image.setWidth(canvas.width)
+      image.setHeight(canvas.height)
+      //image.meetOrSlice = 'meet'
+      this.props.canvas.setBackgroundImage(image)
+      this.props.canvas.renderAll()
+      if (func) func()
+    })
+  }
+
   onItemClick(id) {
     return (env) => {
-      console.log('BG Item clicked..: ' + id)
+      const background = this.resourceImageById(id)
+      if (background) {
+        this.setState({
+          activeIndex: id,
+        })
+        this.setBackground(background.src)
+      }
     }
   }
 }
@@ -158,21 +260,45 @@ class EditorToolBox extends Component {
     ]
 
     const contents = [
-      <FaceTool resource={this.props.assets.face}/>,
-      <HairTool resource={this.props.assets.hair}/>,
-      <BackgroundTool resource={this.props.assets.background}/>,
-      <GoodsTool resource={this.props.assets.goods}/>
+      <FaceTool
+        canvas={this.props.canvas}
+        resource={this.props.assets.face}
+        onStartProcess={this.props.onStartProcess}
+        onFinishProcess={this.props.onFinishProcess}
+        onError={this.props.onError}
+       />,
+      <HairTool
+        canvas={this.props.canvas}
+        resource={this.props.assets.hair}
+        onStartProcess={this.props.onStartProcess}
+        onFinishProcess={this.props.onFinishProcess}
+        onError={this.props.onError}
+      />,
+      <BGTool
+        canvas={this.props.canvas}
+        resource={this.props.assets.background}
+        onStartProcess={this.props.onStartProcess}
+        onFinishProcess={this.props.onFinishProcess}
+        onError={this.props.onError}
+      />,
+      <GoodsTool
+       canvas={this.props.canvas}
+       resource={this.props.assets.goods}
+       onStartProcess={this.props.onStartProcess}
+       onFinishProcess={this.props.onFinishProcess}
+       onError={this.props.onError}
+      />
     ]
 
     return (
-      <Container>
+      <div className='ui container'>
         <Tabs
           titles={titles}
           contents={contents}
           activeTab={this.state.activeTab}
           onTabSelect={this.changeTab}
         />
-      </Container>
+      </div>
     )
   }
 }

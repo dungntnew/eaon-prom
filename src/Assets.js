@@ -6,6 +6,7 @@ const faceAssetDir =  assetBaseDir + 'faces/'
 const hairNums = 5
 const hairAssetDir = assetBaseDir + 'hairs/'
 
+
 const backgroundNum = 5
 const backgroundAssetDir = assetBaseDir + 'backgrounds/'
 
@@ -15,7 +16,10 @@ const goodsAssetDir = assetBaseDir + 'goods/'
 function buildAssets(num, prefix, dir, ext='.png') {
   return Array.from(Array(num).keys()).map((i) => {
     const src = dir + prefix + i + ext
-    return src
+    return {
+      id: i,
+      src: src,
+    }
   } )
 }
 
