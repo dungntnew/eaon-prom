@@ -1,18 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+import Editor from './Editor';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      <div className='ui wrapper'>
+
+        {/* header */}
+        <div className="ui secondary  menu">
+          <a className="item">
+            Home
+          </a>
+          <a className="item active">
+            Messages
+          </a>
+          <a className="item">
+            Friends
+          </a>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+
+        <Editor />
+
+        {/* footer */}
+        <div className="ui inverted vertical footer segment app-footer">
+           <div className="ui container">
+               Re-vue. All Rights Reserved
+            </div>
+        </div>
+
       </div>
     );
   }
