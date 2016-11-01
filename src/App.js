@@ -1,10 +1,40 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import AppConfig from './AppConfig';
 import Editor from './Editor';
 
+
 class App extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      windowHeight: window.innerHeight,
+      windowWidth: window.innerWidth,
+    }
+
+    this.handleResize = this.handleResize.bind(this)
+  }
+
+  handleResize(evt) {
+    this.setState({
+      windowHeight: window.innerHeight,
+      windowWidth: window.innerWidth,
+    })
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.handleResize)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize)
+  }
+
   render() {
+    const editorHeight = this.state.windowHeight - AppConfig.HEADER_HEIGHT;
+
     return (
       <div className='ui wrapper'>
 
@@ -19,9 +49,12 @@ class App extends Component {
           <a className="item">
             Friends
           </a>
+          <a className='item'>
+             {this.state.windowWidth} x {this.state.windowHeight}
+          </a>
         </div>
 
-        <Editor />
+        <Editor editorHeight={editorHeight}/>
 
         {/* footer */}
         <div className="ui inverted vertical footer segment app-footer">
