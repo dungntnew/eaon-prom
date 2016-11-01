@@ -36,7 +36,7 @@ class Editor extends Component {
   }
 
   initCanvas() {
-    this.canvas = new fabric.Canvas('canvas', {
+    this.canvas = window.canvas = new fabric.Canvas('canvas', {
       containerClass: 'canvas-container',
       backgroundColor: 'white'
     })

@@ -117,6 +117,18 @@ class BaseTool extends Component {
     return this.props.resource.images.find(x => x.id === id)
   }
 
+  findFirstElementInCanvas(name) {
+    const canvas = this.props.canvas
+    const objects = canvas.getObjects()
+
+    for(let i = 0; i < objects.length; i++) {
+      if (objects[i].name === name) {
+        return objects[i]
+      }
+    }
+    return null
+  }
+
   render() {
     const thumbnais = this.props.resource.thumbnails.map((item) =>  {
       return {
@@ -156,12 +168,21 @@ class FaceTool extends BaseTool {
   setFace(src) {
     const canvas = this.props.canvas
     const faceConfig = EditorToolConfig.faceConfig
+    let lastFace = this.findFirstElementInCanvas('face')
+
     this.loadImageFrom(src, (image, func) => {
 
-      image.setWidth(faceConfig.size.width)
-      image.setHeight(faceConfig.size.height)
+      if (lastFace) {
+        lastFace.setElement(image.getElement())
+      } else {
+        lastFace = image
+        this.props.canvas.add(lastFace)
+      }
 
-      this.props.canvas.add(image)
+      lastFace.setWidth(faceConfig.size.width)
+      lastFace.setHeight(faceConfig.size.height)
+      lastFace.name = 'face'
+
       this.props.canvas.renderAll()
       if (func) func()
     })
