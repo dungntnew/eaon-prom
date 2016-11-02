@@ -63,6 +63,27 @@ class BaseTool extends Component {
     return null
   }
 
+  getCenterPos(size) {
+      const canvas = this.props.canvas
+      return {
+        left: canvas.width/2 - size.width/2,
+        top: canvas.height/2 - size.height/2
+      }
+  }
+
+  getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
+  getRandPos(size) {
+    const canvas = this.props.canvas
+    const haftWidth = canvas.width/2 - size.width
+    const haftHeight = canvas.height/2  - size.height
+    let left = this.getRandomInt(-haftWidth, haftWidth)
+    let top = this.getRandomInt(-haftHeight, haftHeight)
+    return {left, top}
+  }
+
   render() {
     const thumbnais = this.props.resource.thumbnails.map((item) =>  {
       return {

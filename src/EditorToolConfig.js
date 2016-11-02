@@ -1,27 +1,39 @@
 
 const faceConfig = {
-  pos: {
-    top: 100,
-    left: 100
+  offset: {
+    x: 0,
+    y: 0
   },
   size: {
-    width: 100,
-    height: 100,
+    width: 400,
+    height: 400,
   },
 }
 
 const hairConfig = {
-  pos: {
-    top: 100,
-    left: 100
+  offset: {
+    x: 0,
+    y: -5
   },
   size: {
-    width: 100,
-    height: 100,
+    width: 400,
+    height: 400,
   },
+}
+
+const goodsConfig = {
+  offset: {
+    x: 10,
+    y: 10
+  },
+  size: {
+    width: 150,
+    height: 150
+  }
 }
 
 export {
   faceConfig,
-  hairConfig
+  hairConfig,
+  goodsConfig,
 }

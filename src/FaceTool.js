@@ -18,6 +18,14 @@ class FaceTool extends BaseTool {
 
   setFace(src) {
     const canvas = this.props.canvas
+    const size = faceConfig.size
+    const offset = faceConfig.offset
+    const center = this.getCenterPos(size)
+    const pos = {
+      top: center.top + offset.y,
+      left: center.left + offset.x
+    }
+
     let lastFace = this.findFirstElementInCanvas('face')
 
     this.loadImageFrom(src, (image, func) => {
@@ -29,8 +37,17 @@ class FaceTool extends BaseTool {
         canvas.add(lastFace)
       }
 
-      lastFace.setWidth(faceConfig.size.width)
-      lastFace.setHeight(faceConfig.size.height)
+      lastFace.set({
+        width: size.width,
+        height: size.height,
+        left: pos.left,
+        top: pos.top,
+        transparentCorners: true,
+        selectable: false,
+        hasControls: false,
+        hasBorders: false,
+      })
+      lastFace.moveTo(0)
       lastFace.name = 'face'
 
       canvas.renderAll()
