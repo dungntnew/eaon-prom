@@ -1,16 +1,16 @@
 const assetBaseDir = '/static/media/'
 
-const faceNums = 5
+const faceNums = 15
 const faceAssetDir =  assetBaseDir + 'faces/'
 
-const hairNums = 5
+const hairNums = 15
 const hairAssetDir = assetBaseDir + 'hairs/'
 
 
-const backgroundNum = 5
+const backgroundNum = 15
 const backgroundAssetDir = assetBaseDir + 'backgrounds/'
 
-const goodsNum = 5
+const goodsNum = 15
 const goodsAssetDir = assetBaseDir + 'goods/'
 
 function buildAssets(num, prefix, dir, ext='.png') {

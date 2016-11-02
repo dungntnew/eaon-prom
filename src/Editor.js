@@ -126,6 +126,7 @@ class Editor extends Component {
           onFinishProcess={this.hideWaitDimmer}
           onError={this.showError}
          />
+         <Divider/>
 
         <AppMenu
             onConfirmClick={this.confirmHandler}

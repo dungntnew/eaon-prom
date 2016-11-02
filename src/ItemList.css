@@ -1,0 +1,7 @@
+.list-wrapper {
+  overflow-x: scroll;
+}
+
+.item-list {
+  white-space: nowrap;
+}

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import classNames from 'classnames';
+import './ItemList.css';
 
 class ItemList extends Component {
   render() {
@@ -20,8 +21,10 @@ class ItemList extends Component {
     })
 
     return (
-      <div className='ui list selection horizontal'>
+      <div className='list-wrapper'>
+      <div className='ui list selection horizontal item-list'>
          {items}
+      </div>
       </div>
     )
   }

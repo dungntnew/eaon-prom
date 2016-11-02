@@ -94,13 +94,11 @@ class BaseTool extends Component {
     })
 
     return (
-      <div>
-        <ItemList
-          activeIndex={this.state.activeIndex}
-          items={thumbnais}
-          onItemClick={this.onItemClick}
-        />
-      </div>
+      <ItemList
+        activeIndex={this.state.activeIndex}
+        items={thumbnais}
+        onItemClick={this.onItemClick}
+      />
     )
   }
 }
