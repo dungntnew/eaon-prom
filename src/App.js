@@ -40,14 +40,8 @@ class App extends Component {
 
         {/* header */}
         <div className="ui secondary  menu">
-          <a className="item">
-            Home
-          </a>
           <a className="item active">
-            Messages
-          </a>
-          <a className="item">
-            Friends
+            ホーム
           </a>
           <a className='item'>
              {this.state.windowWidth} x {this.state.windowHeight}

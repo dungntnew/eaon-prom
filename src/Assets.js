@@ -39,6 +39,4 @@ const Assets = {
    goods: buildAssetConfig('装飾', goodsNum, goodsAssetDir),
 }
 
-console.log(Assets)
-
 export default Assets;

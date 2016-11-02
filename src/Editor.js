@@ -59,7 +59,6 @@ class Editor extends Component {
       this.canvas.setWidth(width, {cssOnly: false})
       this.canvas.setHeight(height, {cssOnly: false})
       this.canvas.renderAll()
-      console.log('canvas refreshed on resize')
     }
   }
 
@@ -79,7 +78,9 @@ class Editor extends Component {
   }
 
   showWaitDimmer(message) {
-    return;
+    if (!EditorConfig.USE_DIMMER) {
+      return;
+    }
     this.setState({
       loading: true,
       loadingMessge: message || 'Loading'
@@ -87,7 +88,9 @@ class Editor extends Component {
   }
 
   hideWaitDimmer() {
-    return;
+    if (!EditorConfig.USE_DIMMER) {
+      return;
+    }
     setTimeout(() => {
       this.setState({
         loading: false,
