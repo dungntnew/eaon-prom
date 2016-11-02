@@ -34,12 +34,13 @@ class App extends Component {
 
   render() {
     const editorHeight = this.state.windowHeight - AppConfig.HEADER_HEIGHT;
+    const editorWidth = this.state.windowWidth;
 
     return (
       <div className='ui wrapper'>
 
         {/* header */}
-        <div className="ui secondary  menu">
+        <div className="ui menu top-menu">
           <a className="item active">
             ホーム
           </a>
@@ -48,7 +49,8 @@ class App extends Component {
           </a>
         </div>
 
-        <Editor editorHeight={editorHeight}/>
+        <Editor editorHeight={editorHeight} editorWidth={editorWidth}/>
+        <hr/>
 
         {/* footer */}
         <div className="ui inverted vertical footer segment app-footer">

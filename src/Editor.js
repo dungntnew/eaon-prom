@@ -41,39 +41,28 @@ class Editor extends Component {
       backgroundColor: 'white'
     })
 
-    const exportSize = this.exportSize()
-    this.canvas.setWidth(exportSize.width, {
-      backstoreOnly: true
-    })
-
-    this.canvas.setHeight(exportSize.height, {
-      backstoreOnly: true
-    })
-
-    const size = this.canvasSize()
-    this.setViewSize(size.width, size.height)
+    const size = this.canvasViewSize()
+    this.setViewSize(size.width, size.height, size.zoom)
   }
 
-  setViewSize(width, height) {
+  setViewSize(width, height, zoom) {
     if (this.canvas) {
-      this.canvas.setWidth(width, {cssOnly: false})
-      this.canvas.setHeight(height, {cssOnly: false})
+      this.canvas.setWidth(width)
+      this.canvas.setHeight(height)
       this.canvas.renderAll()
     }
   }
 
-  canvasSize() {
+  canvasViewSize() {
     const height = this.props.editorHeight - EditorConfig.TOOLBAR_HEIGHT;
-    return {
-      width: height,
-      height: height
-    }
-  }
+    const width = this.props.editorWidth - EditorConfig.EDITOR_MARGIN_X * 2;
+    const canvasHeight = Math.min(width, height)
 
-  exportSize() {
+    const zoom = canvasHeight / EditorConfig.EXPORT_HEIGHT;
     return {
-      width: EditorConfig.EXPORT_WIDTH,
-      height: EditorConfig.EXPORT_HEIGHT
+      width: canvasHeight,
+      height: canvasHeight,
+      zoom: zoom,
     }
   }
 
@@ -106,8 +95,8 @@ class Editor extends Component {
   }
 
   render() {
-    const size = this.canvasSize()
-    this.setViewSize(size.width, size.height)
+    const size = this.canvasViewSize()
+    this.setViewSize(size.width, size.height, size.zoom)
 
     const style = {
       size: {
@@ -118,16 +107,16 @@ class Editor extends Component {
     }
 
     return (
-      <Segment padded>
-        <Segment>
-          <div className='ui container canvas-wrapper'>
+      <div className='ui'>
+        <div className='ui'>
+          <div className='ui canvas-wrapper'>
              <canvas style={style.size} className='' id="canvas" ref='canvas'/>
           </div>
           <Loader
             active={this.state.loading}
             message={this.state.loadingMessage}
           />
-        </Segment>
+        </div>
 
          <Divider/>
          <EditorToolBox
@@ -138,12 +127,11 @@ class Editor extends Component {
           onError={this.showError}
          />
 
-        <Divider/>
         <AppMenu
             onConfirmClick={this.confirmHandler}
             onCloseClick={this.closeHandler}
         />
-      </Segment>
+      </div>
     )
   }
 };
