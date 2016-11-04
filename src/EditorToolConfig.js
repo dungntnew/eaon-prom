@@ -59,7 +59,7 @@ const goodsConfig = {
     'tl':true,
     'tr':true,
     'bl':true,
-    'br':true,
+    'br':false,
     'ml':false,
     'mt':false,
     'mr':false,
