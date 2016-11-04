@@ -14,6 +14,9 @@ import AppMenu from './AppMenu'
 import Loader from './Loader';
 
 import {fabric} from 'fabric';
+import setupFabricObjectControls from './FabricEx';
+
+
 
 class Editor extends Component {
 
@@ -36,6 +39,9 @@ class Editor extends Component {
   }
 
   initCanvas() {
+
+    setupFabricObjectControls(fabric, true);
+
     this.canvas = window.canvas = new fabric.Canvas('canvas', {
       containerClass: 'canvas-container',
       backgroundColor: 'white'

@@ -26,7 +26,7 @@ class FaceTool extends BaseTool {
       left: center.left + offset.x
     }
 
-    let lastFace = this.findFirstElementInCanvas('face')
+    let lastFace = this.findFirstElementInCanvas(faceConfig.tag)
 
     this.loadImageFrom(src, (image, func) => {
 
@@ -48,7 +48,7 @@ class FaceTool extends BaseTool {
         hasBorders: false,
       })
       lastFace.moveTo(0)
-      lastFace.name = 'face'
+      lastFace.tag = faceConfig.tag
 
       canvas.renderAll()
       if (func) func()

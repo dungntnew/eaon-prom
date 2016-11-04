@@ -51,12 +51,12 @@ class BaseTool extends Component {
     return this.props.resource.images.find(x => x.id === id)
   }
 
-  findFirstElementInCanvas(name) {
+  findFirstElementInCanvas(tag) {
     const canvas = this.props.canvas
     const objects = canvas.getObjects()
 
     for(let i = 0; i < objects.length; i++) {
-      if (objects[i].name === name) {
+      if (objects[i].tag === tag) {
         return objects[i]
       }
     }
@@ -82,6 +82,39 @@ class BaseTool extends Component {
     let left = this.getRandomInt(-haftWidth, haftWidth)
     let top = this.getRandomInt(-haftHeight, haftHeight)
     return {left, top}
+  }
+
+  configDefaultObject(obj) {
+    obj.customiseCornerIcons( {
+        settings: {
+            borderColor: 'black',
+            cornerSize: 25,
+            cornerShape: 'rect',
+            cornerBackgroundColor: 'black',
+            cornerPadding: 10
+        },
+        tl: {
+            icon: 'icons/rotate.svg'
+        },
+        tr: {
+            icon: 'icons/resize.svg'
+        },
+        bl: {
+            icon: 'icons/remove.svg'
+        },
+        br: {
+            icon: 'icons/up.svg'
+        },
+        mb: {
+            icon: 'icons/down.svg'
+        },
+        mt: {
+            icon: 'icons/acute.svg'
+        },
+        mr: {
+            icon: 'icons/repair-tools-cross.svg'
+        }
+    });
   }
 
   render() {

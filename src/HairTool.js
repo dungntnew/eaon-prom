@@ -26,7 +26,7 @@ class HairTool extends BaseTool {
       left: center.left + offset.x
     }
 
-    let lastHair = this.findFirstElementInCanvas('hair')
+    let lastHair = this.findFirstElementInCanvas(hairConfig.tag)
 
     this.loadImageFrom(src, (image, func) => {
 
@@ -48,7 +48,7 @@ class HairTool extends BaseTool {
         hasBorders: false,
       })
       lastHair.moveTo(1)
-      lastHair.name = 'hair'
+      lastHair.tag = hairConfig.tag
 
       canvas.renderAll()
       if (func) func()

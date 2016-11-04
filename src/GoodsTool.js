@@ -3,10 +3,6 @@ import {goodsConfig} from './EditorToolConfig';
 
 class GoodsTool extends BaseTool {
 
-  randPos(pos) {
-
-  }
-
   addGoods(src) {
     const canvas = this.props.canvas
     const size = goodsConfig.size
@@ -19,13 +15,15 @@ class GoodsTool extends BaseTool {
         height: size.height,
         left: pos.left,
         top: pos.top,
-        transparentCorners: false,
+        transparentCorners: true,
         selectable: true,
         hasControls: true,
-        hasBorders: true,
       })
-      goods.tag = 'goods'
-      canvas.setActiveObject(goods)
+      // overwrite the prototype object based
+
+      goods.tag = goodsConfig.tag
+      this.configDefaultObject(goods)
+      goods.setControlsVisibility(goodsConfig.controls)
       canvas.add(goods)
 
       canvas.renderAll()
