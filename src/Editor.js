@@ -10,11 +10,11 @@ import EditorConfig from './EditorConfig';
 import './Editor.css'
 
 import EditorToolBox from './EditorToolBox'
-import AppMenu from './AppMenu'
 import Loader from './Loader';
+import ExportConfirm from './ExportConfirm';
 
 import {fabric} from 'fabric';
-import setupFabricObjectControls from './FabricEx';
+import {setupFabricObjectControls} from './FabricEx';
 
 
 
@@ -26,11 +26,15 @@ class Editor extends Component {
     this.state = {
       loading: false,
       loadingMessge: '',
+      confirming: false,
     }
     this.showWaitDimmer = this.showWaitDimmer.bind(this)
     this.hideWaitDimmer = this.hideWaitDimmer.bind(this)
     this.showError = this.showError.bind(this)
     this.hideError = this.hideError.bind(this)
+    this.handleConfirm = this.handleConfirm.bind(this)
+    this.handleCancel = this.handleCancel.bind(this)
+    this.handleExport = this.handleExport.bind(this)
   }
 
   componentDidMount() {
@@ -100,6 +104,27 @@ class Editor extends Component {
   hideError() {
   }
 
+  handleConfirm() {
+    this.showConfirmPopup()
+    window.scrollTo(0, 0)
+  }
+
+  handleExport() {
+    this.hideConfirmPopup()
+  }
+
+  handleCancel() {
+    this.hideConfirmPopup()
+  }
+
+  showConfirmPopup() {
+    this.setState({confirming: true})
+  }
+
+  hideConfirmPopup() {
+    this.setState({confirming: false})
+  }
+
   render() {
     const size = this.canvasViewSize()
     this.setViewSize(size.width, size.height, size.zoom)
@@ -134,10 +159,14 @@ class Editor extends Component {
          />
          <Divider/>
 
-        <AppMenu
-            onConfirmClick={this.confirmHandler}
-            onCloseClick={this.closeHandler}
-        />
+         <button className='ui button primary fluid' onClick={this.handleConfirm}>
+            Confirm
+         </button>
+         <ExportConfirm
+           active={this.state.confirming}
+           onDecidedClick={this.handleExport}
+           onCancelClick={this.handleCancel}
+          />
       </div>
     )
   }

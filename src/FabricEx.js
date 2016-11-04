@@ -6,12 +6,6 @@
  */
 
  function setup( global ) {
-     console.log("CALLLING")
-     console.log(global)
-     console.log(global.name)
-     console.log(global.fabric)
-     console.log("END")
-
      'use strict';
      var fabric = global.fabric || ( global.fabric = {} ),
          extCompat = '1.6',
@@ -754,4 +748,4 @@ const setupFabricObjectControls = (fabric, withDefault=false) => {
   }
 }
 
-export default setupFabricObjectControls;
+export { setupFabricObjectControls };

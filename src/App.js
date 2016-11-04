@@ -37,7 +37,7 @@ class App extends Component {
     const editorWidth = this.state.windowWidth;
 
     return (
-      <div className='ui wrapper'>
+      <div className='ui wrapper segment basic'>
 
         {/* header */}
         <div className="ui menu top-menu">
@@ -50,7 +50,6 @@ class App extends Component {
         </div>
 
         <Editor editorHeight={editorHeight} editorWidth={editorWidth}/>
-        <hr/>
 
         {/* footer */}
         <div className="ui inverted vertical footer segment app-footer">
