@@ -68,11 +68,33 @@ const goodsConfig = {
   },
 }
 
-const removableTags = [goodsConfig.tag]
+const tweetConfig = {
+  tag: 'Tweet',
+  offset: {
+    x: 10,
+    y: 10
+  },
+  size: {
+    width: 150,
+    height: 150
+  },
+  controls: {
+    'tl':true,
+    'tr':true,
+    'bl':true,
+    'br':false,
+    'ml':false,
+    'mt':false,
+    'mr':false,
+    'mb':false,
+    'mtr':false
+  },
+}
+
 
 export {
   faceConfig,
   hairConfig,
   goodsConfig,
-  removableTags,
+  tweetConfig,
 }

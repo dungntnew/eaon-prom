@@ -6,6 +6,7 @@ import BGTool from './BGTool';
 import FaceTool from './FaceTool';
 import HairTool from './HairTool';
 import GoodsTool from './GoodsTool';
+import TweetTool from './TweetTool';
 
 class EditorToolBox extends Component {
 
@@ -31,6 +32,7 @@ class EditorToolBox extends Component {
       this.props.assets.hair.title,
       this.props.assets.background.title,
       this.props.assets.goods.title,
+      this.props.assets.tweet.title,
     ]
 
     const contents = [
@@ -58,6 +60,13 @@ class EditorToolBox extends Component {
       <GoodsTool
        canvas={this.props.canvas}
        resource={this.props.assets.goods}
+       onStartProcess={this.props.onStartProcess}
+       onFinishProcess={this.props.onFinishProcess}
+       onError={this.props.onError}
+      />,
+      <TweetTool
+       canvas={this.props.canvas}
+       resource={this.props.assets.tweet}
        onStartProcess={this.props.onStartProcess}
        onFinishProcess={this.props.onFinishProcess}
        onError={this.props.onError}
