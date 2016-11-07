@@ -6,7 +6,6 @@
  */
 
  function setup( global ) {
-     'use strict';
      var fabric = global.fabric || ( global.fabric = {} ),
          extCompat = '1.6',
          isVML = function() {
@@ -304,6 +303,8 @@
                                  );
                              }
                              break;
+                         default:
+                         break;
                      }
                  } else {
                      if ( icon !== undefined ) {
@@ -589,7 +590,7 @@
           */
 
          _rotateByDegrees: function( e, target, value ) {
-             var angle = parseInt( target.getAngle() ) + value,
+             var angle = parseInt( target.getAngle(), 10) + value,
                  needsOriginRestore = false;
 
              if ( ( target.originX !== 'center' || target.originY !== 'center' ) && target.centeredRotation ) {

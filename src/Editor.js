@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 
 import {
-        Segment,
         Divider,
 } from 'semantic-ui-react';
 
@@ -15,8 +14,10 @@ import ExportConfirm from './ExportConfirm';
 
 import {fabric} from 'fabric';
 import {setupFabricObjectControls} from './FabricEx';
-
-
+// import './Blob';
+// import './CanvasToBlob';
+import filesaver from 'filesaver.js-npm';
+import blobUtil from 'blob-util';
 
 class Editor extends Component {
 
@@ -112,7 +113,16 @@ class Editor extends Component {
   }
 
   handleExport() {
-    this.hideConfirmPopup()
+    blobUtil.dataURLToBlob(this.state.exportedData)
+    .then(blob => {
+      filesaver.saveAs(blob, 'img.png')
+      this.hideConfirmPopup()
+    })
+    .catch(err => {
+      console.error(err)
+      this.showError(err)
+      this.hideConfirmPopup()
+    })
   }
 
   handleCancel() {
