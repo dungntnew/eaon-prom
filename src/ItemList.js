@@ -13,16 +13,17 @@ class ItemList extends Component {
           <div className={classes}
                key={item.key}
                onClick={this.props.onItemClick(item.id, item.src)}>
-            <div className='tiny image'>
-              <img width={80} height={80} src={item.src} alt=''/>
-            </div>
+               <div className='ui tiny circular bordered image'>
+                  <img className='ui tiny circular bordered image' width={80} height={80} src={item.src} alt=''/>
+               </div>
+
           </div>
       )
     })
 
     return (
       <div className='list-wrapper'>
-      <div className='ui list selection horizontal item-list'>
+      <div className='ui mylist list selection horizontal item-list'>
          {items}
       </div>
       </div>

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import classNames from 'classnames';
+import './Tabs.css';
 
 class Tabs extends Component {
 
@@ -29,8 +30,8 @@ class Tabs extends Component {
     });
 
     return (
-      <div className='ui container'>
-        <div className='ui top attached tabular menu'>
+      <div className='ui container mytab'>
+        <div className='mytabmenu ui top attached tabular menu'>
             {titles}
         </div>
         {contents}

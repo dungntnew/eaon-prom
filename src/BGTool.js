@@ -11,11 +11,11 @@ class BGTool extends BaseTool {
   initializeLate() {
     const defaultImage = this.resourceImageById(0)
     if (defaultImage) {
-      this.setBackground(defaultImage.src)
+      this.setBackground(defaultImage.src, 0)
     }
   }
 
-  setBackground(src) {
+  setBackground(src, id) {
     const canvas = this.props.canvas
     this.loadImageFrom(src, (image, func) => {
       image.setWidth(canvas.width)
@@ -25,16 +25,16 @@ class BGTool extends BaseTool {
       this.props.canvas.renderAll()
       if (func) func()
     })
+    this.setState({
+      activeIndex: id,
+    })
   }
 
   onItemClick(id) {
     return (env) => {
       const background = this.resourceImageById(id)
       if (background) {
-        this.setState({
-          activeIndex: id,
-        })
-        this.setBackground(background.src)
+        this.setBackground(background.src, id)
       }
     }
   }
