@@ -27,6 +27,7 @@ class Editor extends Component {
       loading: false,
       loadingMessge: '',
       confirming: false,
+      exportedData: null,
     }
     this.showWaitDimmer = this.showWaitDimmer.bind(this)
     this.hideWaitDimmer = this.hideWaitDimmer.bind(this)
@@ -56,10 +57,11 @@ class Editor extends Component {
   }
 
   setViewSize(width, height, zoom) {
-    if (this.canvas) {
-      this.canvas.setWidth(width)
-      this.canvas.setHeight(height)
-      this.canvas.renderAll()
+    if(this.canvas) {
+      this.canvas.setWidth(width, {cssOnly: false})
+      this.canvas.setHeight(height, {cssOnly: false})
+      this.canvas.setWidth(EditorConfig.EXPORT_WIDTH, {backstoreOnly: true})
+      this.canvas.setHeight(EditorConfig.EXPORT_HEIGHT, {backstoreOnly: true})
     }
   }
 
@@ -118,7 +120,12 @@ class Editor extends Component {
   }
 
   showConfirmPopup() {
-    this.setState({confirming: true})
+    const data = this.canvas.toDataURL({
+      format: 'jpeg',
+      quality: 1,
+      multiplier: 0.5
+    })
+    this.setState({confirming: true, exportedData: data})
   }
 
   hideConfirmPopup() {
@@ -164,6 +171,7 @@ class Editor extends Component {
          </button>
          <ExportConfirm
            active={this.state.confirming}
+           exportedData={this.state.exportedData}
            onDecidedClick={this.handleExport}
            onCancelClick={this.handleCancel}
           />
