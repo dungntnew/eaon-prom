@@ -18,7 +18,7 @@ const TweetAssetDir = assetBaseDir + 'tweets/'
 
 function buildAssets(num, prefix, dir, ext='.png') {
   return Array.from(Array(num).keys()).map((i) => {
-    const src = dir + prefix + i + ext
+    const src = dir + prefix + (i　+ 1) + ext
     return {
       id: i,
       src: src,

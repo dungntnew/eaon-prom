@@ -6,15 +6,19 @@ class Tabs extends Component {
 
   render() {
     const titles = this.props.titles.map((title, index) => {
+      const active = this.props.activeTab === index
       const itemClass = classNames({
-        'item': true,
-        'active': this.props.activeTab === index
+        'ui label image': true,
+        'active': active
       })
+      const itemTitle = active ? title.on : title.off
 
       return (
         <div key={'tab-item-' + index} className={itemClass}
              onClick={this.props.onTabSelect(index)}
-        > {title} </div>
+        >
+          <img width={50} height={30} src={itemTitle} className="ui large centered image" alt='tab-item'/>
+        </div>
       )
     });
 
@@ -31,7 +35,7 @@ class Tabs extends Component {
 
     return (
       <div className='ui container mytab'>
-        <div className='mytabmenu ui top attached tabular menu'>
+        <div className='mytabmenu ui tabular menu large labels'>
             {titles}
         </div>
         {contents}

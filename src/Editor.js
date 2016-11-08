@@ -1,9 +1,4 @@
 import React, {Component} from 'react';
-
-import {
-        Divider,
-} from 'semantic-ui-react';
-
 import Assets from './Assets';
 import EditorConfig from './EditorConfig';
 import './Editor.css'
@@ -166,7 +161,7 @@ class Editor extends Component {
           />
         </div>
 
-         <Divider/>
+         <div className='ui divider basic'></div>
          <EditorToolBox
           canvas={this.canvas}
           assets={Assets}
@@ -174,11 +169,13 @@ class Editor extends Component {
           onFinishProcess={this.hideWaitDimmer}
           onError={this.showError}
          />
-         <Divider/>
-
-         <button className='ui button primary fluid' onClick={this.handleConfirm}>
-            Confirm
-         </button>
+        <div className='ui grid '>
+          <div className='row centered'>
+              <button className='ui large button myconfirm' onClick={this.handleConfirm}>
+                 OK
+              </button>
+           </div>
+         </div>
          <ExportConfirm
            active={this.state.confirming}
            exportedData={this.state.exportedData}

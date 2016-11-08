@@ -9,3 +9,14 @@
 #canvas {
   background-color: red;
 }
+
+.ui.button.myconfirm {
+  color: white;
+  background-color: #fc3a99;
+  width: 150px;
+}
+
+.ui.button.myconfirm.active {
+  color: white;
+  background-color: #fc3a99;
+}

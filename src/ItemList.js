@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import classNames from 'classnames';
 import './ItemList.css';
 
-import btnPrev from './img/btn_prev.png';
-import btnNext from './img/btn_next.png';
+import btnPrev from './navi/btn_prev.png';
+import btnNext from './navi/btn_next.png';
 
 const threadshot = 250
 
@@ -99,11 +99,11 @@ class List extends Component {
     })
 
     return (
-      <div className='ui middle aligned  grid'>
-        <div className='row'>
-            <div className='right aligned two wide column'>
+      <div className='ui middle aligned very flexiable grid'>
+          <div className="row">
+          <div className='right aligned two wide column'>
               <a href="#" className={prevBtnClasses} onClick={this.prevHandler}>
-              <img width={40} height={40} src={btnPrev} alt='prev'/>
+              <img className='prevBtn' width={40} height={40} src={btnPrev} alt='prev'/>
               </a>
             </div>
 
@@ -118,10 +118,10 @@ class List extends Component {
 
             <div className='left aligned two wide column'>
                <a href="#" className={nextBtnClasses} onClick={this.nextHandler}>
-               <img width={40} height={40} src={btnNext} alt='next'/>
+               <img className='nextBtn' width={40} height={40} src={btnNext} alt='next'/>
                </a>
             </div>
-        </div>
+            </div>
       </div>
     )
   }

@@ -9,3 +9,27 @@
   color: white;
   border-radius: .28571429rem .28571429rem .28571429rem .28571429rem !important;
 }
+
+.ui.image.label img {
+    margin: 0 !important;
+    background: none !important;
+    border: one !important;
+}
+
+.ui.image.label {
+    margin: 0 !important;
+    background: none !important;
+    border: one !important;
+}
+
+
+.mytab.ui.label {
+  background: none !important;
+}
+
+.mytab.ui.image.label {
+    background: none !important;
+}
+.mytab.ui.active.label {
+  background: none !important;
+}

@@ -26,3 +26,20 @@
 a.disabled img {
   opacity: 0.5;
 }
+.nextBtn {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: -20px;
+  left: -40px;
+  z-index: 100;
+}
+
+.prevBtn {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: -20px;
+  left: 40px;
+  z-index: 100;
+}
