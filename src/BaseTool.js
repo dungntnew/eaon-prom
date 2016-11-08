@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {fabric} from 'fabric';
 
-import ItemList from './ItemList';
+import List from './ItemList';
 import Messages from './Messages';
 
 
@@ -127,7 +127,7 @@ class BaseTool extends Component {
     })
 
     return (
-      <ItemList
+      <List
         activeIndex={this.state.activeIndex}
         items={thumbnais}
         onItemClick={this.onItemClick}

@@ -15,11 +15,14 @@
 }
 
 .mylist.ui.horizontal.list>.item  img {
-  border: 1px solid red;
   opacity: 0.5;
   background: white;
 }
 
 .mylist.ui.selection.list>.item.active img {
   opacity: 1;
+}
+
+a.disabled img {
+  opacity: 0.5;
 }

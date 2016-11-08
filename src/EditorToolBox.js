@@ -74,14 +74,12 @@ class EditorToolBox extends Component {
     ]
 
     return (
-      <div className='ui container'>
-        <Tabs
-          titles={titles}
-          contents={contents}
-          activeTab={this.state.activeTab}
-          onTabSelect={this.changeTab}
-        />
-      </div>
+      <Tabs
+        titles={titles}
+        contents={contents}
+        activeTab={this.state.activeTab}
+        onTabSelect={this.changeTab}
+      />
     )
   }
 }

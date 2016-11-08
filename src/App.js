@@ -4,6 +4,8 @@ import './App.css';
 import AppConfig from './AppConfig';
 import Editor from './Editor';
 
+import List from './ItemList';
+import Assets from './Assets';
 
 class App extends Component {
   constructor(props) {
@@ -15,6 +17,10 @@ class App extends Component {
     }
 
     this.handleResize = this.handleResize.bind(this)
+
+    this.onItemClick = (e) => {
+      console.log('HIHI; ' + e)
+    };
   }
 
   handleResize(evt) {
@@ -37,7 +43,7 @@ class App extends Component {
     const editorWidth = this.state.windowWidth;
 
     return (
-      <div className='ui wrapper segment basic'>
+      <div className='ui wrapper'>
 
         {/* header */}
         <div className="ui menu top-menu">
@@ -60,7 +66,9 @@ class App extends Component {
 
       </div>
     );
+
   }
+
 }
 
 export default App;
