@@ -7,13 +7,13 @@ const hairNums = 15
 const hairAssetDir = assetBaseDir + 'hairs/'
 
 
-const backgroundNum = 15
+const backgroundNum = 10
 const backgroundAssetDir = assetBaseDir + 'backgrounds/'
 
-const goodsNum = 15
+const goodsNum = 10
 const goodsAssetDir = assetBaseDir + 'goods/'
 
-const TweetNum = 15;
+const TweetNum = 10
 const TweetAssetDir = assetBaseDir + 'tweets/'
 
 function buildAssets(num, prefix, dir, ext='.png') {
