@@ -30,16 +30,35 @@ a.disabled img {
   width: 40px;
   height: 40px;
   position: absolute;
-  top: -20px;
-  left: -40px;
-  z-index: 100;
 }
 
 .prevBtn {
   width: 40px;
   height: 40px;
-  position: absolute;
-  top: -20px;
-  left: 40px;
-  z-index: 100;
+}
+.leftCol {
+  width: 6% !important;
+  position: relative;
+}
+
+.rightCol {
+  width: 6% !important;
+  position: relative;
+}
+.leftCol > .leftLink {
+    position: absolute;
+    top: 25px;
+    left: 10px;
+    z-index: 1000;
+}
+
+.rightCol > .rightLink {
+    position: absolute;
+    top: 25px;
+    left: -10px;
+    z-index: 1000;
+}
+
+.centerCol {
+  width: 87% !important;
 }

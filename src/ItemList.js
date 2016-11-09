@@ -48,6 +48,7 @@ class List extends Component {
 
   updateScrollState() {
     const el = this.refs.content
+    if (!el) return;
     this.setState({
       hasPrev: el.scrollLeft > 0,
       hasNext: el.scrollLeft + el.offsetWidth !== el.scrollWidth
@@ -89,39 +90,40 @@ class List extends Component {
 
   render() {
     let prevBtnClasses = classNames({
-      'mini image': true,
+      'mini image leftLink': true,
       'disabled': !this.state.hasPrev
     })
 
     let nextBtnClasses = classNames({
-      'mini image': true,
+      'mini image rightLink': true,
       'disabled': !this.state.hasNext
     })
 
     return (
-      <div className='ui middle aligned very flexiable grid'>
+      <div className='ui middle aligned grid'>
           <div className="row">
-          <div className='right aligned two wide column'>
+            <div className="leftCol">
               <a href="#" className={prevBtnClasses} onClick={this.prevHandler}>
               <img className='prevBtn' width={40} height={40} src={btnPrev} alt='prev'/>
               </a>
+
             </div>
 
-            <div className='twelve wide column'>
-                <div ref="content" className='list-wrapper' >
+            <div className='centerCol'>
+                  <div ref="content" className='list-wrapper' >
                   <ItemList items={this.props.items}
-                      onItemClick={this.props.onItemClick}
-                      activeIndex={this.props.activeIndex}
+                   onItemClick={this.props.onItemClick}
+                   activeIndex={this.props.activeIndex}
                   />
-              </div>
+                  </div>
             </div>
 
-            <div className='left aligned two wide column'>
-               <a href="#" className={nextBtnClasses} onClick={this.nextHandler}>
-               <img className='nextBtn' width={40} height={40} src={btnNext} alt='next'/>
-               </a>
+            <div className='rightCol'>
+                <a href="#" className={nextBtnClasses} onClick={this.nextHandler}>
+                <img className='nextBtn' width={40} height={40} src={btnNext} alt='next'/>
+                </a>
             </div>
-            </div>
+          </div>
       </div>
     )
   }

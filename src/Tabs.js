@@ -24,7 +24,7 @@ class Tabs extends Component {
 
     const contents = this.props.contents.map((body, index) => {
       const itemClass = classNames({
-        'ui attached tab bottom': true,
+        'ui attached tab bottom mytabcontent': true,
         'active': this.props.activeTab === index
       })
 
