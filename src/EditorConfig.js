@@ -7,7 +7,7 @@ const EditorConfig = {
     EXPORT_WIDTH: 500,
     EXPORT_HEIGHT: 500,
     USE_DIMMER: false,
-    DIMMER_TIMEOUT: 50,
+    DIMMER_TIMEOUT: 100,
 };
 
 export default EditorConfig;

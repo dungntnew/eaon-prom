@@ -17,10 +17,6 @@ class App extends Component {
     }
 
     this.handleResize = this.handleResize.bind(this)
-
-    this.onItemClick = (e) => {
-      console.log('HIHI; ' + e)
-    };
   }
 
   handleResize(evt) {

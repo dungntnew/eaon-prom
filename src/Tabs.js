@@ -32,7 +32,7 @@ class Tabs extends Component {
         <div key={'tab-' + index} className={itemClass}> {body}</div>
       )
     });
-
+    
     return (
       <div className='ui container mytab'>
         <div className='mytabmenu ui tabular menu compact large labels'>

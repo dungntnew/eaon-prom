@@ -1,5 +1,6 @@
 .mytab {
   text-align: center;
+  min-height: 151px;
 }
 
 .ui.mytab .mytabmenu.menu .item {
@@ -22,6 +23,7 @@
     margin: 0 !important;
     background: none !important;
     border: one !important;
+    cursor: pointer;
 }
 
 .ui.image.label {
