@@ -8,6 +8,8 @@ const EditorConfig = {
     EXPORT_HEIGHT: 500,
     USE_DIMMER: false,
     DIMMER_TIMEOUT: 100,
+    EXPORT_ITEM_KEY: 'AEON_NAOMI_GENERATOR_IMG_DATA', 
+    FINISH_PATH: '/share.html',
 };
 
 export default EditorConfig;

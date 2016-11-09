@@ -109,7 +109,6 @@ class Editor extends Component {
   }
 
   handleExport() {
-    //console.log(this.state.exportedData);
     blobUtil.dataURLToBlob(this.state.exportedData)
     .then(blob => {
       //console.log(blob);
@@ -133,7 +132,14 @@ class Editor extends Component {
       quality: 1,
       multiplier: 0.5
     })
-    this.setState({confirming: true, exportedData: data})
+    try {
+      localStorage.setItem(EditorConfig.EXPORT_ITEM_KEY, data);
+      window.location.pathname = EditorConfig.FINISH_PATH;
+    }
+    catch(e) {
+      console.error('something wrong: ' + e);
+      this.showError(e);
+    }
   }
 
   hideConfirmPopup() {
