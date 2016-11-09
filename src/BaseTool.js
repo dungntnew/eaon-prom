@@ -26,7 +26,6 @@ class BaseTool extends Component {
   }
 
   initializeLate() {
-    console.log('component initialize late')
   }
 
   onItemClick(id, src) {

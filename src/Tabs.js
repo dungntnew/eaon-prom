@@ -35,7 +35,7 @@ class Tabs extends Component {
 
     return (
       <div className='ui container mytab'>
-        <div className='mytabmenu ui tabular menu large labels'>
+        <div className='mytabmenu ui tabular menu compact large labels'>
             {titles}
         </div>
         {contents}

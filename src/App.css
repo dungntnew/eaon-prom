@@ -1,4 +1,39 @@
+.ui.divider {
+  margin: 0.3rem 0 !important;
+}
+.ui.segment {
+  padding: 0.8em !important;
+}
+
+.ui.header {
+  line-height: 0.5em !important;
+}
+
+.ui.menu {
+  margin: 0 !important;
+}
+
+.ui.image.label {
+  padding: 0.2em 0.2em 0.2em 0.2em !important;
+}
+
 .top-menu {
   margin-left: 0px;
   margin-right: 0px;
+}
+.app-header {
+}
+.app-footer {
+}
+
+.app-footer .copyright {
+  text-align: center;
+  font-size: smaller;
+}
+
+.titleImage {
+  text-align: center;
+}
+.logo {
+  margin-left: 10px;
 }

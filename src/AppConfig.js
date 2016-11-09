@@ -1,6 +1,6 @@
 
 const AppConfig = {
-    HEADER_HEIGHT: 80,
+    HEADER_HEIGHT: 120,
     FOOTER_HEIGHT: 100,
 };
 

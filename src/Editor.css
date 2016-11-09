@@ -1,5 +1,4 @@
 .canvas-container {
-  background-color: green;
   margin: 0px auto;
 }
 .canvas-wrapper {
@@ -7,7 +6,10 @@
 }
 
 #canvas {
-  background-color: red;
+}
+
+.mybuttons {
+  text-align: center;
 }
 
 .ui.button.myconfirm {

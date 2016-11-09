@@ -1,3 +1,7 @@
+.mytab {
+  text-align: center;
+}
+
 .ui.mytab .mytabmenu.menu .item {
     border: 2px solid red;
     margin: 2px 2px 2px 2px;
@@ -8,6 +12,10 @@
   background-color: red;
   color: white;
   border-radius: .28571429rem .28571429rem .28571429rem .28571429rem !important;
+}
+
+.ui.mytab .mytabmenu.menu {
+  border: none !important;
 }
 
 .ui.image.label img {

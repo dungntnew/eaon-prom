@@ -64,7 +64,8 @@ class Editor extends Component {
   canvasViewSize() {
     const height = this.props.editorHeight - EditorConfig.TOOLBAR_HEIGHT;
     const width = this.props.editorWidth - EditorConfig.EDITOR_MARGIN_X * 2;
-    const canvasHeight = Math.min(width, height)
+    const canvasHeight = Math.max(Math.min(width, height), EditorConfig.EDITOR_MIN_H);
+
 
     const zoom = canvasHeight / EditorConfig.EXPORT_HEIGHT;
     return {
@@ -108,8 +109,10 @@ class Editor extends Component {
   }
 
   handleExport() {
+    //console.log(this.state.exportedData);
     blobUtil.dataURLToBlob(this.state.exportedData)
     .then(blob => {
+      //console.log(blob);
       filesaver.saveAs(blob, 'img.png')
       this.hideConfirmPopup()
     })
@@ -150,18 +153,16 @@ class Editor extends Component {
     }
 
     return (
-      <div className='ui'>
-        <div className='ui'>
-          <div className='ui canvas-wrapper'>
-             <canvas style={style.size} className='' id="canvas" ref='canvas'/>
-          </div>
-          <Loader
-            active={this.state.loading}
-            message={this.state.loadingMessage}
-          />
+      <div>
+        <div className='ui canvas-wrapper'>
+           <canvas style={style.size} className='' id="canvas" ref='canvas'/>
         </div>
+        <Loader
+          active={this.state.loading}
+          message={this.state.loadingMessage}
+        />
 
-         <div className='ui divider basic'></div>
+         <div className='ui hidden divider'></div>
          <EditorToolBox
           canvas={this.canvas}
           assets={Assets}
@@ -169,12 +170,10 @@ class Editor extends Component {
           onFinishProcess={this.hideWaitDimmer}
           onError={this.showError}
          />
-        <div className='ui grid '>
-          <div className='row centered'>
-              <button className='ui large button myconfirm' onClick={this.handleConfirm}>
-                 OK
-              </button>
-           </div>
+         <div className='mybuttons'>
+             <button className='ui large button myconfirm' onClick={this.handleConfirm}>
+                OK
+             </button>
          </div>
          <ExportConfirm
            active={this.state.confirming}
