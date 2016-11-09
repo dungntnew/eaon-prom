@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import classNames from 'classnames';
 import './ItemList.css';
 
-import btnPrev from './navi/btn_prev.png';
-import btnNext from './navi/btn_next.png';
+import btnPrev from '../navi/btn_prev.png';
+import btnNext from '../navi/btn_next.png';
 
 const threadshot = 250
 

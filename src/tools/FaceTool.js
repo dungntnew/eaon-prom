@@ -1,5 +1,5 @@
 import BaseTool from './BaseTool';
-import {faceConfig} from './EditorToolConfig';
+import {faceConfig} from '../Config';
 
 class FaceTool extends BaseTool {
   constructor(props){

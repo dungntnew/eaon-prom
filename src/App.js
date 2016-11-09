@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import AppConfig from './AppConfig';
+import {AppConfig} from './Config';
 import Editor from './Editor';
 
 import titleImage from './navi/title_naomi_generator.png';

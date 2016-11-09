@@ -1,5 +1,5 @@
 import BaseTool from './BaseTool';
-import {goodsConfig} from './EditorToolConfig';
+import {goodsConfig} from '../Config';
 
 class GoodsTool extends BaseTool {
 

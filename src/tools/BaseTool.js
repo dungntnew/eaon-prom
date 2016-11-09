@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {fabric} from 'fabric';
 
-import List from './ItemList';
-import Messages from './Messages';
+import List from '../containers/ItemList';
+import {Messages} from '../Config';
 
 
 class BaseTool extends Component {

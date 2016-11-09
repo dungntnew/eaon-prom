@@ -1,5 +1,5 @@
 import BaseTool from './BaseTool';
-import {tweetConfig} from './EditorToolConfig';
+import {tweetConfig} from '../Config';
 
 class TweetTool  extends BaseTool {
   addTweet(src) {

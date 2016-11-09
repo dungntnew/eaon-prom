@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import Assets from './Assets';
-import EditorConfig from './EditorConfig';
+import {EditorConfig} from './Config';
 import './Editor.css'
 
-import EditorToolBox from './EditorToolBox'
+import ToolBox from './ToolBox'
 import Loader from './Loader';
 
 import {fabric} from 'fabric';
-import {setupFabricObjectControls} from './FabricEx';
+import {setupFabricObjectControls} from './lib/FabricEx';
 
 class Editor extends Component {
 
@@ -131,7 +131,7 @@ class Editor extends Component {
         />
 
          <div className='ui hidden divider'></div>
-         <EditorToolBox
+         <ToolBox
           canvas={this.canvas}
           assets={Assets}
           onStartProcess={this.showWaitDimmer}

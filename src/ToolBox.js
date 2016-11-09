@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 
-import Tabs from './Tabs';
+import Tabs from './containers/Tabs';
 
-import BGTool from './BGTool';
-import FaceTool from './FaceTool';
-import HairTool from './HairTool';
-import GoodsTool from './GoodsTool';
-import TweetTool from './TweetTool';
+import BGTool from './tools/BGTool';
+import FaceTool from './tools/FaceTool';
+import HairTool from './tools/HairTool';
+import GoodsTool from './tools/GoodsTool';
+import TweetTool from './tools/TweetTool';
 
 import faceTitleOn from './navi/navi_faces_on.png';
 import faceTitleOff from './navi/navi_faces_off.png';
@@ -21,7 +21,7 @@ import tweetTitleOff from './navi/navi_tweets_off.png';
 
 
 
-class EditorToolBox extends Component {
+class ToolBox extends Component {
 
   constructor() {
     super()
@@ -97,4 +97,4 @@ class EditorToolBox extends Component {
   }
 }
 
-export default EditorToolBox;
+export default ToolBox;

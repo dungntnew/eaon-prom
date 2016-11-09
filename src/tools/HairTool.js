@@ -1,5 +1,5 @@
 import BaseTool from './BaseTool';
-import {hairConfig} from './EditorToolConfig';
+import {hairConfig} from '../Config';
 
 class HairTool extends BaseTool {
   constructor(props){
