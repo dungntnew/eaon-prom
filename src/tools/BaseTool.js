@@ -76,10 +76,10 @@ class BaseTool extends Component {
 
   getRandPos(size) {
     const canvas = this.props.canvas
-    const haftWidth = canvas.width/2 - size.width
-    const haftHeight = canvas.height/2  - size.height
-    let left = this.getRandomInt(-haftWidth, haftWidth)
-    let top = this.getRandomInt(-haftHeight, haftHeight)
+    const haftWidth = canvas.width/2
+    const haftHeight = canvas.height/2
+    let left = this.getRandomInt(0, haftWidth)
+    let top = this.getRandomInt(0, haftHeight)
     return {left, top}
   }
 
