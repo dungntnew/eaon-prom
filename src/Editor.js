@@ -5,14 +5,9 @@ import './Editor.css'
 
 import EditorToolBox from './EditorToolBox'
 import Loader from './Loader';
-import ExportConfirm from './ExportConfirm';
 
 import {fabric} from 'fabric';
 import {setupFabricObjectControls} from './FabricEx';
-// import './Blob';
-// import './CanvasToBlob';
-import filesaver from 'filesaver.js-npm';
-import blobUtil from 'blob-util';
 
 class Editor extends Component {
 
@@ -22,15 +17,11 @@ class Editor extends Component {
     this.state = {
       loading: false,
       loadingMessge: '',
-      confirming: false,
-      exportedData: null,
     }
     this.showWaitDimmer = this.showWaitDimmer.bind(this)
     this.hideWaitDimmer = this.hideWaitDimmer.bind(this)
     this.showError = this.showError.bind(this)
     this.hideError = this.hideError.bind(this)
-    this.handleConfirm = this.handleConfirm.bind(this)
-    this.handleCancel = this.handleCancel.bind(this)
     this.handleExport = this.handleExport.bind(this)
   }
 
@@ -97,36 +88,11 @@ class Editor extends Component {
     }, EditorConfig.DIMMER_TIMEOUT);
   }
 
-  showError(error) {
-  }
+  showError(error) {}
 
-  hideError() {
-  }
-
-  handleConfirm() {
-    this.showConfirmPopup()
-    window.scrollTo(0, 0)
-  }
+  hideError() {}
 
   handleExport() {
-    blobUtil.dataURLToBlob(this.state.exportedData)
-    .then(blob => {
-      //console.log(blob);
-      filesaver.saveAs(blob, 'img.png')
-      this.hideConfirmPopup()
-    })
-    .catch(err => {
-      console.error(err)
-      this.showError(err)
-      this.hideConfirmPopup()
-    })
-  }
-
-  handleCancel() {
-    this.hideConfirmPopup()
-  }
-
-  showConfirmPopup() {
     const data = this.canvas.toDataURL({
       format: 'jpeg',
       quality: 1,
@@ -140,10 +106,6 @@ class Editor extends Component {
       console.error('something wrong: ' + e);
       this.showError(e);
     }
-  }
-
-  hideConfirmPopup() {
-    this.setState({confirming: false})
   }
 
   render() {
@@ -177,16 +139,10 @@ class Editor extends Component {
           onError={this.showError}
          />
          <div className='mybuttons'>
-             <button className='ui large button myconfirm' onClick={this.handleConfirm}>
+             <button className='ui large button myconfirm' onClick={this.handleExport}>
                 OK
              </button>
          </div>
-         <ExportConfirm
-           active={this.state.confirming}
-           exportedData={this.state.exportedData}
-           onDecidedClick={this.handleExport}
-           onCancelClick={this.handleCancel}
-          />
       </div>
     )
   }
