@@ -196,9 +196,12 @@ class App extends Component {
   render() {
     const editorHeight = this.state.windowHeight - AppConfig.HEADER_HEIGHT;
     const editorWidth = this.state.windowWidth;
-    const wrapperWidth = Math.max(Math.min(editorWidth, editorHeight), EditorConfig.EDITOR_MIN_H);
+
     const wrapperHeight = Math.max(this.state.windowHeight -
                                      (AppConfig.HEADER_HEIGHT + AppConfig.FOOTER_HEIGHT), AppConfig.CONTENT_MIN_H);
+
+    const wrapperWidth = wrapperHeight * 3 / 4.0
+
     const style = {
       size: {
         "minHeight": wrapperHeight + "px",

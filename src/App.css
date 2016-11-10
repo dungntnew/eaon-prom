@@ -49,7 +49,36 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  max-width: 400px;
+  max-width: 320px;
+}
+
+/* for SP */
+@media screen and (max-width: 500px)  {
+  .howtoBody {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    max-width: 320px;
+  }
+}
+
+/* for IPAD */
+@media screen and (min-width: 700px) and (max-width: 900px) and (min-height: 800px)  {
+  .howtoBody {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    max-width: 500px;
+  }
+}
+
+@media screen and (max-height: 600px) and (min-width: 700px) {
+  .howtoBody {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    max-width: 240px;
+  }
 }
 
 .howtoImgContent {
