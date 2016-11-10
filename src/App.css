@@ -24,6 +24,9 @@
 .app-header {
 }
 .app-footer {
+  position: absolute !important;
+  bottom: 0;
+  width: 100%;
 }
 
 .app-footer .copyright {
@@ -33,7 +36,35 @@
 
 .titleImage {
   text-align: center;
+  padding-top: 10px;
 }
 .logo {
   margin-left: 10px;
+}
+
+.howto-wrapper {
+}
+
+.howtoBody {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  max-width: 400px;
+}
+
+.howtoImgContent {
+  width: 100%;
+  margin-left: auto;;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.howto-text {
+  text-align: center;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 1.3em;
+  padding-left: 40px;
+  padding-right: 40px;
 }

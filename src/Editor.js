@@ -61,7 +61,7 @@ class Editor extends Component {
   }
 
   calculateViewSize() {
-    const height = this.props.editorHeight - EditorConfig.TOOLBAR_HEIGHT;
+    const height = this.props.editorHeight - (EditorConfig.TOOLBAR_HEIGHT + EditorConfig.HEADER_HEIGHT);
     const width = this.props.editorWidth - EditorConfig.EDITOR_MARGIN_X * 2;
     const canvasHeight = Math.max(Math.min(width, height), EditorConfig.EDITOR_MIN_H);
 

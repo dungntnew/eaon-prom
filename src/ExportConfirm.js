@@ -16,7 +16,7 @@ class ExportConfirm extends Component {
       <div className={modelClasses}>
       <div className="ui center aligned very padded segment confirm-segment">
 
-        <div className="titleImage">
+        <div className="confirm-title">
            <img className="ui" width={250} height={25} src={titleImage} alt="GENERATOR"/>
         </div>
         <div className="ui hidden divider"></div>
