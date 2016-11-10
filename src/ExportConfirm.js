@@ -3,6 +3,8 @@ import classNames from 'classnames';
 
 import './ExportConfirm.css';
 
+import titleImage from './navi/title_naomi_generator.png';
+
 class ExportConfirm extends Component {
   render() {
     const modelClasses = classNames({
@@ -12,18 +14,34 @@ class ExportConfirm extends Component {
 
     return (
       <div className={modelClasses}>
-       <div className="ui column center middle aligned grid segment confirm-segment">
-       <div className="ui one column">
-       <div className="ui medium image">
-         <img src={this.props.exportedData} alt='preview'/>
-       </div>
-        <div className="ui horizontal divider"></div>
-        <div className="segment very padded">
-          <button className="positive ui button large" onClick={this.props.onDecidedClick}>ダウンロード</button>
-          <button className="negative ui button large" onClick={this.props.onCancelClick}>編集</button>
+      <div className="ui center aligned very padded segment confirm-segment">
+
+        <div className="titleImage">
+           <img className="ui" width={250} height={25} src={titleImage} alt="GENERATOR"/>
         </div>
-        </div>
+        <div className="ui hidden divider"></div>
+        <div className="ui hidden divider"></div>
+
+         <img className="ui confirm-image" src={this.props.exportedData} alt='preview'/>
+
+         <div className="ui hidden divider"></div>
+
+         <h2 className="ui header confirm-text">これでOK ?</h2>
+
+         <div className="ui hidden divider"></div>
+
+         <button
+             className="ui grey large button confirm-btn"
+             onClick={this.props.onCancelClick}>戻る
+         </button>
+
+         <button
+            className="ui pink large button confirm-btn"
+            onClick={this.props.onDecidedClick}>決定する
+         </button>
+
        </div>
+
       </div>
     )
   }

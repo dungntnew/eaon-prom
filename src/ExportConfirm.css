@@ -1,3 +1,21 @@
 .confirm-segment {
   background: none !important;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px !important;
+}
+
+.confirm-text {
+  color: white !important;
+}
+
+.confirm-btn {
+  width: 120px;
+  height: 50px;
+}
+.confirm-image {
+  width: 320px;
+  margin-left: auto;;
+  margin-right: auto;
 }
