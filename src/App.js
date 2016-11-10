@@ -200,7 +200,7 @@ class App extends Component {
     const wrapperHeight = Math.max(this.state.windowHeight -
                                      (AppConfig.HEADER_HEIGHT + AppConfig.FOOTER_HEIGHT), AppConfig.CONTENT_MIN_H);
 
-    const wrapperWidth = wrapperHeight * 3 / 4.0
+    const wrapperWidth = wrapperHeight * 3 / 4.0 + 80
 
     const style = {
       size: {

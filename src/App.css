@@ -49,7 +49,7 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  max-width: 320px;
+  max-width: 240px;
 }
 
 /* for SP */
@@ -58,7 +58,7 @@
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    max-width: 320px;
+    max-width: 240px;
   }
 }
 
@@ -69,15 +69,6 @@
     margin-right: auto;
     text-align: center;
     max-width: 500px;
-  }
-}
-
-@media screen and (max-height: 600px) and (min-width: 700px) {
-  .howtoBody {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    max-width: 240px;
   }
 }
 
