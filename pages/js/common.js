@@ -1,6 +1,13 @@
 
 
 $(function(){
+	
+	
+	
+	$(window).on('resize',function(){
+		hPos();
+	});
+	hPos();
 	var itemHeight=0;
 	var allHeight=0;
 	$('.itemArea article').each(function(i) {
@@ -12,6 +19,14 @@ $(function(){
   });
 	//$('.itemArea').css({'height':itemHeight});
 	
+	/*ヘッドポジション*/
+	function hPos(){
+	if($(window).width()>1080){
+			headPos=118;
+		}else{
+			headPos=50;
+		}
+	}
 	
 	/*クリック*/
 	$('.more').on('click',function(){
@@ -21,7 +36,7 @@ $(function(){
 	
 	$('nav li').on('click',function(){
 		cClass=$(this).attr('class');
-		$('html,body').animate({scrollTop: $('#'+cClass+'').offset().top-50}, 500, 'swing');
+		$('html,body').animate({scrollTop: $('#'+cClass+'').offset().top-headPos}, 500, 'swing');
 	});
 
 	$('.menu').on('click',function(){

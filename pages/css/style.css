@@ -105,7 +105,7 @@ img{
 	padding:20px;
 	margin:0 20px;
 	color:#fff;
-	font-size:24px;
+	font-size:22px;
 	font-weight:bold;
 	background: url(../image/icon_blank.png) no-repeat 5% #ff3399;
 	border-radius:10px;
@@ -1196,10 +1196,14 @@ section h2{
 }
 .playBox .kiyaku{
 	font-size:12px;
+	margin:0 0 20px 0;
 }
 .swipetextArea{
 	text-align:center;
 	font-size:12px;
+}
+.btnOther {
+	margin:20px 0;
 }
 .btnOther a{
 	padding:5px 0;
