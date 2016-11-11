@@ -6,13 +6,18 @@
     "react-scripts": "0.7.0"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
+    "fabric": "^1.6.6",
+    "firebase": "^3.6.0",
+    "jquery": "^3.1.1",
     "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "react-dom": "^15.3.2",
+    "semantic-ui-css": "^2.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "pages": "cp -v pages/*.html build/ && cp -rv pages/static/ build/static/",
+    "build": "react-scripts build && mv build/index.html build/generator.html",
+    "pages": "cp -vr pages/* build/",
     "test": "react-scripts test --env=jsdom",
     "deploy": "firebase deploy",
     "eject": "react-scripts eject"
