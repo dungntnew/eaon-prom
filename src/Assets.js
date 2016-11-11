@@ -1,3 +1,4 @@
+require('es6-shim');
 const assetBaseDir = '/static/media/'
 
 const faceNums = 15

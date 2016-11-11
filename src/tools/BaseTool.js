@@ -43,7 +43,9 @@ class BaseTool extends Component {
       } else {
         this.props.onFinishProcess()
       }
-    }, this.props.onError)
+    }, this.props.onError, {
+        crossOrigin: 'Anonymous'
+    })
   }
 
   resourceImageById(id) {

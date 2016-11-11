@@ -1,3 +1,5 @@
+require('es6-shim');
+
 import React, { Component } from 'react';
 import './App.css';
 
