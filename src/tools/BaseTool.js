@@ -93,13 +93,13 @@ class BaseTool extends Component {
             cornerPadding: 10
         },
         tl: {
-            icon: 'icons/rotate.svg'
+            icon: 'icons/icon_rotate.svg'
         },
         tr: {
-            icon: 'icons/resize.svg'
+            icon: 'icons/icon_zoom.svg'
         },
         bl: {
-            icon: 'icons/remove.svg'
+            icon: 'icons/icon_trash.svg'
         },
         br: {
             icon: 'icons/up.svg'
