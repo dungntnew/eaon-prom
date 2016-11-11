@@ -1,24 +1,97 @@
-.App {
+.ui.divider {
+  margin: 0.3rem 0 !important;
+}
+.ui.segment {
+  padding: 0.8em !important;
+}
+
+.ui.header {
+  line-height: 0.5em !important;
+}
+
+.ui.menu {
+  margin: 0 !important;
+}
+
+.ui.image.label {
+  padding: 0.2em 0.2em 0.2em 0.2em !important;
+}
+
+.top-menu {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.app-header {
+}
+.app-footer {
+  position: absolute !important;
+  bottom: 0;
+  width: 100%;
+}
+
+.app-footer .copyright {
   text-align: center;
+  font-size: smaller;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.titleImage {
+  text-align: center;
+  padding-top: 10px;
+}
+.logo {
+  margin-left: 10px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.howto-wrapper {
 }
 
-.App-intro {
-  font-size: large;
+.howtoBody {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  max-width: 240px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/* for SP */
+@media screen and (max-width: 500px)  {
+  .howtoBody {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    max-width: 240px;
+  }
+}
+
+/* for IPAD */
+@media screen and (min-width: 700px) and (max-width: 900px) and (min-height: 800px)  {
+  .howtoBody {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    max-width: 500px;
+  }
+}
+
+.howtoImgContent {
+  width: 100%;
+  margin-left: auto;;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.howto-text {
+  text-align: center;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 1.3em;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.authFormBody {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  max-width: 400px;
 }

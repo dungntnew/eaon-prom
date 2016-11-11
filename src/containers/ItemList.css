@@ -1,0 +1,64 @@
+.list-wrapper {
+  overflow-x: scroll;
+}
+
+.item-list {
+  white-space: nowrap;
+}
+
+.mylist.ui.horizontal.list>.item {
+  margin-left: -30px;
+}
+.mylist.ui.horizontal.list>.item > div {
+  opacity: 1;
+  background: white;
+}
+
+.mylist.ui.horizontal.list>.item  img {
+  opacity: 0.5;
+  background: white;
+}
+
+.mylist.ui.selection.list>.item.active img {
+  opacity: 1;
+}
+
+a.disabled img {
+  opacity: 0.5;
+}
+.nextBtn {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+}
+
+.prevBtn {
+  width: 40px;
+  height: 40px;
+}
+.leftCol {
+  width: 6% !important;
+  position: relative;
+}
+
+.rightCol {
+  width: 6% !important;
+  position: relative;
+}
+.leftCol > .leftLink {
+    position: absolute;
+    top: 25px;
+    left: 10px;
+    z-index: 1000;
+}
+
+.rightCol > .rightLink {
+    position: absolute;
+    top: 25px;
+    left: -10px;
+    z-index: 1000;
+}
+
+.centerCol {
+  width: 87% !important;
+}
