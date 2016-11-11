@@ -6,20 +6,17 @@
     "react-scripts": "0.7.0"
   },
   "dependencies": {
-    "blob-util": "^1.2.1",
     "classnames": "^2.2.5",
     "fabric": "^1.6.6",
-    "filesaver.js-npm": "^1.0.1",
     "firebase": "^3.6.0",
     "jquery": "^3.1.1",
     "react": "^15.3.2",
-    "react-dom": "^16.3.2",
-    "semantic-ui-css": "^2.2.4",
-    "semantic-ui-react": "^0.58.0"
+    "react-dom": "^15.3.2",
+    "semantic-ui-css": "^2.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && cp build/index.html build/app.html",
     "pages": "cp -v pages/*.html build/ && cp -rv pages/static/ build/static/",
     "test": "react-scripts test --env=jsdom",
     "deploy": "firebase deploy",
