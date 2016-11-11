@@ -38,6 +38,7 @@ class BaseTool extends Component {
     this.props.onStartProcess(Messages.loading)
 
     fabric.Image.fromURL(src, (res) => {
+      res.crossOrigin = "anonymous"
       if (func) {
         func(res, this.props.onFinishProcess)
       } else {
