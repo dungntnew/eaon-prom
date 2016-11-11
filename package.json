@@ -16,8 +16,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && cp build/index.html build/app.html",
-    "pages": "cp -v pages/*.html build/ && cp -rv pages/static/ build/static/",
+    "build": "react-scripts build && mv build/index.html build/generator.html",
+    "pages": "cp -vr pages/* build/",
     "test": "react-scripts test --env=jsdom",
     "deploy": "firebase deploy",
     "eject": "react-scripts eject"
