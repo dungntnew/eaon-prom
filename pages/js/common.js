@@ -2,12 +2,18 @@
 
 $(function(){
 	
-	
+	//ie11用
+	$(function(){
+		if($(window).width()>1080){
+		$('div.swiper-wrapper').css({'transform':'translate3d(-1110px, 0px, 0px)'});
+		}
+	});
 	
 	$(window).on('resize',function(){
 		hPos();
 	});
 	hPos();
+	
 	var itemHeight=0;
 	var allHeight=0;
 	$('.itemArea article').each(function(i) {
@@ -26,6 +32,7 @@ $(function(){
 		}else{
 			headPos=50;
 		}
+		
 	}
 	
 	/*クリック*/
@@ -97,6 +104,19 @@ $(function(){
 		$('.policy').fadeOut(500);
 	});
 	
+	/*poricyCheck*/
+	$('#top__Con .btnMain').on('click',function(){
+		 if(!$("#checkbox01").prop('checked')) {
+			 alert('利用規約に同意してください');
+			 return false;
+		 }
+	});
+	$('.playBox .btnMain').on('click',function(){
+		 if(!$("#checkbox02").prop('checked')) {
+			 alert('利用規約に同意してください');
+			 return false;
+		 }
+	});
 	
 });
 
