@@ -24,8 +24,6 @@
 .app-header {
 }
 .app-footer {
-  position: absolute !important;
-  bottom: 0;
   width: 100%;
 }
 
@@ -49,12 +47,18 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+}
+
+.howtoImgContent {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
   max-width: 240px;
 }
 
 /* for SP */
 @media screen and (max-width: 500px)  {
-  .howtoBody {
+  .howtoImgContent {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -64,20 +68,12 @@
 
 /* for IPAD */
 @media screen and (min-width: 700px) and (max-width: 900px) and (min-height: 800px)  {
-  .howtoBody {
+  .howtoImgContent {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     max-width: 500px;
   }
-}
-
-.howtoImgContent {
-  width: 100%;
-  margin-left: auto;;
-  margin-right: auto;
-  padding-left: 30px;
-  padding-right: 30px;
 }
 
 .howto-text {

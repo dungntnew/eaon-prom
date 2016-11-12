@@ -10,6 +10,8 @@
 
 .mybuttons {
   text-align: center;
+  margin-top: 2px;
+  margin-bottom: 10px;
 }
 
 .ui.button.myconfirm {

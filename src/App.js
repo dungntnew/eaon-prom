@@ -208,7 +208,9 @@ class App extends Component {
       size: {
         "minHeight": wrapperHeight + "px",
         "maxWidth": wrapperWidth + "px",
-        "height": wrapperHeight + "px",
+        "height": "auto",
+        "display": "block",
+        "border": "1px solid white",
         "margin": '0px auto',
         "backgroundColor": "white",
       },
