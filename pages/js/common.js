@@ -1,6 +1,18 @@
 
-
 $(function(){
+	
+	//ie11用
+	$(function(){
+		if($(window).width()>1080){
+		$('div.swiper-wrapper').css({'transform':'translate3d(-1110px, 0px, 0px)'});
+		}
+	});
+	
+	$(window).on('resize',function(){
+		hPos();
+	});
+	hPos();
+	
 	var itemHeight=0;
 	var allHeight=0;
 	$('.itemArea article').each(function(i) {
@@ -12,6 +24,15 @@ $(function(){
   });
 	//$('.itemArea').css({'height':itemHeight});
 	
+	/*ヘッドポジション*/
+	function hPos(){
+	if($(window).width()>1080){
+			headPos=118;
+		}else{
+			headPos=50;
+		}
+		
+	}
 	
 	/*クリック*/
 	$('.more').on('click',function(){
@@ -21,7 +42,7 @@ $(function(){
 	
 	$('nav li').on('click',function(){
 		cClass=$(this).attr('class');
-		$('html,body').animate({scrollTop: $('#'+cClass+'').offset().top-50}, 500, 'swing');
+		$('html,body').animate({scrollTop: $('#'+cClass+'').offset().top-headPos}, 500, 'swing');
 	});
 
 	$('.menu').on('click',function(){
@@ -82,6 +103,37 @@ $(function(){
 		$('.policy').fadeOut(500);
 	});
 	
+	/*poricyCheck*/
+	$('#checkbox01').on(' click',function(){
+		//
+		if(!$("#checkbox01").prop('checked')) {
+			
+			 $('.btnMain.me a').css({'background-color':'#ccc'});
+			}else{
+			 
+			 $('.btnMain.me a').css({'background-color':''});
+		 }
+		//$('#checkbox02').click();
+		$("#checkbox02").prop("checked", true);
+	});
+	
+	$('#checkbox02').on(' click',function(){
+		//
+		if(!$("#checkbox02").prop('checked')) {
+			 $('.btnMain.me a').css({'background-color':'#ccc'});
+			}else{
+			 $('.btnMain.me a').css({'background-color':''});
+		 }
+		 //$('#checkbox01').click();
+		 $("#checkbox01").prop("checked", true);
+	});
+	$('.btnMain.me a').on(' click',function(){
+		 if(!($("#checkbox02").prop('checked')||$("#checkbox01").prop('checked'))) {
+			 alert('利用規約に同意してください');
+			 $('.btnMain.me a').css({'background-color':'#ccc'});
+			 return false;
+		 }
+	});
 	
 });
 
