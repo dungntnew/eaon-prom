@@ -6,13 +6,31 @@
 <meta name="robots" content="noindex,nofollow">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Cache-Control" content="no-cache">
-<title>ハイパーなおみジェネレーター</title>
-<meta property="og:title" content="" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="" />
-<meta property="og:image" content="" />
-<meta property="og:locale" content="ja_JP" />
+<title>ハイパーなおみジェネレーター | AEON.com</title>
+<meta name="keywords" content="渡辺直美,ジェネレーター,イオンドットコム,イオン,aeon,AEON,AEON.com,オリジナル画像,ハイパーなおみジェネレーター,アイコン作成,サイバーウィーク,ハイパーセール">
+<meta name="description" content="ハイパーなおみジェネレーター。サイバーウィークを盛り上げる、ハイパーな渡辺直美をいろんなパーツを組合せて自分好みに作れちゃうジェネレーターです！ハイパーな渡辺直美をつくって豪華プレゼントをゲットしよう！">
+<meta property="og:title" content="ハイパーなおみジェネレーター | AEON.com">
+<meta property="og:description" content="ハイパーなおみジェネレーター。サイバーウィークを盛り上げる、ハイパーな渡辺直美をいろんなパーツを組合せて自分好みに作れちゃうジェネレーターです！ハイパーな渡辺直美をつくって豪華プレゼントをゲットしよう！">
+<meta property="og:url" content="http://ononama.sakura.ne.jp/sample/naomi/">
+<meta property="og:image" content="http://ononama.sakura.ne.jp/sample/naomi/image/naomi_ogp.jpg">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AEON.com">
+<meta property="og:locale" content="ja_JP">
+<meta property="fb:app_id" content="502744359762778" />
+<meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ハイパーなおみジェネレーター | AEON.com" />
+  <meta name="twitter:description" content="ハイパーなおみジェネレーター。サイバーウィークを盛り上げる、ハイパーな渡辺直美をいろんなパーツを組合せて自分好みに作れちゃうジェネレーターです！ハイパーな渡辺直美をつくって豪華プレゼントをゲットしよう！" />
+  <meta name="twitter:image:src" content="http://ononama.sakura.ne.jp/sample/naomi/image/naomi_ogp.jpg" />
+<link rel="apple-touch-icon" sizes="57x57" href="https://www.aeon.com/sp/static/img/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://www.aeon.com/sp/static/img/favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://www.aeon.com/sp/static/img/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://www.aeon.com/sp/static/img/favicons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://www.aeon.com/sp/static/img/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://www.aeon.com/sp/static/img/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://www.aeon.com/sp/static/img/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://www.aeon.com/sp/static/img/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.aeon.com/sp/static/img/favicons/apple-touch-icon-180x180.png">
+<link rel="mask-icon" href="https://www.aeon.com/sp/static/img/favicons/safari-pinned-tab.svg">
 <link rel="stylesheet" href="css/reset.css" type="text/css">
 
 <link rel="stylesheet" href="css/swiper.css" type="text/css">
@@ -21,7 +39,22 @@
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
 
+<script>
+var startday = new Date('2016/11/11 00:00:00');
+var endday = new Date('2016/11/24 23:59:59');
+var today = new Date();
+$(function(){
 
+if ( startday < today && today < endday ){
+   $(".spec").hide();
+   $(".blankLink a").html('AEON.com サイバーウィーク<br class="spD">11月25日開催予定！');
+}else{
+   $(".spec").show();
+   $(".blankLink a").html('AEON.com <br class="spD">サイバーウィーク実施中！');
+}
+});
+
+</script>
 </head>
 <body>
 <div class="overlay" id="js__overlay"></div>
@@ -36,6 +69,7 @@
       <li class="item">商品紹介</li>
       <li class="movie">ムービー</li>
       <li class="kirikae"><a href="20161125.html">日付変更（デバック）</a></li>
+      <li class="kirikae"><a href="http://ononama.sakura.ne.jp/sample/naomi/share.php?p=dd">シェア（デバック）</a></li>
     </ul>
   </nav>
   <p class="menu">
@@ -55,18 +89,18 @@
       <p class="topIcon"><img src="image/top_pick.png" alt=""/></p>
       <div class="kiyaku">
       <p>
-      <input type="checkbox" name="riyou" value="利用規約" id="checkbox01" />
+      <input type="checkbox" name="riyou" value="利用規約" checked id="checkbox01" />
     	<label for="checkbox01" class="checkbox"></label>
       
       <a class="pBtn" href="#">利用規約</a>に同意する</p></div>
-      <p class="btnMain"><a href="">いますぐ遊ぶ</a></p>
+      <p class="btnMain me"><a href="https://ean-promotion.firebaseapp.com/generator.html">いますぐ遊ぶ</a></p>
     </div>
   </section>
   <section class="sns__Con">
   	<ul>
-    	<li><a href=""><img src="image/sns_hatena.png" alt=""/></a></li>
-      <li><a href=""><img src="image/sns_twitter.png" alt=""/></a></li>
-      <li><a href=""><img src="image/sns_facebook.png" alt=""/></a></li>
+    	<li><a href="http://b.hatena.ne.jp/add?mode=confirm&url=http://ononama.sakura.ne.jp/sample/naomi/&title=ハイパーなおみジェネレーター" target="_blank"><img src="image/sns_hatena.png" alt=""/></a></li>
+      <li><a href="https://twitter.com/share?url=http://ononama.sakura.ne.jp/sample/naomi/&text=ハイパーなおみジェネレーター。サイバーウィークを盛り上げる、ハイパーな渡辺直美をいろんなパーツを組合せて自分好みに作れちゃうジェネレーターです！ハイパーな渡辺直美をつくって豪華プレゼントをゲットしよう！&hashtags=aeon" target="_blank"><img src="image/sns_twitter.png" alt=""/></a></li>
+      <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://ononama.sakura.ne.jp/sample/naomi/"><img src="image/sns_facebook.png" alt=""/></a></li>
     </ul>
   </section>
   <section id="about__Con">
@@ -136,10 +170,11 @@
     </div>
     <div class="box1080">
     <div class="playBox">
-    	<p class="kiyaku"><input type="checkbox" name="riyou" value="利用規約" id="checkbox02" />
+    	<p class="kiyaku"><input type="checkbox" name="riyou" value="利用規約" checked id="checkbox02" />
     	<label for="checkbox02" class="checkbox"></label><a class="pBtn" href="#">利用規約</a>に同意する</p>
-      <p class="btnMain"><a href="">いますぐ遊ぶ</a></p>
-      <p class="btnOther"><a href="">他の人の作品はこちら</a></p>
+      <p class="btnMain me"><a href="https://ean-promotion.firebaseapp.com/generator.html">いますぐ遊ぶ</a></p>
+      <p class="btnOther spD"><a href="gallery/sp/index.html">他の人の作品はこちら</a></p>
+      <p class="btnOther pcD"><a href="gallery/pc/index.html">他の人の作品はこちら</a></p>
     	<!--<p class="moveN2"><img src="image/naomi2.png" alt=""/></p>-->
     	<p class="hukiN2"><img src="image/naomi_huki2.png" alt=""/></p>
     </div>
@@ -284,9 +319,9 @@
   </section>
   <section class="sns__Con">
   	<ul>
-    	<li><a href=""><img src="image/sns_hatena.png" alt=""/></a></li>
-      <li><a href=""><img src="image/sns_twitter.png" alt=""/></a></li>
-      <li><a href=""><img src="image/sns_facebook.png" alt=""/></a></li>
+    	<li><a href="http://b.hatena.ne.jp/add?mode=confirm&url=http://ononama.sakura.ne.jp/sample/naomi/&title=ハイパーなおみジェネレーター" target="_blank"><img src="image/sns_hatena.png" alt=""/></a></li>
+      <li><a href="https://twitter.com/share?url=http://ononama.sakura.ne.jp/sample/naomi/&text=ハイパーなおみジェネレーター。サイバーウィークを盛り上げる、ハイパーな渡辺直美をいろんなパーツを組合せて自分好みに作れちゃうジェネレーターです！ハイパーな渡辺直美をつくって豪華プレゼントをゲットしよう！&hashtags=aeon" target="_blank"><img src="image/sns_twitter.png" alt=""/></a></li>
+      <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://ononama.sakura.ne.jp/sample/naomi/"><img src="image/sns_facebook.png" alt=""/></a></li>
     </ul>
   </section>
 </div>

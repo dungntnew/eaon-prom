@@ -1,5 +1,4 @@
 
-
 $(function(){
 	
 	//ie11用
@@ -105,15 +104,33 @@ $(function(){
 	});
 	
 	/*poricyCheck*/
-	$('#top__Con .btnMain').on('click',function(){
-		 if(!$("#checkbox01").prop('checked')) {
-			 alert('利用規約に同意してください');
-			 return false;
+	$('#checkbox01').on(' click',function(){
+		//
+		if(!$("#checkbox01").prop('checked')) {
+			
+			 $('.btnMain.me a').css({'background-color':'#ccc'});
+			}else{
+			 
+			 $('.btnMain.me a').css({'background-color':''});
 		 }
+		//$('#checkbox02').click();
+		$("#checkbox02").prop("checked", true);
 	});
-	$('.playBox .btnMain').on('click',function(){
-		 if(!$("#checkbox02").prop('checked')) {
+	
+	$('#checkbox02').on(' click',function(){
+		//
+		if(!$("#checkbox02").prop('checked')) {
+			 $('.btnMain.me a').css({'background-color':'#ccc'});
+			}else{
+			 $('.btnMain.me a').css({'background-color':''});
+		 }
+		 //$('#checkbox01').click();
+		 $("#checkbox01").prop("checked", true);
+	});
+	$('.btnMain.me a').on(' click',function(){
+		 if(!($("#checkbox02").prop('checked')||$("#checkbox01").prop('checked'))) {
 			 alert('利用規約に同意してください');
+			 $('.btnMain.me a').css({'background-color':'#ccc'});
 			 return false;
 		 }
 	});
