@@ -159,7 +159,9 @@ class App extends Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.handleResize)
-    this.regsiterFireBaseAuth()
+    if (AppConfig.REQUIRE_LOGIN) {
+      this.regsiterFireBaseAuth()
+    }
   }
 
   componentWillUnmount() {

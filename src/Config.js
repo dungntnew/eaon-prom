@@ -3,7 +3,7 @@ const AppConfig = {
     HEADER_HEIGHT: 40,
     FOOTER_HEIGHT: 40,
     CONTENT_MIN_H: 480,
-    REQUIRE_LOGIN: true,
+    REQUIRE_LOGIN: false,
 };
 
 const EditorConfig = {
