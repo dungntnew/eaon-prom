@@ -4,7 +4,7 @@ const assetBaseDir = '/static/media/'
 const faceNums = 15
 const faceAssetDir =  assetBaseDir + 'faces/'
 
-const hairNums = 15
+const hairNums = 10
 const hairAssetDir = assetBaseDir + 'hairs/'
 
 

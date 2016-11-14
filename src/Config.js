@@ -46,11 +46,11 @@ const hairConfig = {
   tag: 'HAIR',
   offset: {
     x: 0,
-    y: -5
+    y: 0
   },
   size: {
-    width: 400,
-    height: 400,
+    width: 500,
+    height: 500,
   },
   controls: {
     'tl':false,
