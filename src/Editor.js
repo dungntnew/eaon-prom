@@ -9,6 +9,8 @@ import ExportConfirm from './ExportConfirm';
 import {fabric} from 'fabric';
 import {setupFabricObjectControls} from './lib/FabricEx';
 
+import $ from 'jquery';
+
 class Editor extends Component {
 
   constructor() {
@@ -93,20 +95,54 @@ class Editor extends Component {
     }, EditorConfig.DIMMER_TIMEOUT);
   }
 
+  showLoading(message) {
+    
+    this.setState({
+      loading: true,
+      loadingMessge: message || 'Loading'
+    })
+  }
+
+  hideLoading() {
+    setTimeout(() => {
+      this.setState({
+        loading: false,
+        loadingMessge: ''
+      })
+    }, EditorConfig.DIMMER_TIMEOUT);
+  }
+
+
   showError(error) {}
 
   hideError() {}
 
   handleExport() {
     const data = this.state.exportedData
-    try {
-      localStorage.setItem(EditorConfig.EXPORT_ITEM_KEY, data);
-      window.location.pathname = EditorConfig.FINISH_PATH;
-    }
-    catch(e) {
-      console.error('something wrong: ' + e);
-      this.showError(e);
-    }
+    this.showLoading("Processing..");
+    $.ajax({
+      type: 'POST',
+      url: EditorConfig.UPLOAD_PATH,
+      data: {'file': data},
+      success: (res, textStatus, jqXHRn) => {
+         this.hideLoading();
+         window.location.href = EditorConfig.SHARE_PATH + '?p=' + res.fileid;
+      },
+      error: (err) => {
+        this.hideLoading();
+        console.error(err);
+      },
+      dataType: "json"
+    })
+
+    // try {
+    //   localStorage.setItem(EditorConfig.EXPORT_ITEM_KEY, data);
+    //   window.location.pathname = EditorConfig.FINISH_PATH;
+    // }
+    // catch(e) {
+    //   console.error('something wrong: ' + e);
+    //   this.showError(e);
+    // }
   }
 
   handleConfirm() {
