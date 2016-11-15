@@ -55,88 +55,157 @@
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <style>
+
 .btnTweet{
-  text-align:center;
-  color:#fff;
-  padding:15px 0;
-  max-width:250px;
-  margin:10px auto;
-  background:#1da1f2;
-  background-size: 30px;
-  border-radius:10px;
+	text-align:center;
+	color:#fff;
+	padding:15px 0;
+	max-width:250px;
+	margin:10px auto;
+	background:#1da1f2;
+	background-size: 30px;
+	border-radius:10px;
 }
 .save{
-  text-align:center;
-  color:#fff;
-  max-width:250px;
-  margin:10px auto;
-  border-radius:10px;
-  background:#ff3399;
-  padding:10px 0;
-  color:#fff;
+	text-align:center;
+	color:#fff;
+	max-width:250px;
+	margin:10px auto;
+	border-radius:10px;
+	background:#ff3399;
+	padding:10px 0;
+	color:#fff;
 }
 .check{
-  max-width:250px;
-  margin:10px auto;
-  padding:10px;
-  color:#666;
-  border-radius:10px;
-  background:#eee;
+	max-width:250px;
+	margin:10px auto;
+	padding:10px;
+	color:#666;
+	border-radius:10px;
+	background:#eee;
 }
 .btnTweet a,.save a{
-  display:block;
-  color:#fff;
-  font-weight:bold;
+	display:block;
+	color:#fff;
+	font-weight:bold;
 }
 .gotop{
-  text-align:center;
-  margin:20px 0;
-  padding:0 0 20px 0;
+	text-align:center;
+	margin:20px 0;
+	padding:0 0 20px 0;
 }
 .gotop a{
-  font-size:18px;
-  color:#ff3399;
+	font-size:18px;
+	color:#ff3399;
 }
 .howto-wrapper{
-  max-width:604px;
-  margin: 0px auto;
-  background-color: white;
+	max-width:604px;
+	margin: 0px auto;
+	background-color: white;
+}
+.last{
+	background: url(gene_img/bg1.gif);
 }
 #preview{
-    height:500px;
-    width:500px;
-  }
-
+		height:500px;
+		width:500px;
+	}
+#gene4{
+	display:none;
+	padding:0 0 30px 0;
+}
+.sTwiBtn{
+	width:100%;
+	margin:0 auto 60px auto;
+	max-width:100%;
+	text-align:center;
+	background: url(gene_img/sns_twitter.png) no-repeat 5% #1da1f2;
+	background-size: 30px;
+	border-radius:10px;
+}
+.sTwiBtn a{
+	line-height:20px;
+	box-sizing:border-box;
+	display:block;	
+	padding:20px 15px;
+	color:#fff;
+	font-size:16px;
+	font-weight:bold;
+	background: url(gene_img/icon_btn.png) no-repeat 95%;
+	background-size: 20px;
+	max-width:100%;
+	margin:0 auto;
+}
+.lastNaomi{
+	margin:0 auto;
+	width:100%;
+	text-align:center;
+	max-width:500px;
+	vertical-align:baseline;
+	padding:0;
+}
+.lastNaomi img{
+	margin:0 auto;
+	max-width:100%;
+	display: block;
+}
+.lastBox{
+	padding:30px 30px 30px 30px;
+	box-sizing:border-box;
+	background:#fff;
+	margin:0 auto 0 auto;
+	width:100%;
+	max-width:500px;
+}
 @media screen and (max-width:769px) {
-  #preview{
-    height:250px;
-    width:250px;
-  }
+	#preview{
+		height:250px;
+		width:250px;
+	}
+	.lastNaomi{
+		margin:0 auto;
+		width:100%;
+		text-align:center;
+		max-width:250px;
+	}
+	.lastBox{
+		max-width:300px;
+	}
 }
 
 </style>
 
 <script>
 function reSize(){
-  minH=$(window).height()-80;
-  $('.howto-wrapper').css({'min-height':minH})
+	minH=$(window).height()-80;
+	$('.howto-wrapper').css({'min-height':minH})
 }
 $(function(){
-
-
-  if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
-  $('.check').html('保存ボタンを押して、次の画面の画像を長押しで保存してください');
+	if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
+	$('.check').html('保存ボタンを押して、次の画面の画像を長押しで保存してください');
 }else{
-  $('.check').html('画像が自動保存できない場合は画像をドラッグ、または右クリックで「画像を保存」を選択してください');
+	$('.check').html('画像が自動保存できない場合は画像をドラッグ、または右クリックで「画像を保存」を選択してください');
 }
 
-
-  reSize();
-  $(window).on('resize',function(){
-    reSize();
-  });
+	
+	reSize();
+	$(window).on('resize',function(){
+		reSize();
+	});
+	
+	$('.btnTweet').on('click',function(){
+		
+		setTimeout(function(){
+			$('#gene3').hide();
+			$('#gene4').show();
+			$('.howto-wrapper').addClass('last');
+			$('#root').css({'background-color':'#fff'})
+		},1000);
+		
+		
+	});
+	
 });
-
 
 </script>
 </head>
@@ -150,7 +219,7 @@ $(function(){
 
     <div class="howto-wrapper">
       <div id="gene3">
-        <div class="titleImage"><img class="ui" height="25px" src="http://ononama.sakura.ne.jp/sample/naomi/image/title_naomi_generator_fin.png" alt="GENERATOR"></div>
+        <div class="titleImage"><img class="ui" height="25px" src="gene_img/title_naomi_generator_fin.png" alt="GENERATOR"></div>
         <div class="ui hidden divider"></div>
         <div>
           <center>
@@ -164,6 +233,13 @@ $(function(){
         <p class="gotop"><a href="http://ononama.sakura.ne.jp/sample/naomi/">TOPへ戻る</a></p>
       </div>
       <div id="gene4">
+      	<div class="titleImage"><img class="ui" height="50px" src="gene_img/title_naomi_generator_twi.png" alt="twitterフォロー"></div>
+        <div class="ui hidden divider"></div>
+        <div class="lastNaomi"><img src="gene_img/naomi.png" alt="naomi"></div>
+        <div class="lastBox">
+        <p class="sTwiBtn mt20"><a href="https://twitter.com/aeon_japan?lang=ja" target="_blank">イオン公式Twitter<br class="spD">ページはこちら</a></p>
+        <p class="gotop"><a href="http://ononama.sakura.ne.jp/sample/naomi/">TOPへ戻る</a></p>
+        </div>
       </div>
     </div>
     <div class="ui inverted vertical footer segment app-footer" style="height: 40px;">
