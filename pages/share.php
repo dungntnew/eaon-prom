@@ -291,7 +291,7 @@ $(function(){
 	background-color: white;
 }
 .last{
-	background: url(gene_img/bg1.gif);
+	background: url(image/bg1.gif);
 }
 #preview{
 		height:500px;
@@ -306,7 +306,7 @@ $(function(){
 	margin:0 auto 60px auto;
 	max-width:100%;
 	text-align:center;
-	background: url(gene_img/sns_twitter.png) no-repeat 5% #1da1f2;
+	background: url(image/sns_twitter.png) no-repeat 5% #1da1f2;
 	background-size: 30px;
 	border-radius:10px;
 }
@@ -318,7 +318,7 @@ $(function(){
 	color:#fff;
 	font-size:16px;
 	font-weight:bold;
-	background: url(gene_img/icon_btn.png) no-repeat 95%;
+	background: url(image/icon_btn.png) no-repeat 95%;
 	background-size: 20px;
 	max-width:100%;
 	margin:0 auto;
@@ -406,7 +406,7 @@ $(function(){
 
     <div class="howto-wrapper">
       <div id="gene3">
-        <div class="titleImage"><img class="ui" height="25px" src="http://ononama.sakura.ne.jp/sample/naomi/image/title_naomi_generator_fin.png" alt="GENERATOR"></div>
+        <div class="titleImage"><img class="ui" height="25px" src="image/title_naomi_generator_fin.png" alt="GENERATOR"></div>
         <div class="ui hidden divider"></div>
         <div>
           <center>
@@ -420,9 +420,9 @@ $(function(){
         <p class="gotop"><a href="http://ononama.sakura.ne.jp/sample/naomi/">TOPへ戻る</a></p>
       </div>
       <div id="gene4">
-      	<div class="titleImage"><img class="ui" height="50px" src="gene_img/title_naomi_generator_twi.png" alt="twitterフォロー"></div>
+      	<div class="titleImage"><img class="ui" height="50px" src="image/title_naomi_generator_twi.png" alt="twitterフォロー"></div>
         <div class="ui hidden divider"></div>
-        <div class="lastNaomi"><img src="gene_img/naomi.png" alt="naomi"></div>
+        <div class="lastNaomi"><img src="image/naomi.png" alt="naomi"></div>
         <div class="lastBox">
         <p class="sTwiBtn mt20"><a href="https://twitter.com/aeon_japan?lang=ja" target="_blank">イオン公式Twitter<br class="spD">ページはこちら</a></p>
         <p class="gotop"><a href="http://ononama.sakura.ne.jp/sample/naomi/">TOPへ戻る</a></p>
