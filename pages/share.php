@@ -1,9 +1,10 @@
 
 <?php
    // 有効な定数名
-   define('ABS_TOP_PATH', 'http://re-vue.biz/aeon/');
-   define('ABS_UPLOAD_PATH', 'http://re-vue.biz/aeon/uploads/');
-   define('ABS_SHARE_PATH', 'http://re-vue.biz/aeon/share.php');
+   // TODO: fix link of top page
+   define('ABS_TOP_PATH', 'http://ononama.sakura.ne.jp/sample/naomi/index.html');
+   define('ABS_UPLOAD_PATH', 'http://hyper-naomi-generator.com/uploads/');
+   define('ABS_SHARE_PATH', 'http://hyper-naomi-generator.com/share.php');
    define('IMG_EXT', 'jpeg');
 
 
@@ -47,6 +48,7 @@
   <link href="https://ean-promotion.firebaseapp.com/static/css/main.ffe6ef20.css" rel="stylesheet">
 <script>
 
+// TODO: fix redirect behavior, it's broken now >_<
 // if (document.referrer.indexOf('http://ononama.sakura.ne.jp/')==0) {
 // }
 // else {
@@ -127,7 +129,7 @@
 .sTwiBtn a{
 	line-height:20px;
 	box-sizing:border-box;
-	display:block;	
+	display:block;
 	padding:20px 15px;
 	color:#fff;
 	font-size:16px;
@@ -188,24 +190,24 @@ $(function(){
 	$('.check').html('画像が自動保存できない場合は画像をドラッグ、または右クリックで「画像を保存」を選択してください');
 }
 
-	
+
 	reSize();
 	$(window).on('resize',function(){
 		reSize();
 	});
-	
+
 	$('.btnTweet').on('click',function(){
-		
+
 		setTimeout(function(){
 			$('#gene3').hide();
 			$('#gene4').show();
 			$('.howto-wrapper').addClass('last');
 			$('#root').css({'background-color':'#fff'})
 		},1000);
-		
-		
+
+
 	});
-	
+
 });
 
 </script>
@@ -231,7 +233,7 @@ $(function(){
         <p class="btnTweet"><a href="<?php echo $tweetUrl ?>" target="_blank">ツイートして応募する</a></p>
         <p class="save"><a href="<?php echo $shareimage ?>" download="<?php print("$param"); ?>.jpg" class="btn-dl to" target="_blank" >完成画像を保存する</a></p>
         <p class="check"></p>
-        <p class="gotop"><a href="http://ononama.sakura.ne.jp/sample/naomi/">TOPへ戻る</a></p>
+        <p class="gotop"><a href="<?php echo ABS_TOP_PATH ?>">TOPへ戻る</a></p>
       </div>
       <div id="gene4">
       	<div class="titleImage"><img class="ui" height="50px" src="image/title_naomi_generator_twi.png" alt="twitterフォロー"></div>
@@ -239,7 +241,7 @@ $(function(){
         <div class="lastNaomi"><img src="image/naomi.png" alt="naomi"></div>
         <div class="lastBox">
         <p class="sTwiBtn mt20"><a href="https://twitter.com/aeon_japan?lang=ja" target="_blank">イオン公式Twitter<br class="spD">ページはこちら</a></p>
-        <p class="gotop"><a href="http://ononama.sakura.ne.jp/sample/naomi/">TOPへ戻る</a></p>
+        <p class="gotop"><a href="<?php echo ABS_TOP_PATH ?>">TOPへ戻る</a></p>
         </div>
       </div>
     </div>
@@ -250,8 +252,3 @@ $(function(){
 </div>
 </body>
 </html>
-
-
-
-
-
