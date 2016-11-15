@@ -3,8 +3,8 @@
    // 有効な定数名
    // TODO: fix link of top page
    define('ABS_TOP_PATH', 'http://ononama.sakura.ne.jp/sample/naomi/index.html');
-   define('ABS_UPLOAD_PATH', 'http://hyper-naomi-generator.com/uploads/');
-   define('ABS_SHARE_PATH', 'http://hyper-naomi-generator.com/share.php');
+   define('ABS_UPLOAD_PATH', 'http://107.167.180.112/uploads/');
+   define('ABS_SHARE_PATH', 'http://107.167.180.112/share.php');
    define('IMG_EXT', 'jpeg');
 
 
@@ -12,17 +12,19 @@
     $param = $_GET['p'];
     $id = $param;
 
-    $text = "【ハイパーなおみジェネレーター】でハイパーな渡辺直美を作ってみたよ♪";
+    $text = "【ハイパーなおみジェネレーター】でハイパーな渡辺直美を作ってみたよ♪
+#ハイパーなおみジェネレーター";
     $hashtags = "aeon";
     $shareimage = ABS_UPLOAD_PATH. "$id.".IMG_EXT;
     $shareurl = ABS_SHARE_PATH;
 
-    $shareurl .= "?p=".urlencode($id);
-    $shareurl .= "&text=".urlencode($text);
-    $shareurl .= "&hashtags=".urlencode($hashtags);
+    $shareurl .= "?p=".$id;
+    //$shareurl .= "&text=".$text;
+    //$shareurl .= "&hashtags=".$hashtags;
 
-    $tweetUrl = "https://twitter.com/share?url=";
-    $tweetUrl .= rawurlencode($shareurl);
+    $tweetUrl = "https://twitter.com/intent/tweet";
+    $tweetUrl .= "?text=".urlencode($text);
+    $tweetUrl .= "&url=".rawurlencode($shareurl);
   }
 ?>
 

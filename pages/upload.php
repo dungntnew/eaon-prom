@@ -3,7 +3,7 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $dir = __DIR__;
         $uploaddir = $dir."/uploads/";
-        $fileid = md5(date('Y-m-d H:i:s:u'));
+        $fileid = uniqid();
         $filename = $fileid.'.jpeg';
         $filepath = $uploaddir.$filename;
         $file = $_POST['file'];
