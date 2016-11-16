@@ -64,22 +64,27 @@
 .btnTweet{
 	text-align:center;
 	color:#fff;
-	padding:15px 0;
 	max-width:250px;
 	margin:10px auto;
 	background:#1da1f2;
 	background-size: 30px;
 	border-radius:10px;
 }
+.btnTweet a{
+	padding:15px 0;
+	display:block;
+}
 .save{
 	text-align:center;
-	color:#fff;
 	max-width:250px;
 	margin:10px auto;
 	border-radius:10px;
 	background:#ff3399;
-	padding:10px 0;
 	color:#fff;
+}
+.save a{
+	display:block;
+	padding:10px 0;
 }
 .check{
 	max-width:250px;
@@ -88,6 +93,14 @@
 	color:#666;
 	border-radius:10px;
 	background:#eee;
+}
+.snsFun{
+	max-width:250px;
+	margin:10px auto;
+	padding:10px;
+	color:#666;
+	border-radius:10px;
+	background: #ffef00
 }
 .btnTweet a,.save a{
 	display:block;
@@ -355,6 +368,7 @@ $(function(){
         </div>
         <p class="btnTweet"><a href="<?php echo $tweetUrl ?>" target="_blank">ツイートして応募する</a></p>
         <p class="save"><a href="<?php echo $shareimage ?>" download="<?php print("$param"); ?>.jpg" class="btn-dl to" target="_blank" >完成画像を保存する</a></p>
+        <p class="snsFun">保存した画像はフェイスブックやインスタグラム、LINEでも使ってね♪</p>
         <p class="check"></p>
         <p class="gotop"><a href="<?php echo ABS_TOP_PATH ?>">TOPへ戻る</a></p>
       </div>
