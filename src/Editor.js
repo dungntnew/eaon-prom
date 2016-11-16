@@ -39,42 +39,21 @@ class Editor extends Component {
 
   initCanvas() {
     setupFabricObjectControls(fabric, true);
-
+    const canvasWidth = this.refs.canvas.clientWidth;
     this.canvas = window.canvas = new fabric.Canvas('canvas', {
       containerClass: 'canvas-container',
       backgroundColor: 'white'
     })
 
-    const size = this.calculateViewSize()
-    this.resizeView(size.width, size.height)
-  }
-
-  resizeView(width, height) {
-    if (!this.canvas) return;
-    console.log("editor canvas size setting up...")
     this.canvas.setDimensions({
-      width: width,
-      height: height
+      width: canvasWidth,
+      height: canvasWidth
     }, {cssOnly: false})
 
     this.canvas.setDimensions({
       width: EditorConfig.EXPORT_WIDTH,
       height: EditorConfig.EXPORT_HEIGHT
     }, {backstoreOnly: true})
-  }
-
-  calculateViewSize() {
-    const screenWidth = window.screen ? window.screen.width : window.outerWidth;
-    const screenHeight = window.screen ? window.screen.height: window.outerHeight;
-    const T_H = 150
-    const B_H = 150
-    const height = screenHeight - (T_H + B_H)
-    const canvasHeight = Math.min(Math.min(screenWidth, EditorConfig.EDITOR_MAX_W), height);
-
-    return {
-      width: canvasHeight,
-      height: canvasHeight,
-    }
   }
 
   showWaitDimmer(message) {
@@ -175,21 +154,10 @@ class Editor extends Component {
   }
 
   render() {
-    const size = this.calculateViewSize()
-    //this.resizeView(size.width, size.height)
-
-    const style = {
-      size: {
-        height: size.height + 'px',
-        width: size.width + 'px',
-        margin: '0px auto',
-      }
-    }
-
     return (
       <div>
         <div className='ui canvas-wrapper'>
-           <canvas style={style.size} className='editor-canvas' id="canvas" ref='canvas'/>
+           <canvas className='editor-canvas' id="canvas" ref='canvas'/>
         </div>
         <Loader
           active={this.state.loading}
