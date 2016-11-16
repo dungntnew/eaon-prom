@@ -67,8 +67,8 @@ const goodsConfig = {
     y: 10
   },
   size: {
-    width: 150,
-    height: 150
+    width: 300,
+    height: 300
   },
   controls: {
     'tl':true,
