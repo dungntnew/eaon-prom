@@ -35,6 +35,7 @@ class Editor extends Component {
   componentDidMount() {
     this.initCanvas()
     this.forceUpdate()
+    this.showLoading()
   }
 
   initCanvas() {
@@ -135,7 +136,7 @@ class Editor extends Component {
   showConfirmPopup() {
     this.canvas.deactivateAll();
     this.canvas.renderAll();
-    
+
     const data = this.canvas.toDataURL({
       format: 'jpeg',
       quality: 1,
@@ -174,6 +175,7 @@ class Editor extends Component {
           onStartProcess={this.showWaitDimmer}
           onFinishProcess={this.hideWaitDimmer}
           onError={this.showError}
+          initDoneFunc={() => this.hideLoading()}
          />
          <div className='mybuttons'>
              <button className='ui large button myconfirm' onClick={this.handleConfirm}>

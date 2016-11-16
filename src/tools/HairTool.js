@@ -12,11 +12,15 @@ class HairTool extends BaseTool {
   initializeLate() {
     const defaultHair = this.resourceImageById(0)
     if (defaultHair) {
-      this.setHair(defaultHair.src, 0)
+      this.setHair(defaultHair.src, 0, ()=>{
+        if (this.props.initDoneFunc) {
+          this.props.initDoneFunc()
+        }
+      })
     }
   }
 
-  setHair(src, id) {
+  setHair(src, id, next=null) {
     const canvas = this.props.canvas
     const size = hairConfig.size
     const offset = hairConfig.offset
@@ -52,6 +56,7 @@ class HairTool extends BaseTool {
 
       canvas.renderAll()
       if (func) func()
+      if (next) next()
     })
 
     this.setState({

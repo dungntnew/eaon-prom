@@ -29,6 +29,8 @@ class ToolBox extends Component {
       activeTab: 0
     }
     this.changeTab = this.changeTab.bind(this)
+    this.initDoneFunc = this.initDoneFunc.bind(this)
+    this.count = 0
   }
 
   changeTab(index) {
@@ -36,6 +38,20 @@ class ToolBox extends Component {
       this.setState({
         activeTab: index
       })
+    }
+  }
+
+  componentDidMount() {
+    this.count = 0;
+  }
+
+  initDoneFunc() {
+    this.count = this.count +1
+    if (this.count === 3) {
+      if (this.props.initDoneFunc) {
+        console.log("already!")
+        this.props.initDoneFunc()
+      }
     }
   }
 
@@ -55,6 +71,7 @@ class ToolBox extends Component {
         onStartProcess={this.props.onStartProcess}
         onFinishProcess={this.props.onFinishProcess}
         onError={this.props.onError}
+        initDoneFunc={this.initDoneFunc}
        />,
       <HairTool
         canvas={this.props.canvas}
@@ -62,6 +79,7 @@ class ToolBox extends Component {
         onStartProcess={this.props.onStartProcess}
         onFinishProcess={this.props.onFinishProcess}
         onError={this.props.onError}
+        initDoneFunc={this.initDoneFunc}
       />,
       <BGTool
         canvas={this.props.canvas}
@@ -69,6 +87,7 @@ class ToolBox extends Component {
         onStartProcess={this.props.onStartProcess}
         onFinishProcess={this.props.onFinishProcess}
         onError={this.props.onError}
+        initDoneFunc={this.initDoneFunc}
       />,
       <GoodsTool
        canvas={this.props.canvas}

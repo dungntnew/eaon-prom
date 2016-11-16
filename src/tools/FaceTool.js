@@ -12,11 +12,15 @@ class FaceTool extends BaseTool {
   initializeLate() {
     const defaultFace = this.resourceImageById(0)
     if (defaultFace) {
-      this.setFace(defaultFace.src, 0)
+      this.setFace(defaultFace.src, 0, ()=>{
+        if (this.props.initDoneFunc) {
+          this.props.initDoneFunc()
+        }
+      })
     }
   }
 
-  setFace(src, id) {
+  setFace(src, id, next=null) {
     const canvas = this.props.canvas
     const size = faceConfig.size
     const offset = faceConfig.offset
@@ -52,6 +56,7 @@ class FaceTool extends BaseTool {
 
       canvas.renderAll()
       if (func) func()
+      if (next) next()
     })
 
     this.setState({
