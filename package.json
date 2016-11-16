@@ -21,11 +21,12 @@
     "bk": "cp -Rv deploy/* backup/",
     "dp": "sudo mv -v  build/* deploy/",
     "build": "react-scripts build",
-    "pages": "mv -v pages/index.html pages/top.html &&  cp -vr pages/* build/ && mv -v pages/top.html pages/index.html",
-    "owner": "sudo chcon -R -t httpd_sys_rw_content_t deploy/ && sudo chown -R nginx:nginx deploy/",
+    "pages": "cp -rv pages/* build/",
+    "owner": "sudo chcon -R -t httpd_sys_rw_content_t deploy/",
     "test": "react-scripts test --env=jsdom",
     "deploy": "firebase deploy",
     "eject": "react-scripts eject",
-    "all": " npm run bk && npm run build && npm run pages && npm run dp && npm run owner"
+    "all": " npm run bk && npm run build && npm run pages && npm run dp && npm run owner",
+    "local_all": " npm run bk && npm run build && npm run pages && npm run dp"
   }
 }
