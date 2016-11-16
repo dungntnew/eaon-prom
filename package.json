@@ -18,8 +18,9 @@
   "scripts": {
     "start": "react-scripts start",
     "pre": "mkdir -p deploy uploads backup",
-    "bk": "cp -Rv deploy/* backup/",
-    "dp": "sudo mv -v  build/* deploy/",
+    "bk": "cp -Rv deploy/ backup",
+    "rv": "rm -rf deploy && cp -Rv backup/ deploy",
+    "dp": "rm -rf deploy && mv -v  build deploy",
     "build": "react-scripts build",
     "pages": "cp -rv pages/* build/",
     "owner": "sudo chcon -R -t httpd_sys_rw_content_t deploy/",
@@ -27,6 +28,7 @@
     "deploy": "firebase deploy",
     "eject": "react-scripts eject",
     "all": " npm run bk && npm run build && npm run pages && npm run dp && npm run owner",
-    "local_all": " npm run bk && npm run build && npm run pages && npm run dp"
+    "local_all": " npm run bk && npm run build && npm run pages && npm run dp",
+    "php": "cd deploy && php -S localhost:8080"
   }
 }
