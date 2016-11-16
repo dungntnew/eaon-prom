@@ -133,6 +133,9 @@ class Editor extends Component {
   }
 
   showConfirmPopup() {
+    this.canvas.deactivateAll();
+    this.canvas.renderAll();
+    
     const data = this.canvas.toDataURL({
       format: 'jpeg',
       quality: 1,
