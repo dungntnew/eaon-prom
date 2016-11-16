@@ -2,9 +2,9 @@
 <?php
    // 有効な定数名
    // TODO: fix link of top page
-   define('ABS_TOP_PATH', 'http://ononama.sakura.ne.jp/sample/naomi/index.html');
-   define('ABS_UPLOAD_PATH', 'http://107.167.180.112/uploads/');
-   define('ABS_SHARE_PATH', 'http://107.167.180.112/share.php');
+   define('ABS_TOP_PATH', 'https://www.aeon.com/content/cyberweek/naomi/');
+   define('ABS_UPLOAD_PATH', 'http://hyper-naomi-generator.com/uploads/');
+   define('ABS_SHARE_PATH', 'http://hyper-naomi-generator.com/share.php');
    define('IMG_EXT', 'jpeg');
 
 
