@@ -727,18 +727,6 @@ const configDefaultControl = (fabric) => {
               cornerShape: 'rect',
               cornerBackgroundColor: 'black'
           },
-          tl: {
-              icon: 'icons/rotate.svg'
-          },
-          tr: {
-              icon: 'icons/resize.svg'
-          },
-          ml: {
-              icon: 'icons/diagonal-resize.svg'
-          },
-          mr: {
-              icon: 'icons/diagonal-resize.svg'
-          }
       } );
 }
 

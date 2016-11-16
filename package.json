@@ -29,6 +29,7 @@
     "eject": "react-scripts eject",
     "all": " npm run bk && npm run build && npm run pages && npm run dp && npm run owner",
     "local_all": " npm run bk && npm run build && npm run pages && npm run dp",
-    "php": "cd deploy && php -S localhost:8080"
+    "php": "cd deploy && php -S localhost:8080",
+    "sync": "gcloud compute copy-files ./deploy/* instance-1:~/aeon/deploy" 
   }
 }
