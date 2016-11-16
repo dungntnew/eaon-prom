@@ -98,10 +98,14 @@ class List extends Component {
       'mini image rightLink': true,
       'disabled': !this.state.hasNext
     })
+    const style = {
+      marginRight: "0px !important",
+      marginLeft: "0px !important",
+    }
 
     return (
-      <div className='ui middle aligned grid'>
-          <div className="row">
+      <div style={style} className='ui container middle aligned grid'>
+          <div className="row item-list-row">
             <div className="leftCol">
               <a href="#" className={prevBtnClasses} onClick={this.prevHandler}>
               <img className='prevBtn' width={40} height={40} src={btnPrev} alt='prev'/>

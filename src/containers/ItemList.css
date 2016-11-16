@@ -1,3 +1,13 @@
+.item-list-wrapper {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  width: 100% !important;
+}
+.item-list-row {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
 .list-wrapper {
   overflow-x: scroll;
 }
