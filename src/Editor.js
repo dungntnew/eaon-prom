@@ -64,7 +64,11 @@ class Editor extends Component {
 
   calculateViewSize() {
     const screenWidth = window.screen ? window.screen.width : window.outerWidth;
-    const canvasHeight = Math.min(screenWidth, EditorConfig.EDITOR_MAX_W);
+    const screenHeight = window.screen ? window.screen.height: window.outerHeight;
+    const T_H = 150
+    const B_H = 150
+    const height = screenHeight - (T_H + B_H)
+    const canvasHeight = Math.min(Math.min(screenWidth, EditorConfig.EDITOR_MAX_W), height);
 
     return {
       width: canvasHeight,

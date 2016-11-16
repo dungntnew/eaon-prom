@@ -3,7 +3,7 @@ const AppConfig = {
 };
 
 const EditorConfig = {
-    EDITOR_MAX_W: 480,
+    EDITOR_MAX_W: 320,
     EXPORT_WIDTH: 500,
     EXPORT_HEIGHT: 500,
     USE_DIMMER: false,
@@ -67,8 +67,8 @@ const goodsConfig = {
     y: 10
   },
   size: {
-    width: 300,
-    height: 300
+    width: 150,
+    height: 150
   },
   controls: {
     'tl':true,
