@@ -17,12 +17,15 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "mkdir -pv backup build/uploads && mv -v build/uploads backup/uploads && react-scripts build && mv -v backup/uploads build/uploads",
+    "pre": "mkdir -p deploy uploads backup",
+    "bk": "cp -Rv deploy/* backup/",
+    "dp": "sudo mv -v  build/* deploy/",
+    "build": "react-scripts build",
     "pages": "mv -v pages/index.html pages/top.html &&  cp -vr pages/* build/ && mv -v pages/top.html pages/index.html",
-    "owner": "chcon -R -t httpd_sys_rw_content_t build/ && sudo chown -R nginx:nginx build/",
-    "all": "npm run build && npm run pages && npm run owner",
+    "owner": "sudo chcon -R -t httpd_sys_rw_content_t deploy/ && sudo chown -R nginx:nginx deploy/",
     "test": "react-scripts test --env=jsdom",
     "deploy": "firebase deploy",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "all": " npm run bk && npm run build && npm run pages && npm run dp && npm run owner"
   }
 }

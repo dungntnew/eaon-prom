@@ -2,7 +2,7 @@
 <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $dir = __DIR__;
-        $uploaddir = $dir."/uploads/";
+        $uploaddir = $dir."/../uploads/";
         $fileid = uniqid();
         $filename = $fileid.'.jpeg';
         $filepath = $uploaddir.$filename;
