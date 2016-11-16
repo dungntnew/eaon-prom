@@ -51,6 +51,7 @@ class Editor extends Component {
 
   resizeView(width, height) {
     if (!this.canvas) return;
+    console.log("editor canvas size setting up...")
     this.canvas.setDimensions({
       width: width,
       height: height
@@ -156,8 +157,9 @@ class Editor extends Component {
     const data = this.canvas.toDataURL({
       format: 'jpeg',
       quality: 1,
-      multiplier: 0.5
+      multiplier: 1
     })
+
     this.setState({
       exportedData: data,
       confirming: true,
@@ -174,7 +176,7 @@ class Editor extends Component {
 
   render() {
     const size = this.calculateViewSize()
-    this.resizeView(size.width, size.height)
+    //this.resizeView(size.width, size.height)
 
     const style = {
       size: {
@@ -187,7 +189,7 @@ class Editor extends Component {
     return (
       <div>
         <div className='ui canvas-wrapper'>
-           <canvas style={style.size} className='' id="canvas" ref='canvas'/>
+           <canvas style={style.size} className='editor-canvas' id="canvas" ref='canvas'/>
         </div>
         <Loader
           active={this.state.loading}
