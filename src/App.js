@@ -23,10 +23,33 @@ var config = {
 };
 firebase.initializeApp(config);
 
+function estimateMinHeight() {
+  const outerHeight =  window.outerHeight
+  const minContentHeight = outerHeight - (AppConfig.HEADER_HEIGHT + AppConfig.FOOTER_HEIGHT)
+  return minContentHeight
+}
+
 class EditorApp extends Component {
+  constructor() {
+    super()
+    this.state = {
+        wrapperMinHeight: estimateMinHeight()
+    }
+  }
+
+  componentDidMount() {
+    this.setState({
+      wrapperMinHeight: estimateMinHeight()
+    })
+  }
+
   render() {
+    const style = {
+      minHeight: this.state.wrapperMinHeight
+    }
+
     return (
-      <div className="content-wrapper">
+      <div style={style} className="content-wrapper">
       <div className="titleImage">
          <img className="ui" width={250} height={25} src={titleImage} alt="GENERATOR"/>
       </div>
@@ -38,9 +61,26 @@ class EditorApp extends Component {
 }
 
 class HowTo extends Component {
+  constructor() {
+    super()
+    this.state = {
+        wrapperMinHeight: estimateMinHeight()
+    }
+  }
+
+  componentDidMount() {
+    this.setState({
+      wrapperMinHeight: estimateMinHeight()
+    })
+  }
+
   render() {
+    const style = {
+      minHeight: this.state.wrapperMinHeight
+    }
+
     return (
-      <div className="content-wrapper">
+      <div style={style} className="content-wrapper">
           <div className="titleImage">
              <img className="ui" width={200} height={50} src={howtoTitle} alt="GENERATOR"/>
           </div>
@@ -69,7 +109,7 @@ class App extends Component {
     super(props)
 
     this.state = {
-      started: true,
+      started: false,
       errorMessage: '',
     }
 
@@ -84,11 +124,19 @@ class App extends Component {
     const screen =  this.state.started
                  ? (<EditorApp />)
                  : (<HowTo startHandler={this.startHandler} />)
+    const styles = {
+      header : {
+        height: AppConfig.HEADER_HEIGHT,
+      },
+      footer: {
+        height: AppConfig.FOOTER_HEIGHT,
+      }
+    }
 
     return (
       <div className='wrapper'>
         {/* header */}
-        <div className="ui inverted vertical header segment app-header">
+        <div style={styles.header} className="ui inverted vertical header segment app-header">
           <div className="logo">
              <img width={90} height={15} src={logo} alt='LOGO'/>
           </div>
@@ -96,7 +144,7 @@ class App extends Component {
 
         {screen}
         {/* footer */}
-        <div className="ui inverted vertical footer segment app-footer">
+        <div style={styles.footer} className="ui inverted vertical footer segment app-footer">
            <p className='copyright'>© 2016 AEON.com Co.,Ltd.</p>
         </div>
       </div>

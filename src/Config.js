@@ -1,5 +1,7 @@
 
 const AppConfig = {
+  HEADER_HEIGHT: 40,
+  FOOTER_HEIGHT: 40
 };
 
 const EditorConfig = {
