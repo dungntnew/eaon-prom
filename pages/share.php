@@ -14,7 +14,7 @@
 
     $text = "【ハイパーなおみジェネレーター】でハイパーな渡辺直美を作ってみたよ♪
 #ハイパーなおみジェネレーター";
-    $hashtags = "aeon";
+    $hashtags = "ハイパーなおみ";
     $shareimage = ABS_UPLOAD_PATH. "$id.".IMG_EXT;
     $shareurl = ABS_SHARE_PATH;
 
@@ -109,7 +109,7 @@
 	background-color: white;
 }
 .last{
-	background: url(image/bg1.gif);
+	background: url(image/bg1.gif) !important;
 }
 #preview{
 		height:500px;
@@ -119,6 +119,20 @@
 	display:none;
 	padding:0 0 30px 0;
 }
+#gene4{
+	font-size:36px;
+	background:#fff;
+	position:fixed;	
+	display:none;
+	width:84%;
+	padding:60px;
+	box-sizing:border-box;
+	left:8%;
+	top:3%;
+	z-index:400000;
+}
+
+
 .sTwiBtn{
 	width:100%;
 	margin:0 auto 60px auto;
@@ -162,6 +176,72 @@
 	width:100%;
 	max-width:500px;
 }
+.overlay2 {
+	content: '';
+	visibility: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	-webkit-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	z-index: 300000;
+}
+.side-open2.overlay2 {
+	visibility: visible;
+	cursor: pointer;
+	background: rgba(0, 0, 0, 0.8);
+}
+.close{
+	-webkit-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+  z-index:500000;
+  bottom:0;
+	opacity:0;
+  right:0px;
+  position:fixed;
+  display:block;
+  width:60px;
+	height:60px;
+  max-width:60px;
+	background:#ff3399;
+}
+.close-trigger,
+.close-trigger span {
+	display: inline-block;
+	transition: all .4s;
+	box-sizing: border-box;
+}
+.close-trigger {
+	position: relative;
+	width: 60px;
+  padding:20px;
+	height: 61px;
+}
+.close-trigger span {
+	position: absolute;
+	left: 20px;
+	width: 20px;
+	height: 3px;
+	background-color: #fff;
+	border-radius: 0px;
+}
+.close-trigger span:nth-of-type(1) {
+	top: 20px;
+	-webkit-transform: translateY(9px) rotate(-45deg);
+	transform: translateY(9px) rotate(-45deg);
+}
+.close-trigger span:nth-of-type(2) {
+	bottom: 20px;
+	-webkit-transform: translateY(-9px) rotate(45deg);
+	transform: translateY(-9px) rotate(45deg);
+}
+.close.on{
+	opacity:1;
+}
 @media screen and (max-width:769px) {
 	#preview{
 		height:250px;
@@ -174,8 +254,19 @@
 		max-width:250px;
 	}
 	.lastBox{
+		padding:3%;
 		max-width:300px;
 	}
+	.sTwiBtn{
+		margin:0 auto 20px auto;
+	}
+	#gene4{
+	width:94%;
+	left:3%;
+	padding:10px;
+	height:auto;
+}
+
 }
 
 </style>
@@ -201,13 +292,43 @@ $(function(){
 	$('.btnTweet').on('click',function(){
 
 		setTimeout(function(){
-			$('#gene3').hide();
+			$('.close').toggleClass('on');
+			if($('#gene4').hasClass('checks')){
+				$('#gene4').fadeOut(500);
+				$('#js__overlay2').removeClass('side-open2');
+				$('#gene4').removeClass('checks');
+			}else{
+				$('#js__overlay2').addClass('side-open2');
+				$('#gene4').addClass('checks');
+				$('#gene4').fadeIn(500);
+				$('#js__overlay2').fadeIn(500);
+			}
+			
+			
+			//$('#gene3').hide();
 			$('#gene4').show();
-			$('.howto-wrapper').addClass('last');
-			$('#root').css({'background-color':'#fff'})
+			$('#gene4').addClass('last');
+			//$('#root').css({'background-color':'#fff'})
 		},1000);
 
 
+	});
+
+
+
+
+
+	$('#js__overlay2').on('click', function () {
+		$('.close').removeClass('on');
+		$('#js__overlay2').removeClass('side-open2');
+		$('#gene4').removeClass('checks');
+		$('#gene4').fadeOut(500);
+	});
+	$('.close').on('click', function () {
+		$('.close').removeClass('on');
+		$('#js__overlay2').removeClass('side-open2');
+		$('#gene4').removeClass('checks');
+		$('#gene4').fadeOut(500);
 	});
 
 });
@@ -251,6 +372,9 @@ $(function(){
       <p class="copyright">© 2016 AEON.com Co.,Ltd.</p>
     </div>
   </div>
+</div>
+<div class="overlay2" id="js__overlay2">
+  <p class="close"> <span class="close-trigger" href=""> <span></span> <span></span> </span> </p>
 </div>
 </body>
 </html>
