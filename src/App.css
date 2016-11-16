@@ -62,27 +62,8 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  max-width: 240px;
-}
-
-/* for SP */
-@media screen and (max-width: 500px)  {
-  .howtoImgContent {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    max-width: 240px;
-  }
-}
-
-/* for IPAD */
-@media screen and (min-width: 700px) and (max-width: 900px) and (min-height: 800px)  {
-  .howtoImgContent {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    max-width: 500px;
-  }
+  width: 100%;
+  max-width: 400px;
 }
 
 .howto-text {
