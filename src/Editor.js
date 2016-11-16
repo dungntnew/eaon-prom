@@ -63,9 +63,8 @@ class Editor extends Component {
   }
 
   calculateViewSize() {
-    const height = this.props.editorHeight - (EditorConfig.TOOLBAR_HEIGHT + EditorConfig.HEADER_HEIGHT);
-    const width = this.props.editorWidth - EditorConfig.EDITOR_MARGIN_X * 2;
-    const canvasHeight = Math.max(Math.min(width, height), EditorConfig.EDITOR_MIN_H);
+    const screenWidth = window.screen ? window.screen.width : window.outerWidth;
+    const canvasHeight = Math.min(screenWidth, EditorConfig.EDITOR_MAX_W);
 
     return {
       width: canvasHeight,
@@ -96,7 +95,7 @@ class Editor extends Component {
   }
 
   showLoading(message) {
-    
+
     this.setState({
       loading: true,
       loadingMessge: message || 'Loading'
@@ -111,7 +110,6 @@ class Editor extends Component {
       })
     }, EditorConfig.DIMMER_TIMEOUT);
   }
-
 
   showError(error) {}
 

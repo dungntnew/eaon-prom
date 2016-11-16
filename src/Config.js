@@ -1,16 +1,9 @@
 
 const AppConfig = {
-    HEADER_HEIGHT: 40,
-    FOOTER_HEIGHT: 40,
-    CONTENT_MIN_H: 480,
-    REQUIRE_LOGIN: false,
 };
 
 const EditorConfig = {
-    HEADER_HEIGHT: 80,
-    TOOLBAR_HEIGHT: 200,
-    EDITOR_MARGIN_X: 20,
-    EDITOR_MIN_H: 240,
+    EDITOR_MAX_W: 480,
     EXPORT_WIDTH: 500,
     EXPORT_HEIGHT: 500,
     USE_DIMMER: false,
