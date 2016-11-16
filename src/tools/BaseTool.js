@@ -97,7 +97,7 @@ class BaseTool extends Component {
     obj.customiseCornerIcons( {
         settings: {
             borderColor: 'black',
-            cornerSize: 25,
+            cornerSize: 50,
             cornerShape: 'rect',
             cornerBackgroundColor: 'black',
             cornerPadding: 10
