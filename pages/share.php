@@ -41,11 +41,11 @@
   <meta property="og:url" content="<?php echo 'http://'. $_SERVER['HTTP_HOST']. $_SERVER['REQUEST_URI']; ?>" />
   <meta property="og:image" content="<?php echo $shareimage ?>" />
   <meta property="og:site_name" content="ハイパーなおみジェネレーター" />
-  <meta property="og:description" content="ハイパーなおみジェネレーター。サイバーウィークを盛り上げる、ハイパーな渡辺直美をいろんなパーツを組合せて自分好みに作れちゃうジェネレーターです！ハイパーな渡辺直美をつくって豪華プレゼントをゲットしよう！" />
-  <meta property="fb:app_id" content="502744359762778" />
+  <meta property="og:description" content="サイバーウィークを盛り上げる、ハイパーな渡辺直美をいろんなパーツを組合せて自分好みに作れちゃうジェネレーターです！ハイパーな渡辺直美をつくって豪華プレゼントをゲットしよう！" />
+  <meta property="fb:app_id" content="162094920924270" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ハイパーなおみジェネレーター | AEON.com" />
-  <meta name="twitter:description" content="ハイパーなおみジェネレーター。サイバーウィークを盛り上げる、ハイパーな渡辺直美をいろんなパーツを組合せて自分好みに作れちゃうジェネレーターです！ハイパーな渡辺直美をつくって豪華プレゼントをゲットしよう！" />
+  <meta name="twitter:description" content="サイバーウィークを盛り上げる、ハイパーな渡辺直美をいろんなパーツを組合せて自分好みに作れちゃうジェネレーターです！ハイパーな渡辺直美をつくって豪華プレゼントをゲットしよう！" />
   <meta name="twitter:image:src" content="<?php echo $shareimage ?>" />
   <link href="https://ean-promotion.firebaseapp.com/static/css/main.ffe6ef20.css" rel="stylesheet">
 <script>
