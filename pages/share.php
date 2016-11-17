@@ -14,7 +14,7 @@
 
     $text = "【ハイパーなおみジェネレーター】でハイパーな渡辺直美を作ってみたよ♪
 #ハイパーなおみジェネレーター";
-    $hashtags = "ハイパーなおみ";
+    $hashtags = "ハイパーなおみジェネレーター";
     $shareimage = ABS_UPLOAD_PATH. "$id.".IMG_EXT;
     $shareurl = ABS_SHARE_PATH;
 
