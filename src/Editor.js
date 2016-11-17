@@ -40,7 +40,9 @@ class Editor extends Component {
 
   initCanvas() {
     setupFabricObjectControls(fabric, true);
-    const canvasWidth = this.refs.canvas.clientWidth;
+    const browerMaxWidth = window.outerWidth || EditorConfig.EDITOR_MAX_W
+    const canvasWidth = Math.min(this.refs.canvas.clientWidth, browerMaxWidth);
+
     this.canvas = window.canvas = new fabric.Canvas('canvas', {
       containerClass: 'canvas-container',
       backgroundColor: 'white'
