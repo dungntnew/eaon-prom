@@ -19,12 +19,14 @@
     $shareurl = ABS_SHARE_PATH;
 
     $shareurl .= "?p=".$id;
+		//add ono ↓
+		$sharepath = "http://bit.ly/2g1tHih";
     //$shareurl .= "&text=".$text;
     //$shareurl .= "&hashtags=".$hashtags;
 
     $tweetUrl = "https://twitter.com/intent/tweet";
     $tweetUrl .= "?text=".urlencode($text);
-    $tweetUrl .= "&url=".rawurlencode($shareurl);
+    $tweetUrl .= "&url=".rawurlencode($sharepath);
   }
 ?>
 
@@ -51,11 +53,13 @@
 <script>
 
 // TODO: fix redirect behavior, it's broken now >_<
+/*
 if (document.referrer.indexOf('http://hyper-naomi-generator.com')==0) {
 	 }
  else {
    location.href='https://www.aeon.com/content/cyberweek/naomi/';
  }
+ */
 
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -388,7 +392,7 @@ $(function(){
   </div>
 </div>
 <div class="overlay2" id="js__overlay2">
-  <p class="close"> <span class="close-trigger" href=""> <span></span> <span></span> </span> </p>
 </div>
+<p class="close"> <span class="close-trigger" href=""> <span></span> <span></span> </span> </p>
 </body>
 </html>
