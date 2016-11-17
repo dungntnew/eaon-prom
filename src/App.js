@@ -90,7 +90,7 @@ class HowTo extends Component {
             <div className="ui hidden divider"></div>
 
             <div className="howto-text">
-              渡辺直美の顔とハイパーな髪型を組み合わせてハイパーな渡辺直美を作成しましょう！
+              渡辺直美の顔やハイパーな髪型、メッセージなどを組み合わせてハイパーな渡辺直美を作成しましょう！
             </div>
 　　　　　　　<div className="ui hidden divider"></div>
 
