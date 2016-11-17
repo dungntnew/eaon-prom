@@ -370,7 +370,7 @@ $(function(){
         <p class="save"><a href="<?php echo $shareimage ?>" download="<?php print("$param"); ?>.jpg" class="btn-dl to" target="_blank" >完成画像を保存する</a></p>
         <p class="snsFun">保存した画像はフェイスブックやインスタグラム、LINEでも使ってね♪</p>
         <p class="check"></p>
-        <p class="gotop"><a href="<?php echo ABS_TOP_PATH ?>">TOPへ戻る</a></p>
+        <p class="gotop"><a href="https://www.aeon.com/content/cyberweek/naomi/?bannerid=ac07_s20MpTw5&exmid=OWN">TOPへ戻る</a></p>
       </div>
       <div id="gene4">
       	<div class="titleImage"><img class="ui" height="50px" src="image/title_naomi_generator_twi.png" alt="twitterフォロー"></div>
@@ -378,7 +378,7 @@ $(function(){
         <div class="lastNaomi"><img src="image/naomi.png" alt="naomi"></div>
         <div class="lastBox">
         <p class="sTwiBtn mt20"><a href="https://twitter.com/aeon_japan?lang=ja" target="_blank">イオン公式Twitter<br class="spD">ページはこちら</a></p>
-        <p class="gotop"><a href="<?php echo ABS_TOP_PATH ?>">TOPへ戻る</a></p>
+        <p class="gotop"><a href="https://www.aeon.com/content/cyberweek/naomi/?bannerid=ac07_bHKxf94k&exmid=OWN">TOPへ戻る</a></p>
         </div>
       </div>
     </div>
