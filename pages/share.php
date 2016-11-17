@@ -51,11 +51,11 @@
 <script>
 
 // TODO: fix redirect behavior, it's broken now >_<
-// if (document.referrer.indexOf('http://ononama.sakura.ne.jp/')==0) {
-// }
-// else {
-//   location.href='http://ononama.sakura.ne.jp/sample/naomi/';
-// }
+if (document.referrer.indexOf('http://hyper-naomi-generator.com')==0) {
+	 }
+ else {
+   location.href='https://www.aeon.com/content/cyberweek/naomi/';
+ }
 
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
