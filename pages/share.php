@@ -13,20 +13,18 @@
     $id = $param;
 
     $text = "【ハイパーなおみジェネレーター】でハイパーな渡辺直美を作ってみたよ♪
-#ハイパーなおみジェネレーター";
+#ハイパーなおみジェネレーター http://bit.ly/2g1tHih";
     $hashtags = "ハイパーなおみジェネレーター";
     $shareimage = ABS_UPLOAD_PATH. "$id.".IMG_EXT;
     $shareurl = ABS_SHARE_PATH;
 
     $shareurl .= "?p=".$id;
-		//add ono ↓
-		$sharepath = "http://bit.ly/2g1tHih";
     //$shareurl .= "&text=".$text;
     //$shareurl .= "&hashtags=".$hashtags;
 
     $tweetUrl = "https://twitter.com/intent/tweet";
     $tweetUrl .= "?text=".urlencode($text);
-    $tweetUrl .= "&url=".rawurlencode($sharepath);
+    $tweetUrl .= "&url=".rawurlencode($shareurl);
   }
 ?>
 
