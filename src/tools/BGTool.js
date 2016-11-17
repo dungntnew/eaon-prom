@@ -1,6 +1,6 @@
 import BaseTool from './BaseTool';
 import {logoConfig} from '../Config';
-import logo1 from './../navi/logo-2.png';
+import logo1 from './../navi/logo-1.png';
 //import logo2 from './../navi/logo-2.png';
 
 class BGTool extends BaseTool {
