@@ -108,6 +108,33 @@ const tweetConfig = {
   },
 }
 
+const logoConfig = {
+  tag: 'LOGO',
+  offset: {
+    x: 0,
+    y: 0
+  },
+  pos: {
+    top: 10,
+    left: 10
+  },
+  size: {
+    width: 218,
+    height: 28,
+  },
+  controls: {
+    'tl':false,
+    'tr':false,
+    'bl':false,
+    'br':false,
+    'ml':false,
+    'mt':false,
+    'mr':false,
+    'mb':false,
+    'mtr':false
+  },
+}
+
 const Messages = {
   loading: 'Loading..',
   loadError: 'Loading error!',
@@ -122,5 +149,6 @@ export {
   hairConfig,
   goodsConfig,
   tweetConfig,
+  logoConfig,
   Messages
 }

@@ -24,6 +24,7 @@ class TweetTool  extends BaseTool {
       this.configDefaultObject(tweet)
       tweet.setControlsVisibility(tweetConfig.controls)
       canvas.add(tweet)
+      this.resetLogo()
 
       canvas.renderAll()
       if (func) func()

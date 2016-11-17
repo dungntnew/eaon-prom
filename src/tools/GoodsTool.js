@@ -25,6 +25,7 @@ class GoodsTool extends BaseTool {
       this.configDefaultObject(goods)
       goods.setControlsVisibility(goodsConfig.controls)
       canvas.add(goods)
+      this.resetLogo()
 
       canvas.renderAll()
       if (func) func()

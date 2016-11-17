@@ -35,6 +35,13 @@ class BaseTool extends Component {
   initializeLate() {
   }
 
+  resetLogo() {
+    const  logo1 = this.findFirstElementInCanvas('LOGO1')
+    if (logo1) {
+      logo1.bringToFront();
+    }
+  }
+
   onItemClick(id, src) {
     return (env) => {
       console.log('Item clicked..: ' + id + ' => ' + src)

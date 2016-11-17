@@ -134,6 +134,7 @@ class Editor extends Component {
   }
 
   showConfirmPopup() {
+
     this.canvas.deactivateAll();
     this.canvas.renderAll();
 
