@@ -51,7 +51,7 @@
   <meta name="twitter:title" content="ハイパーなおみジェネレーター | AEON.com" />
   <meta name="twitter:description" content="サイバーウィークを盛り上げる、ハイパーな渡辺直美をいろんなパーツを組合せて自分好みに作れちゃうジェネレーターです！ハイパーな渡辺直美をつくって豪華プレゼントをゲットしよう！" />
   <meta name="twitter:image:src" content="<?php echo $shareimage ?>" />
-  <link href="https://ean-promotion.firebaseapp.com/static/css/main.ffe6ef20.css" rel="stylesheet">
+  <link href="http://hyper-naomi-generator.com/static/css/main.541a2155.css" rel="stylesheet">
 <script>
 
 // TODO: fix redirect behavior, it's broken now >_<
@@ -268,7 +268,7 @@ if (document.referrer.indexOf('http://hyper-naomi-generator.com')==0) {
     padding-bottom: 15px;
 }
 .toContactlink a {
-    font-size: 18px;
+    font-size: 10px;
     color: #000;
 }
 @media screen and (max-width:769px) {
