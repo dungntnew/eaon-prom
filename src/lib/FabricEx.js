@@ -97,13 +97,28 @@
                      }
 
                      if ( obj[ setting ].icon !== undefined ) {
+                         var _self = this;
                          this.useCustomIcons = true;
 
                          this.loadIcon( setting, obj[ setting ].icon, function() {
                              if ( callback && typeof( callback ) === 'function' ) {
                                  callback();
                              }
-                         } );
+                         } , function() {
+
+                           //fallback when cannot load icon
+                           _self.useCustomIcons = false;
+                           _self.transparentCorners = false;
+                           _self.borderColor = 'black';
+                           _self.cornerSize = 15;
+                           _self.cornerShape = 'rect';
+                           _self.cornerBackgroundColor = 'black';
+                           _self.cornerPadding = 10;
+
+                           if ( callback && typeof( callback ) === 'function' ) {
+                               callback();
+                           }
+                         });
                      }
                  }
              }
@@ -116,7 +131,7 @@
           * @param callback function.
           */
 
-         loadIcon: function( corner, iconUrl, callback ) {
+         loadIcon: function( corner, iconUrl, callback, fallback) {
              var self = this,
                  icon = new Image();
 
@@ -129,6 +144,9 @@
 
              icon.onerror = function() {
                  fabric.warn( this.src + ' icon is not an image' );
+                 if (fallback && typeof(fallback) === 'function') {
+                   fallback();
+                 }
              };
 
              if ( iconUrl.indexOf( 'http' ) > -1 ) {
@@ -686,13 +704,14 @@ const configDefaultControl = (fabric) => {
   fabric.Canvas.prototype.customiseControls( {
           tl: {
               action: 'rotate',
+              cursor: 'e-resize'
           },
           tr: {
               action: 'scale'
           },
           bl: {
               action: 'remove',
-              cursor: 'pointer'
+              cursor: 'not-allowed'
           },
           br: {
               action: 'moveUp',
