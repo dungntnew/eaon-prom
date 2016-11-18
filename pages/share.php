@@ -385,6 +385,7 @@ $(function(){
         <div class="lastBox">
         <p class="sTwiBtn mt20"><a href="https://twitter.com/aeon_japan?lang=ja" target="_blank">イオン公式Twitter<br class="spD">ページはこちら</a></p>
         <p class="gotop"><a href="https://www.aeon.com/content/cyberweek/naomi/?bannerid=ac07_bHKxf94k&exmid=OWN">TOPへ戻る</a></p>
+        <p class="toContactlink"><a href="https://www.aeon.com/contact/">お問い合わせ</a></p>
         </div>
       </div>
     </div>
