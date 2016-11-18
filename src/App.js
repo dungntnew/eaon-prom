@@ -55,7 +55,7 @@ class EditorApp extends Component {
       </div>
       <div className="ui hidden divider"></div>
       <Editor/>
-      <p className="toToplink"><a href="https://www.aeon.com/content/cyberweek/naomi/?bannerid=ac07_bHKxf94k&exmid=OWN">TOPへ戻る</a></p>
+      <p className="toToplink"><a href="https://www.aeon.com/content/cyberweek/naomi/">TOPへ戻る</a></p>
       <p className="toContactlink"><a href="https://www.aeon.com/contact/">お問い合わせ</a></p>
       </div>
     )
@@ -100,7 +100,7 @@ class HowTo extends Component {
                     onClick={this.props.startHandler}>
             開始する
             </button>
-            <p className="toToplink"><a href="https://www.aeon.com/content/cyberweek/naomi/?bannerid=ac07_bHKxf94k&exmid=OWN">TOPへ戻る</a></p>
+            <p className="toToplink"><a href="https://www.aeon.com/content/cyberweek/naomi/">TOPへ戻る</a></p>
             <p className="toContactlink"><a href="https://www.aeon.com/contact/">お問い合わせ</a></p>
           </div>
       </div>
