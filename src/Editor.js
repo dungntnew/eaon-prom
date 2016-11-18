@@ -9,6 +9,8 @@ import ExportConfirm from './ExportConfirm';
 import {fabric} from 'fabric';
 import {setupFabricObjectControls} from './lib/FabricEx';
 
+import twbg from './navi/twbg.png';
+
 import $ from 'jquery';
 
 
@@ -31,7 +33,7 @@ class Editor extends Component {
     this.state = {
       loading: false,
       loadingMessge: '',
-      confirming: false,
+      confirming: false
     }
 
     this.showWaitDimmer = this.showWaitDimmer.bind(this)
@@ -120,9 +122,63 @@ class Editor extends Component {
 
   hideError() {}
 
-  handleExport() {
 
-    this.showLoading("Processing..");
+  generateTwitterImage(content, done) {
+    const w = 800
+    const h = 320
+    const cw = 280
+    const ch = 280
+    const ct = 20
+    const cl = 20
+
+    const twitterCanvas = new fabric.Canvas('tw-canvas', {
+      containerClass: 'tw-canvas-container',
+      backgroundColor: 'white'
+    });
+
+    twitterCanvas.setDimensions({
+      width: w,
+      height: h
+    });
+
+    const gen = ()=> {
+      const data = twitterCanvas.toDataURL({
+        format: 'png',
+        quality: 0.5,
+        multiplier: 1
+      });
+      console.log("generate done twitter image.[OK YEAH]")
+      done(data);
+    }
+
+    fabric.Image.fromURL(twbg, (bg) => {
+      bg.crossOrigin = "anonymous"
+      bg.setWidth(w)
+      bg.setHeight(h)
+
+      twitterCanvas.setBackgroundImage(bg);
+
+      fabric.Image.fromURL(content, (c) => {
+        c.crossOrigin = "anonymous"
+        c.setWidth(cw)
+        c.setHeight(ch)
+        c.setTop(ct)
+        c.setLeft(cl)
+
+        twitterCanvas.add(c);
+        twitterCanvas.renderAll();
+        console.log("generating twitter image..");
+        gen()
+      }, (ee) => { console.error("load twitter img content error: ", ee)})
+    }, (err) => {
+      console.error("load twitter bg fail: ", err)
+    });
+  }
+
+  handleExport() {
+　　 this.setState({confirming: false})
+    this.showLoading("Loading..");
+
     let data = this.state.exportedData
     if (!data) {
       try {
@@ -134,38 +190,39 @@ class Editor extends Component {
       }
     }
 
-    $.ajax({
-      type: 'POST',
-      url: EditorConfig.UPLOAD_PATH,
-      data: {'file': data},
-      success: (res, textStatus, jqXHRn) => {
-         this.hideLoading();
-         window.location.href = EditorConfig.SHARE_PATH + '?p=' + res.fileid;
-      },
-      error: (err) => {
-        this.hideLoading();
+    const postFunc = (twData)=> {
+      console.log("start post data to server...");
 
-        try {
-          const msg = JSON.stringify(err);
-          console.error(msg);
-        }
-        catch(ee) {
-          console.error(err);
-        }
-        Raven.captureException(err);
-      },
-      dataType: "json"
-    })
+      $.ajax({
+        type: 'POST',
+        url: EditorConfig.UPLOAD_PATH,
+        data: {'file': data, 'twfile': twData},
+        success: (res, textStatus, jqXHRn) => {
+           this.hideLoading();
+           window.location.href = EditorConfig.SHARE_PATH
+                                + '?p=' + res.fileid
+                                + '&t=' + res.twfileid;
+        },
+        error: (err) => {
 
+          this.hideLoading();
+          this.setState({confirming: true})
 
-    // try {
-    //   localStorage.setItem(EditorConfig.EXPORT_ITEM_KEY, data);
-    //   window.location.pathname = EditorConfig.FINISH_PATH;
-    // }
-    // catch(e) {
-    //   console.error('something wrong: ' + e);
-    //   this.showError(e);
-    // }
+          try {
+            const msg = JSON.stringify(err);
+            console.error(msg);
+          }
+          catch(ee) {
+            console.error(err);
+          }
+          Raven.captureException(err);
+        },
+        dataType: "json"
+      });
+      // No PRO
+    }
+
+    this.generateTwitterImage(data, postFunc)
   }
 
   handleConfirm() {
@@ -209,8 +266,17 @@ class Editor extends Component {
   }
 
   render() {
+    const twCanvasStyle = {
+      display: "none"
+    }
+
     return (
       <div>
+
+        <div className="ui tw-canvas-wrapper" style={twCanvasStyle}>
+           <canvas className='tw-preview-canvas' id="tw-canvas" ref='tw-canvas'/>
+        </div>
+
         <div className='ui canvas-wrapper'>
            <canvas className='editor-canvas' id="canvas" ref='canvas'/>
         </div>

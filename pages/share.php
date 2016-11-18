@@ -8,17 +8,20 @@
    define('IMG_EXT', 'png');
 
 
-  if (isset($_GET['p'])) {
+  if (isset($_GET['p']) && isset($_GET['t'])) {
     $param = $_GET['p'];
     $id = $param;
+
+    $twparam = $_GET['t'];
+    $tid = $twpram;
 
     $text = "【ハイパーなおみジェネレーター】でハイパーな渡辺直美を作ってみたよ♪
 #ハイパーなおみジェネレーター http://bit.ly/2g1tHih";
     $hashtags = "ハイパーなおみジェネレーター";
-    $shareimage = ABS_UPLOAD_PATH. "$id.".IMG_EXT;
+    $shareimage = ABS_UPLOAD_PATH. "$tid.".IMG_EXT;
     $shareurl = ABS_SHARE_PATH;
 
-    $shareurl .= "?p=".$id;
+    $shareurl .= "?p=".$id."&t=".$tid;
     //$shareurl .= "&text=".$text;
     //$shareurl .= "&hashtags=".$hashtags;
 

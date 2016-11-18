@@ -33,5 +33,6 @@
     "php": "cd deploy && php -S localhost:8080",
     "sync": "gcloud compute copy-files --zone asia-northeast1-a ./deploy/* instance-2:~/aeon/deploy",
     "ssh": "gcloud compute ssh instance-2 --zone asia-northeast1-a"
-  }
+  },
+  "proxy": "http://localhost:8080/"
 }
