@@ -124,7 +124,7 @@ class Editor extends Component {
 
 
   generateTwitterImage(content, done) {
-    const w = 800
+    const w = 612
     const h = 320
     const cw = 280
     const ch = 280
