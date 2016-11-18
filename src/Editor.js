@@ -11,6 +11,18 @@ import {setupFabricObjectControls} from './lib/FabricEx';
 
 import $ from 'jquery';
 
+
+import Raven from 'raven-js';
+
+// install sentry js
+try {
+  Raven.config('https://a7f4310bf02f42669dfc12ad2b7dac4b@sentry.io/115577').install();
+}
+catch(error) {
+  console.error("Raven Error: ", error);
+}
+
+
 class Editor extends Component {
 
   constructor() {
@@ -103,22 +115,47 @@ class Editor extends Component {
   hideError() {}
 
   handleExport() {
-    const data = this.state.exportedData
+
     this.showLoading("Processing..");
-    $.ajax({
-      type: 'POST',
-      url: EditorConfig.UPLOAD_PATH,
-      data: {'file': data},
-      success: (res, textStatus, jqXHRn) => {
-         this.hideLoading();
-         window.location.href = EditorConfig.SHARE_PATH + '?p=' + res.fileid;
-      },
-      error: (err) => {
-        this.hideLoading();
-        console.error(err);
-      },
-      dataType: "json"
-    })
+    let data = this.state.exportedData
+    if (!data) {
+      try {
+        data = this.exportData();
+      }
+      catch(e) {
+          Raven.captureException(e)
+          return;
+      }
+    }
+
+    try {
+      $.ajax({
+        type: 'POST',
+        url: EditorConfig.UPLOAD_PATH,
+        data: {'file': data},
+        success: (res, textStatus, jqXHRn) => {
+           this.hideLoading();
+           window.location.href = EditorConfig.SHARE_PATH + '?p=' + res.fileid;
+        },
+        error: (err) => {
+          this.hideLoading();
+          
+          try {
+            const msg = JSON.stringify(err);
+            console.error(msg);
+          }
+          catch(ee) {
+            console.error(err);
+          }
+          Raven.captureException(err);
+        },
+        dataType: "json"
+      })
+    }
+    catch(e) {
+        Raven.captureException(e)
+    }
+
 
     // try {
     //   localStorage.setItem(EditorConfig.EXPORT_ITEM_KEY, data);
@@ -135,21 +172,29 @@ class Editor extends Component {
     window.scrollTo(0, 0)
   }
 
+  exportData() {
+    return this.canvas.toDataURL({
+      format: 'jpeg',
+      quality: 1,
+      multiplier: 1
+    })
+  }
+
   showConfirmPopup() {
 
     this.canvas.deactivateAll();
     this.canvas.renderAll();
 
-    const data = this.canvas.toDataURL({
-      format: 'jpeg',
-      quality: 1,
-      multiplier: 1
-    })
+    try {
+      const data = this.exportData()
 
-    this.setState({
-      exportedData: data,
-      confirming: true,
-    })
+      this.setState({
+        exportedData: data,
+        confirming: true,
+      })
+    } catch(e) {
+        Raven.captureException(e)
+    }
   }
 
   handleBack() {
