@@ -84,8 +84,8 @@
 
 /*------------- Common -----------------------*/
 .editor-canvas {
-  width: 380px;
-  height: 380px;
+  width: 320px;
+  height: 320px;
 }
 
 
@@ -205,21 +205,6 @@
     }
 }
 
-/* Portrait */
-@media screen
-  and (device-width: 360px)
-  and (device-height: 640px)
-  and (-webkit-device-pixel-ratio: 3)
-  and (orientation: portrait) {
-    .howtoImgContent {
-      max-width: 180px;
-    }
-    .editor-canvas {
-      width: 320px;
-      height: 320px;
-    }
-}
-
 /* ----------- Non-Retina Screens ----------- */
 @media screen
   and (min-device-width: 1200px)
@@ -294,5 +279,31 @@
     .editor-canvas {
       width: 500px;
       height: 500px;
+    }
+}
+
+/* SHIT DEVICE 540×960 SoftBank 101F*/
+@media only screen
+  and (device-width: 540px)
+  and (device-height: 960px) {
+    .howtoImgContent {
+      max-width: 180px;
+    }
+    .editor-canvas {
+      width: 320px;
+      height: 320px;
+    }
+}
+
+/* SHIT DEVICE 360 x 515SoftBank 101F*/
+@media only screen
+  and (device-width: 360px)
+  and (device-height: 515px) {
+    .howtoImgContent {
+      max-width: 180px;
+    }
+    .editor-canvas {
+      width: 320px;
+      height: 320px;
     }
 }

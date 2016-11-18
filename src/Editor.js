@@ -134,33 +134,28 @@ class Editor extends Component {
       }
     }
 
-    try {
-      $.ajax({
-        type: 'POST',
-        url: EditorConfig.UPLOAD_PATH,
-        data: {'file': data},
-        success: (res, textStatus, jqXHRn) => {
-           this.hideLoading();
-           window.location.href = EditorConfig.SHARE_PATH + '?p=' + res.fileid;
-        },
-        error: (err) => {
-          this.hideLoading();
+    $.ajax({
+      type: 'POST',
+      url: EditorConfig.UPLOAD_PATH,
+      data: {'file': data},
+      success: (res, textStatus, jqXHRn) => {
+         this.hideLoading();
+         window.location.href = EditorConfig.SHARE_PATH + '?p=' + res.fileid;
+      },
+      error: (err) => {
+        this.hideLoading();
 
-          try {
-            const msg = JSON.stringify(err);
-            console.error(msg);
-          }
-          catch(ee) {
-            console.error(err);
-          }
-          Raven.captureException(err);
-        },
-        dataType: "json"
-      })
-    }
-    catch(e) {
-        Raven.captureException(e)
-    }
+        try {
+          const msg = JSON.stringify(err);
+          console.error(msg);
+        }
+        catch(ee) {
+          console.error(err);
+        }
+        Raven.captureException(err);
+      },
+      dataType: "json"
+    })
 
 
     // try {
