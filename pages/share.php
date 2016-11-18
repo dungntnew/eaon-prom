@@ -261,6 +261,16 @@ if (document.referrer.indexOf('http://hyper-naomi-generator.com')==0) {
 .close.on{
 	opacity:1;
 }
+.toContactlink{
+    text-align: center;
+    margin: 20px 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.toContactlink a {
+    font-size: 18px;
+    color: #000;
+}
 @media screen and (max-width:769px) {
 	#preview{
 		height:250px;
@@ -377,6 +387,7 @@ $(function(){
         <p class="snsFun">保存した画像はフェイスブックやインスタグラム、LINEでも使ってね♪</p>
         <p class="check"></p>
         <p class="gotop"><a href="https://www.aeon.com/content/cyberweek/naomi/?bannerid=ac07_s20MpTw5&exmid=OWN">TOPへ戻る</a></p>
+        <p class="toContactlink"><a href="https://www.aeon.com/contact/">お問い合わせ</a></p>
       </div>
       <div id="gene4">
       	<div class="titleImage"><img class="ui" height="50px" src="image/title_naomi_generator_twi.png" alt="twitterフォロー"></div>
