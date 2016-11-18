@@ -372,7 +372,7 @@ $(function(){
 
         </div>
         <p class="btnTweet"><a href="<?php echo $tweetUrl ?>" target="_blank">ツイートして応募する</a></p>
-        <p class="save"><a href="<?php echo $shareimage ?>" download="<?php print("$param"); ?>.jpg" class="btn-dl to" target="_blank" >完成画像を保存する</a></p>
+        <p class="save"><a href="<?php echo $shareimage ?>" download="<?php print("$param"); ?>.png" class="btn-dl to" target="_blank" >完成画像を保存する</a></p>
         <p class="snsFun">保存した画像はフェイスブックやインスタグラム、LINEでも使ってね♪</p>
         <p class="check"></p>
         <p class="gotop"><a href="https://www.aeon.com/content/cyberweek/naomi/?bannerid=ac07_s20MpTw5&exmid=OWN">TOPへ戻る</a></p>
