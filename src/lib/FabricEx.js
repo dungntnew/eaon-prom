@@ -152,8 +152,7 @@
              if ( iconUrl.indexOf( 'http' ) > -1 ) {
                  icon.crossOrigin = 'Anonymous';
              }
-             icon.crossOrigin = "anonymous";
-
+             
              icon.src = iconUrl;
          },
 
