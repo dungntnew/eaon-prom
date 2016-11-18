@@ -10,19 +10,20 @@ import {fabric} from 'fabric';
 import {setupFabricObjectControls} from './lib/FabricEx';
 
 import twbg from './navi/twbg.png';
+import errorImage from './navi/error.png';
 
 import $ from 'jquery';
 
 
-import Raven from 'raven-js';
-
-// install sentry js
-try {
-  Raven.config('https://a7f4310bf02f42669dfc12ad2b7dac4b@sentry.io/115577').install();
-}
-catch(error) {
-  console.error("Raven Error: ", error);
-}
+// import Raven from 'raven-js';
+//
+// // install sentry js
+// try {
+//   Raven.config('https://a7f4310bf02f42669dfc12ad2b7dac4b@sentry.io/115577').install();
+// }
+// catch(error) {
+//   console.error("Raven Error: ", error);
+// }
 
 
 class Editor extends Component {
@@ -142,13 +143,18 @@ class Editor extends Component {
     });
 
     const gen = ()=> {
-      const data = twitterCanvas.toDataURL({
-        format: 'png',
-        quality: 0.5,
-        multiplier: 1
-      });
-      console.log("generate done twitter image.[OK YEAH]")
-      done(data);
+      try {
+        const data = twitterCanvas.toDataURL({
+          format: 'png',
+          quality: 0.5,
+          multiplier: 1
+        });
+        console.log("generate done twitter image.[OK YEAH]")
+        done(data);
+      }
+      catch(eeeee) {
+        console.error(eeeee)
+      }
     }
 
     fabric.Image.fromURL(twbg, (bg) => {
@@ -185,7 +191,8 @@ class Editor extends Component {
         data = this.exportData();
       }
       catch(e) {
-          Raven.captureException(e)
+          console.error(e);
+          //Raven.captureException(e)
           return;
       }
     }
@@ -209,13 +216,12 @@ class Editor extends Component {
           this.setState({confirming: true})
 
           try {
-            const msg = JSON.stringify(err);
-            console.error(msg);
+            console.error(JSON.stringify(err));
           }
           catch(ee) {
             console.error(err);
           }
-          Raven.captureException(err);
+          //Raven.captureException(err);
         },
         dataType: "json"
       });
@@ -253,7 +259,11 @@ class Editor extends Component {
         confirming: true,
       })
     } catch(e) {
-        Raven.captureException(e)
+        //Raven.captureException(e)
+        this.setState({
+          exportedData: errorImage,
+          confirming: true,
+        })
     }
   }
 
