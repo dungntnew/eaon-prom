@@ -307,3 +307,25 @@
       height: 320px;
     }
 }
+
+
+.toToplink{
+	text-align:center;
+	margin:20px 0;
+	padding-top: 15px;
+}
+.toToplink a{
+	font-size:18px;
+	color:#ff3399;
+}
+
+.toContactlink{
+	text-align:center;
+	margin:20px 0;
+	padding-top: 15px;
+  padding-bottom: 15px;
+}
+.toContactlink a{
+	font-size:18px;
+	color:black;
+}
