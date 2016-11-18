@@ -8,7 +8,7 @@ import titleImage from './navi/title_naomi_generator.png';
 class ExportConfirm extends Component {
   render() {
     const modelClasses = classNames({
-      'ui dimmer fluid': true,
+      'ui dimmer': true,
       'active': this.props.active
     })
 

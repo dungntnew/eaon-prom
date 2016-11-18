@@ -59,10 +59,16 @@ class Editor extends Component {
       containerClass: 'canvas-container',
       backgroundColor: 'white'
     })
+    // keep canvas size - (BUG after export image)
+    this.canvasWidth = canvasWidth;
+    this.canvasHeight = canvasWidth;
+    this.setSize()
+  }
 
+  setSize() {
     this.canvas.setDimensions({
-      width: canvasWidth,
-      height: canvasWidth
+      width: this.canvasWidth,
+      height: this.canvasWidth
     }, {cssOnly: false})
 
     this.canvas.setDimensions({
@@ -173,11 +179,13 @@ class Editor extends Component {
   }
 
   exportData() {
-    return this.canvas.toDataURL({
+    const data = this.canvas.toDataURL({
       format: 'png',
       quality: 0.5,
       multiplier: 1
-    })
+    });
+    this.setSize();
+    return data;
   }
 
   showConfirmPopup() {
