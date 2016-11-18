@@ -4,10 +4,10 @@
         $dir = __DIR__;
         $uploaddir = $dir."/../uploads/";
         $fileid = uniqid();
-        $filename = $fileid.'.jpeg';
+        $filename = $fileid.'.png';
         $filepath = $uploaddir.$filename;
         $file = $_POST['file'];
-        $img = str_replace('data:image/jpeg;base64,', '', $file);
+        $img = str_replace('data:image/png;base64,', '', $file);
 
         file_put_contents($filepath, base64_decode($img));
 

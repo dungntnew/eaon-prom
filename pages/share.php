@@ -5,7 +5,7 @@
    define('ABS_TOP_PATH', 'https://www.aeon.com/content/cyberweek/naomi/');
    define('ABS_UPLOAD_PATH', 'http://hyper-naomi-generator.com/uploads/');
    define('ABS_SHARE_PATH', 'http://hyper-naomi-generator.com/share.php');
-   define('IMG_EXT', 'jpeg');
+   define('IMG_EXT', 'png');
 
 
   if (isset($_GET['p'])) {
@@ -137,7 +137,7 @@ if (document.referrer.indexOf('http://hyper-naomi-generator.com')==0) {
 #gene4{
 	font-size:36px;
 	background:#fff;
-	position:fixed;	
+	position:fixed;
 	display:none;
 	width:84%;
 	padding:60px;
@@ -318,8 +318,8 @@ $(function(){
 				$('#gene4').fadeIn(500);
 				$('#js__overlay2').fadeIn(500);
 			}
-			
-			
+
+
 			//$('#gene3').hide();
 			$('#gene4').show();
 			$('#gene4').addClass('last');

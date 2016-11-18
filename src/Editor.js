@@ -139,7 +139,7 @@ class Editor extends Component {
         },
         error: (err) => {
           this.hideLoading();
-          
+
           try {
             const msg = JSON.stringify(err);
             console.error(msg);
@@ -174,8 +174,8 @@ class Editor extends Component {
 
   exportData() {
     return this.canvas.toDataURL({
-      format: 'jpeg',
-      quality: 1,
+      format: 'png',
+      quality: 0.5,
       multiplier: 1
     })
   }
