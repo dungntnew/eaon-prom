@@ -260,6 +260,7 @@ class Editor extends Component {
       })
     } catch(e) {
         //Raven.captureException(e)
+        console.error(e);
         this.setState({
           exportedData: errorImage,
           confirming: true,

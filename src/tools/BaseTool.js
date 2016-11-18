@@ -4,13 +4,9 @@ import {fabric} from 'fabric';
 import List from '../containers/ItemList';
 import {Messages} from '../Config';
 
-import iconRotate from '../icons/icon_rotate.svg';
-import iconZoom from '../icons/icon_zoom.svg';
-import iconTrash from '../icons/icon_trash.svg';
-import iconUp from '../icons/up.svg';
-import iconDown from '../icons/down.svg';
-import iconAcute from '../icons/acute.svg';
-import iconRepair from '../icons/repair-tools-cross.svg';
+import iconRotate from '../icons/icon_rotate.png';
+import iconZoom from '../icons/icon_zoom.png';
+import iconTrash from '../icons/icon_trash.png';
 
 class BaseTool extends Component {
   constructor(props) {
@@ -117,18 +113,6 @@ class BaseTool extends Component {
         },
         bl: {
             icon: iconTrash
-        },
-        br: {
-            icon: iconUp
-        },
-        mb: {
-            icon: iconDown
-        },
-        mt: {
-            icon: iconAcute
-        },
-        mr: {
-            icon: iconRepair
         }
     });
   }

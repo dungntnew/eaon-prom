@@ -134,6 +134,7 @@
              if ( iconUrl.indexOf( 'http' ) > -1 ) {
                  icon.crossOrigin = 'Anonymous';
              }
+             icon.crossOrigin = "anonymous";
 
              icon.src = iconUrl;
          },
@@ -685,7 +686,6 @@ const configDefaultControl = (fabric) => {
   fabric.Canvas.prototype.customiseControls( {
           tl: {
               action: 'rotate',
-              cursor: 'cow.png'
           },
           tr: {
               action: 'scale'
