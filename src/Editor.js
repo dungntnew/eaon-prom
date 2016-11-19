@@ -139,14 +139,19 @@ class Editor extends Component {
     twitterCanvas.setDimensions({
       width: w,
       height: h
-    });
+    }, {backstoreOnly: true});
 
+    twitterCanvas.setDimensions({
+      width: w,
+      height: h
+    }, {cssOnly: false});
+
+    const multiplier = 1 / (fabric.devicePixelRatio || 1);
     const gen = ()=> {
       try {
         const data = twitterCanvas.toDataURL({
           format: 'png',
-          quality: 0.5,
-          multiplier: 0.4
+          multiplier: multiplier
         });
         console.log("generate done twitter image.[OK YEAH]")
         done(data);
@@ -189,10 +194,15 @@ class Editor extends Component {
 　　 this.setState({confirming: false})
     this.showLoading("Loading..");
 
-    let data = this.state.exportedData
+    const multiplier = 1 / (fabric.devicePixelRatio || 1);
+    let data = this.state.exportedData;
     if (!data) {
       try {
-        data = this.exportData();
+         data = this.canvas.toDataURL({
+          format: 'png',
+          multiplier: multiplier
+        });
+        this.setSize();
       }
       catch(e) {
           console.error(e);
@@ -200,6 +210,7 @@ class Editor extends Component {
           return;
       }
     }
+
 
     const postFunc = (twData)=> {
       console.log("start post data to server...");
@@ -241,10 +252,10 @@ class Editor extends Component {
   }
 
   exportData() {
+    const multiplier = 1 / (fabric.devicePixelRatio || 1);
     const data = this.canvas.toDataURL({
       format: 'png',
-      quality: 0.5,
-      multiplier: 0.5
+      multiplier: multiplier
     });
     this.setSize();
     return data;
