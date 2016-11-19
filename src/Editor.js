@@ -146,7 +146,7 @@ class Editor extends Component {
         const data = twitterCanvas.toDataURL({
           format: 'png',
           quality: 0.5,
-          multiplier: 1
+          multiplier: 0.4
         });
         console.log("generate done twitter image.[OK YEAH]")
         done(data);
@@ -172,8 +172,6 @@ class Editor extends Component {
         twitterCanvas.centerObject(c);
         let l = c.left + 10;
         c.setLeft(l)
-
-
 
         twitterCanvas.add(c);
 
@@ -246,7 +244,7 @@ class Editor extends Component {
     const data = this.canvas.toDataURL({
       format: 'png',
       quality: 0.5,
-      multiplier: 1
+      multiplier: 0.5
     });
     this.setSize();
     return data;
