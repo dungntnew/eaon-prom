@@ -4,7 +4,7 @@
    // TODO: fix link of top page
    define('ABS_TOP_PATH', 'https://www.aeon.com/content/cyberweek/naomi/');
    define('ABS_UPLOAD_PATH', 'http://hyper-naomi-generator.com/uploads/');
-   define('ABS_SHARE_PATH', 'http://hyper-naomi-generator.com/result.php');
+   define('ABS_SHARE_PATH', 'http://hyper-naomi-generator.com/share.php');
    define('IMG_EXT', 'png');
 
 
@@ -382,11 +382,10 @@ $(function(){
           </center>
 
         </div>
-        <p class="btnTweet"><a href="<?php echo $tweetUrl ?>" target="_blank">ツイートして応募する</a></p>
+        <p class="btnTweet"><a href="https://www.aeon.com/content/cyberweek/naomi/?bannerid=ac07_s20MpTw5&exmid=OWN" target="_blank">オリジナルのなおみを作成する</a></p>
         <p class="save"><a href="<?php echo $downloadimage ?>" download="<?php print("$param"); ?>.jpg" class="btn-dl to" target="_blank" >完成画像を保存する</a></p>
         <p class="snsFun">保存した画像はフェイスブックやインスタグラム、LINEでも使ってね♪</p>
         <p class="check"></p>
-        <p class="gotop"><a href="https://www.aeon.com/content/cyberweek/naomi/?bannerid=ac07_s20MpTw5&exmid=OWN">TOPへ戻る</a></p>
         <p class="toContactlink"><a href="https://www.aeon.com/contact/">お問い合わせ</a></p>
       </div>
       <div id="gene4">
