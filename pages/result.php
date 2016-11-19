@@ -322,6 +322,32 @@ $(function(){
 		reSize();
 	});
 
+	$('.btnTweet').on('click',function(){
+
+		setTimeout(function(){
+			$('.close').toggleClass('on');
+			if($('#gene4').hasClass('checks')){
+				$('#gene4').fadeOut(500);
+				$('#js__overlay2').removeClass('side-open2');
+				$('#gene4').removeClass('checks');
+			}else{
+				$('#js__overlay2').addClass('side-open2');
+				$('#gene4').addClass('checks');
+				$('#gene4').fadeIn(500);
+				$('#js__overlay2').fadeIn(500);
+			}
+
+
+			//$('#gene3').hide();
+			$('#gene4').show();
+			$('#gene4').addClass('last');
+			//$('#root').css({'background-color':'#fff'})
+		},1000);
+
+
+	});
+
+
 
 
 
@@ -360,7 +386,7 @@ $(function(){
           </center>
 
         </div>
-        <p class="btnTweet"><a href="https://www.aeon.com/content/cyberweek/naomi/?bannerid=ac07_s20MpTw5&exmid=OWN" target="_blank">オリジナルのハイパーなおみを<br/>作ってみる</a></p>
+        <p class="btnTweet"><a href="https://www.aeon.com/content/cyberweek/naomi/?bannerid=ac07_s20MpTw5&exmid=OWN" target="_blank">オリジナルのなおみを作成する</a></p>
         <p class="save"><a href="<?php echo $downloadimage ?>" download="<?php print("$param"); ?>.jpg" class="btn-dl to" target="_blank" >完成画像を保存する</a></p>
         <p class="snsFun">保存した画像はフェイスブックやインスタグラム、LINEでも使ってね♪</p>
         <p class="check"></p>
