@@ -11,8 +11,8 @@ const EditorConfig = {
     USE_DIMMER: false,
     DIMMER_TIMEOUT: 100,
     EXPORT_ITEM_KEY: 'AEON_NAOMI_GENERATOR_IMG_DATA',
-    UPLOAD_PATH: 'http://localhost:8080/upload.php',
-    SHARE_PATH: 'http://localhost:8080/share.php',
+    UPLOAD_PATH: '/upload.php',
+    SHARE_PATH: '/share.php',
     FINISH_PATH: '/share.html',
 };
 

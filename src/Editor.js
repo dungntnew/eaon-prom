@@ -127,8 +127,8 @@ class Editor extends Component {
   generateTwitterImage(content, done) {
     const w = 612
     const h = 320
-    const cw = 252
-    const ch = 252
+    const cw = 260
+    const ch = 260
     const a = 8
 
     const twitterCanvas = new fabric.Canvas('tw-canvas', {
