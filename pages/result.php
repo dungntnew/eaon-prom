@@ -309,7 +309,7 @@ function reSize(){
 }
 $(function(){
 	if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
-	$('.check').html('保存ボタンを押して、次の画面の画像を長押しで保存してください');
+	$('.check').html('「完成画像を保存する」を押して、次の画面の画像を長押しで保存してください');
 }else{
 	$('.check').html('画像が自動保存できない場合は画像をドラッグ、または右クリックで「画像を保存」を選択してください');
 }
@@ -358,7 +358,7 @@ $(function(){
           </center>
 
         </div>
-        <p class="btnGoGen"><a href="https://www.aeon.com/content/cyberweek/naomi/?bannerid=ac07_s20MpTw5&exmid=OWN" target="_blank">オリジナルのハイパーなおみを<br/>作ってみる</a></p>
+        <p class="btnGoGen"><a href="https://www.aeon.com/content/cyberweek/naomi/?bannerid=ac07_0Xu3Cgy2&exmid=OWN" target="_blank">オリジナルのハイパーなおみを<br/>作ってみる</a></p>
         <p class="save"><a href="<?php echo $downloadimage ?>" download="<?php print("$param"); ?>.jpg" class="btn-dl to" target="_blank" >完成画像を保存する</a></p>
         <p class="snsFun">保存した画像はフェイスブックやインスタグラム、LINEでも使ってね♪</p>
         <p class="check"></p>

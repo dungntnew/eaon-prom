@@ -127,10 +127,9 @@ class Editor extends Component {
   generateTwitterImage(content, done) {
     const w = 612
     const h = 320
-    const cw = 280
-    const ch = 280
-    const ct = 20
-    const cl = 20
+    const cw = 252
+    const ch = 252
+    const a = 8
 
     const twitterCanvas = new fabric.Canvas('tw-canvas', {
       containerClass: 'tw-canvas-container',
@@ -168,10 +167,17 @@ class Editor extends Component {
         c.crossOrigin = "anonymous"
         c.setWidth(cw)
         c.setHeight(ch)
-        c.setTop(ct)
-        c.setLeft(cl)
+        c.setAngle(8)
+
+        twitterCanvas.centerObject(c);
+        let l = c.left + 10;
+        c.setLeft(l)
+
+
 
         twitterCanvas.add(c);
+
+
         twitterCanvas.renderAll();
         console.log("generating twitter image..");
         gen()

@@ -307,7 +307,7 @@ function reSize(){
 }
 $(function(){
 	if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
-	$('.check').html('保存ボタンを押して、次の画面の画像を長押しで保存してください');
+	$('.check').html('「完成画像を保存する」を押して、次の画面の画像を長押しで保存してください');
 }else{
 	$('.check').html('画像が自動保存できない場合は画像をドラッグ、または右クリックで「画像を保存」を選択してください');
 }
