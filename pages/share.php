@@ -387,7 +387,7 @@ $(function(){
         <p class="snsFun">保存した画像はフェイスブックやインスタグラム、LINEでも使ってね♪</p>
         <p class="check"></p>
         <p class="gotop"><a href="https://www.aeon.com/content/cyberweek/naomi/?bannerid=ac07_s20MpTw5&exmid=OWN">TOPへ戻る</a></p>
-        <p class="toContactlink"><a href="https://www.aeon.com/contact/">お問い合わせ</a></p>
+        <p class="toContactlink"><a href="https://www.aeon.com/contact/">AEON.comに関するお問い合わせ</a></p>
       </div>
       <div id="gene4">
       	<div class="titleImage"><img class="ui" height="50px" src="image/title_naomi_generator_twi.png" alt="twitterフォロー"></div>
@@ -396,7 +396,7 @@ $(function(){
         <div class="lastBox">
         <p class="sTwiBtn mt20"><a href="https://twitter.com/aeon_japan?lang=ja" target="_blank">イオン公式Twitter<br class="spD">ページはこちら</a></p>
         <p class="gotop"><a href="https://www.aeon.com/content/cyberweek/naomi/?bannerid=ac07_bHKxf94k&exmid=OWN">TOPへ戻る</a></p>
-        <p class="toContactlink"><a href="https://www.aeon.com/contact/">お問い合わせ</a></p>
+        <p class="toContactlink"><a href="https://www.aeon.com/contact/">AEON.comに関するお問い合わせ</a></p>
         </div>
       </div>
     </div>

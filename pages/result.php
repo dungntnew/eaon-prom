@@ -67,16 +67,18 @@ if (document.referrer.indexOf('http://hyper-naomi-generator.com')==0) {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <style>
 
-.btnTweet{
+.btnGoGen{
 	text-align:center;
 	color:#fff;
 	max-width:250px;
 	margin:10px auto;
-	background:#1da1f2;
+	background:#0066cc;
 	background-size: 30px;
 	border-radius:10px;
 }
-.btnTweet a{
+.btnGoGen a{
+  color: white;
+  font-weight: bold;
 	padding:15px 0;
 	display:block;
 }
@@ -356,11 +358,11 @@ $(function(){
           </center>
 
         </div>
-        <p class="btnTweet"><a href="https://www.aeon.com/content/cyberweek/naomi/?bannerid=ac07_s20MpTw5&exmid=OWN" target="_blank">オリジナルのハイパーなおみを<br/>作ってみる</a></p>
+        <p class="btnGoGen"><a href="https://www.aeon.com/content/cyberweek/naomi/?bannerid=ac07_s20MpTw5&exmid=OWN" target="_blank">オリジナルのハイパーなおみを<br/>作ってみる</a></p>
         <p class="save"><a href="<?php echo $downloadimage ?>" download="<?php print("$param"); ?>.jpg" class="btn-dl to" target="_blank" >完成画像を保存する</a></p>
         <p class="snsFun">保存した画像はフェイスブックやインスタグラム、LINEでも使ってね♪</p>
         <p class="check"></p>
-        <p class="toContactlink"><a href="https://www.aeon.com/contact/">お問い合わせ</a></p>
+        <p class="toContactlink"><a href="https://www.aeon.com/contact/">AEON.comに関するお問い合わせ</a></p>
       </div>
       <div id="gene4">
       	<div class="titleImage"><img class="ui" height="50px" src="image/title_naomi_generator_twi.png" alt="twitterフォロー"></div>
@@ -369,7 +371,7 @@ $(function(){
         <div class="lastBox">
         <p class="sTwiBtn mt20"><a href="https://twitter.com/aeon_japan?lang=ja" target="_blank">イオン公式Twitter<br class="spD">ページはこちら</a></p>
         <p class="gotop"><a href="https://www.aeon.com/content/cyberweek/naomi/?bannerid=ac07_bHKxf94k&exmid=OWN">TOPへ戻る</a></p>
-        <p class="toContactlink"><a href="https://www.aeon.com/contact/">お問い合わせ</a></p>
+        <p class="toContactlink"><a href="https://www.aeon.com/contact/">AEON.comに関するお問い合わせ</a></p>
         </div>
       </div>
     </div>

@@ -56,7 +56,7 @@ class EditorApp extends Component {
       <div className="ui hidden divider"></div>
       <Editor/>
       <p className="toToplink"><a href="https://www.aeon.com/content/cyberweek/naomi/">TOPへ戻る</a></p>
-      <p className="toContactlink"><a href="https://www.aeon.com/contact/">お問い合わせ</a></p>
+      <p className="toContactlink"><a href="https://www.aeon.com/contact/">AEON.comに関するお問い合わせ</a></p>
       </div>
     )
   }
@@ -101,7 +101,7 @@ class HowTo extends Component {
             開始する
             </button>
             <p className="toToplink"><a href="https://www.aeon.com/content/cyberweek/naomi/">TOPへ戻る</a></p>
-            <p className="toContactlink"><a href="https://www.aeon.com/contact/">お問い合わせ</a></p>
+            <p className="toContactlink"><a href="https://www.aeon.com/contact/">AEON.comに関するお問い合わせ</a></p>
           </div>
       </div>
     )
