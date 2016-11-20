@@ -36,7 +36,8 @@
     "ssh": "gcloud compute ssh instance-2 --zone asia-northeast1-a",
 
     "p": "npm run local_all && npm run sync",
-    "gs": "rm -v deploy.zip && zip -r deploy.zip deploy && gsutil cp deploy.zip gs://ean-promotion/deploy.zip"
+    "gs": "rm -v deploy.zip && zip -r deploy.zip deploy && gsutil cp deploy.zip gs://ean-promotion/deploy.zip",
+    "go": "gcloud compute ssh instance-group-2-6hxk --zone asia-northeast1-a"
   },
   "proxy": "http://localhost:8080"
 }
