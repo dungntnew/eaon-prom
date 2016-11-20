@@ -73,6 +73,29 @@
          customiseCornerIcons: function( obj, callback ) {
              var setting;
 
+             var _self = this;
+             var onIconLoaded = function() {
+                 if ( callback && typeof( callback ) === 'function' ) {
+                     callback();
+                 }
+             }
+
+             var onIconLoadError =  function() {
+
+               //fallback when cannot load icon
+               _self.useCustomIcons = false;
+               _self.transparentCorners = false;
+               _self.borderColor = 'black';
+               _self.cornerSize = 15;
+               _self.cornerShape = 'rect';
+               _self.cornerBackgroundColor = 'black';
+               _self.cornerPadding = 10;
+
+               if ( callback && typeof( callback ) === 'function' ) {
+                   callback();
+               }
+             }
+
              for ( setting in obj ) {
                  if ( obj.hasOwnProperty( setting ) ) {
 
@@ -97,28 +120,9 @@
                      }
 
                      if ( obj[ setting ].icon !== undefined ) {
-                         var _self = this;
                          this.useCustomIcons = true;
-
-                         this.loadIcon( setting, obj[ setting ].icon, function() {
-                             if ( callback && typeof( callback ) === 'function' ) {
-                                 callback();
-                             }
-                         } , function() {
-
-                           //fallback when cannot load icon
-                           _self.useCustomIcons = false;
-                           _self.transparentCorners = false;
-                           _self.borderColor = 'black';
-                           _self.cornerSize = 15;
-                           _self.cornerShape = 'rect';
-                           _self.cornerBackgroundColor = 'black';
-                           _self.cornerPadding = 10;
-
-                           if ( callback && typeof( callback ) === 'function' ) {
-                               callback();
-                           }
-                         });
+                         this.loadIcon( setting, obj[ setting ].icon,
+                                        onIconLoaded, onIconLoadError);
                      }
                  }
              }
@@ -152,7 +156,7 @@
              if ( iconUrl.indexOf( 'http' ) > -1 ) {
                  icon.crossOrigin = 'Anonymous';
              }
-             
+
              icon.src = iconUrl;
          },
 

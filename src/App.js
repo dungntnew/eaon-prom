@@ -3,9 +3,8 @@ require('es6-shim');
 import React, { Component } from 'react';
 import './App.css';
 
-import {AppConfig, EditorConfig} from './Config';
+import {AppConfig} from './Config';
 import Editor from './Editor';
-import classNames from 'classnames';
 import titleImage from './navi/title_naomi_generator.png';
 import logo from './navi/logo_aeon.png';
 import howtoTitle from './navi/title_how-01.png';

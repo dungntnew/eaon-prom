@@ -16,6 +16,15 @@ const EditorConfig = {
     FINISH_PATH: '/share.html',
 };
 
+const TwitterConfig = {
+  EXPORT_WIDTH:612,
+  EXPORT_HEIGHT: 320,
+  CONTENT_WIDTH: 260,
+  CONTENT_HEIGHT: 260,
+  CONTENT_ROTATE: 8,
+  CONTENT_OFFSET_X: 10,
+}
+
 const faceConfig = {
   tag: 'FACE',
   offset: {
@@ -145,6 +154,7 @@ const Messages = {
 export {
   AppConfig,
   EditorConfig,
+  TwitterConfig,
   faceConfig,
   hairConfig,
   goodsConfig,

@@ -29,8 +29,6 @@ class BGTool extends BaseTool {
       if (next) next()
     }
     else {
-
-      const canvas = this.props.canvas
       const size = logoConfig.size
       const offset = logoConfig.offset
 

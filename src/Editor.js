@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Assets from './Assets';
-import {EditorConfig} from './Config';
+import {EditorConfig, TwitterConfig} from './Config';
 import './Editor.css'
 
 import ToolBox from './ToolBox'
@@ -125,25 +125,19 @@ class Editor extends Component {
 
 
   generateTwitterImage(content, done) {
-    const w = 612
-    const h = 320
-    const cw = 260
-    const ch = 260
-    const a = 8
-
     const twitterCanvas = new fabric.Canvas('tw-canvas', {
       containerClass: 'tw-canvas-container',
       backgroundColor: 'white'
     });
 
     twitterCanvas.setDimensions({
-      width: w,
-      height: h
+      width: TwitterConfig.EXPORT_WIDTH,
+      height: TwitterConfig.EXPORT_HEIGHT
     }, {backstoreOnly: true});
 
     twitterCanvas.setDimensions({
-      width: w,
-      height: h
+      width: TwitterConfig.EXPORT_WIDTH,
+      height: TwitterConfig.EXPORT_HEIGHT
     }, {cssOnly: false});
 
     const multiplier = 1 / (fabric.devicePixelRatio || 1);
@@ -163,19 +157,19 @@ class Editor extends Component {
 
     fabric.Image.fromURL(twbg, (bg) => {
       bg.crossOrigin = "anonymous"
-      bg.setWidth(w)
-      bg.setHeight(h)
+      bg.setWidth(TwitterConfig.EXPORT_WIDTH)
+      bg.setHeight(TwitterConfig.EXPORT_HEIGHT)
 
       twitterCanvas.setBackgroundImage(bg);
 
       fabric.Image.fromURL(content, (c) => {
         c.crossOrigin = "anonymous"
-        c.setWidth(cw)
-        c.setHeight(ch)
-        c.setAngle(8)
+        c.setWidth(TwitterConfig.CONTENT_WIDTH)
+        c.setHeight(TwitterConfig.CONTENT_HEIGHT)
+        c.setAngle(TwitterConfig.CONTENT_ROTATE)
 
         twitterCanvas.centerObject(c);
-        let l = c.left + 10;
+        let l = c.left + TwitterConfig.CONTENT_OFFSET_X;
         c.setLeft(l)
 
         twitterCanvas.add(c);
