@@ -31,13 +31,12 @@
     "all": " npm run bk && npm run build && npm run pages && npm run dp && npm run owner",
     "local_all": " npm run bk && npm run build && npm run pages && npm run dp",
     "php": "cd deploy && php -S localhost:8080",
-
     "sync": "gcloud compute copy-files --zone asia-northeast1-a ./deploy/* instance-2:~/aeon/deploy",
     "ssh": "gcloud compute ssh instance-2 --zone asia-northeast1-a",
-
     "p": "npm run local_all && npm run sync",
     "gs": "rm -v deploy.zip && zip -r deploy.zip deploy && gsutil cp deploy.zip gs://ean-promotion/deploy.zip",
-    "go": "gcloud compute ssh instance-group-2-6hxk --zone asia-northeast1-a"
+    "go": "gcloud compute ssh instance-group-2-6hxk --zone asia-northeast1-a",
+    "counti": "gcloud compute ssh instance-group-2-6hxk --zone asia-northeast1-a  -- 'ls /usr/share/nginx/virtualhost/aeon-promotion/uploads/ | grep tw_ | wc -l'"
   },
   "proxy": "http://localhost:8080"
 }
