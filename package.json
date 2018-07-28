@@ -39,7 +39,9 @@
     "gs": "rm -v deploy.zip && zip -r deploy.zip deploy && gsutil cp deploy.zip gs://ean-promotion/deploy.zip",
     "go": "gcloud compute ssh instance-group-2-6hxk --zone asia-northeast1-a",
     "counti": "gcloud compute ssh instance-group-2-6hxk --zone asia-northeast1-a  -- 'ls /usr/share/nginx/virtualhost/aeon-promotion/uploads/ | grep tw_ | wc -l'",
-    "deploy-gh": "gh-pages -d build"
+    "deploy-gh": "gh-pages -d build",
+    "go-fabbi": "npm run build && scp -rv build/ fabbi:~/sites/eaon-prom/",
+    "sync-fabbi": "scp -rv build/* fabbi:~/sites/eaon-prom/"
   },
   "proxy": "http://localhost:8080"
 }

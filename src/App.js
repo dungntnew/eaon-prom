@@ -54,8 +54,8 @@ class EditorApp extends Component {
       </div>
       <div className="ui hidden divider"></div>
       <Editor/>
-      <p className="toToplink"><a href="https://www.aeon.com/content/cyberweek/naomi/">TOPへ戻る</a></p>
-      <p className="toContactlink"><a href="https://www.aeon.com/contact/">AEON.comに関するお問い合わせ</a></p>
+      <p className="toToplink"><a href="/">TOPへ戻る</a></p>
+      <p className="toContactlink"><a href="http://fabbi.com.vn/">fabbi.com.vnに関するお問い合わせ</a></p>
       </div>
     )
   }
@@ -99,8 +99,8 @@ class HowTo extends Component {
                     onClick={this.props.startHandler}>
             開始する
             </button>
-            <p className="toToplink"><a href="https://www.aeon.com/content/cyberweek/naomi/">TOPへ戻る</a></p>
-            <p className="toContactlink"><a href="https://www.aeon.com/contact/">AEON.comに関するお問い合わせ</a></p>
+            <p className="toToplink"><a href="/">TOPへ戻る</a></p>
+            <p className="toContactlink"><a href="http://fabbi.com.vn/">fabbi.com.vnに関するお問い合わせ</a></p>
           </div>
       </div>
     )
@@ -141,14 +141,14 @@ class App extends Component {
         {/* header */}
         <div style={styles.header} className="ui inverted vertical header segment app-header">
           <div className="logo">
-             <img width={90} height={15} src={logo} alt='LOGO'/>
+             <img height={18} src={logo} alt='LOGO'/>
           </div>
         </div>
 
         {screen}
         {/* footer */}
         <div style={styles.footer} className="ui inverted vertical footer segment app-footer">
-           <p className='copyright'>© 2016 AEON.com Co.,Ltd.</p>
+           <p className='copyright'>© 2018 Dev-Team Fabbi Jsc</p>
         </div>
       </div>
     );
