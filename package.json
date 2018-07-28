@@ -2,19 +2,44 @@
   "name": "aeon-prom",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://dungntnew.github.io/eaon-prom/",
   "devDependencies": {
+    "gh-pages": "^1.2.0",
     "react-scripts": "0.7.0"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
+    "es6-shim": "^0.35.1",
+    "fabric": "^1.6.6",
+    "firebase": "^3.6.0",
+    "jquery": "^3.1.1",
+    "raven-js": "^3.8.1",
     "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "react-dom": "^15.3.2",
+    "semantic-ui-css": "^2.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
+    "pre": "mkdir -p deploy uploads backup",
+    "bk": "cp -Rv deploy/ backup",
+    "rv": "rm -rf deploy && cp -Rv backup/ deploy",
+    "dp": "rm -rf deploy && mv -v  build deploy",
     "build": "react-scripts build",
-    "pages": "cp -v pages/*.html build/ && cp -rv pages/static/ build/static/",
+    "pages": "cp -rv pages/* build/",
+    "owner": "sudo chcon -R -t httpd_sys_rw_content_t deploy/",
     "test": "react-scripts test --env=jsdom",
     "deploy": "firebase deploy",
-    "eject": "react-scripts eject"
-  }
+    "eject": "react-scripts eject",
+    "all": " npm run bk && npm run build && npm run pages && npm run dp && npm run owner",
+    "local_all": " npm run bk && npm run build && npm run pages && npm run dp",
+    "php": "cd deploy && php -S localhost:8080",
+    "sync": "gcloud compute copy-files --zone asia-northeast1-a ./deploy/* instance-2:~/aeon/deploy",
+    "ssh": "gcloud compute ssh instance-2 --zone asia-northeast1-a",
+    "p": "npm run local_all && npm run sync",
+    "gs": "rm -v deploy.zip && zip -r deploy.zip deploy && gsutil cp deploy.zip gs://ean-promotion/deploy.zip",
+    "go": "gcloud compute ssh instance-group-2-6hxk --zone asia-northeast1-a",
+    "counti": "gcloud compute ssh instance-group-2-6hxk --zone asia-northeast1-a  -- 'ls /usr/share/nginx/virtualhost/aeon-promotion/uploads/ | grep tw_ | wc -l'",
+    "deploy-gh": "gh-pages -d build"
+  },
+  "proxy": "http://localhost:8080"
 }

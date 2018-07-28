@@ -1,24 +1,331 @@
-.App {
+.ui.divider {
+  margin: 0.3rem 0 !important;
+}
+.ui.segment {
+  padding: 0.8em !important;
+}
+
+.ui.header {
+  line-height: 0.5em !important;
+}
+
+.ui.menu {
+  margin: 0 !important;
+}
+
+.ui.image.label {
+  padding: 0.2em 0.2em 0.2em 0.2em !important;
+}
+
+.top-menu {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.app-header {
+}
+.app-footer {
+  width: 100%;
+}
+
+.app-footer .copyright {
+  text-align: center;
+  font-size: smaller;
+}
+
+.titleImage {
+  text-align: center;
+  padding-top: 10px;
+}
+.logo {
+  margin-left: 10px;
+}
+
+.content-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  max-width: 550px;
+  background-color: white;
+  padding-bottom: 10px;
+}
+
+.howto-wrapper {
+}
+
+.howtoBody {
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.howtoImgContent {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.howto-text {
+  text-align: center;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 1.3em;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
-.App-intro {
-  font-size: large;
+.authFormBody {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  max-width: 400px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/*------------- Common -----------------------*/
+.editor-canvas {
+  width: 320px;
+  height: 320px;
+}
+
+
+/* ----------- iPhone 4 and 4S ----------- */
+/* Portrait */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    .howtoImgContent {
+      max-width: 180px;
+    }
+    .editor-canvas {
+      width: 180px;
+      height: 180px;
+    }
+}
+
+
+/* ----------- iPhone 5 and 5S ----------- */
+/* Portrait */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    .howtoImgContent {
+      max-width: 180px;
+    }
+    .editor-canvas {
+      width: 180px;
+      height: 180px;
+    }
+}
+
+/* ----------- iPhone 6 ----------- */
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    .howtoImgContent {
+      max-width: 310px;
+    }
+    .editor-canvas {
+      width: 310px;
+      height: 310px;
+    }
+}
+/* ----------- iPhone 6+ ----------- */
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+    .howtoImgContent {
+      max-width: 310px;
+    }
+    .editor-canvas {
+      width: 310px;
+      height: 310px;
+    }
+}
+
+/* ----------- Galaxy S3 ----------- */
+
+/* Portrait */
+@media screen
+  and (device-width: 320px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    .howtoImgContent {
+      max-width: 180px;
+    }
+    .editor-canvas {
+      width: 320px;
+      height: 320px;
+    }
+}
+
+/* ----------- Galaxy S4 ----------- */
+
+/* Portrait */
+@media screen
+  and (device-width: 320px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+    .howtoImgContent {
+      max-width: 180px;
+    }
+    .editor-canvas {
+      width: 320px;
+      height: 320px;
+    }
+}
+
+/* ----------- Galaxy S5 ----------- */
+/* Portrait */
+@media screen
+  and (device-width: 360px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+    .howtoImgContent {
+      max-width: 180px;
+    }
+    .editor-canvas {
+      width: 320px;
+      height: 320px;
+    }
+}
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .howtoImgContent {
+      max-width: 320px;
+    }
+    .editor-canvas {
+      width: 350px;
+      height: 350px;
+    }
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) {
+    .howtoImgContent {
+      max-width: 380px;
+    }
+    .editor-canvas {
+      width: 350px;
+      height: 350px;
+    }
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .howtoImgContent {
+      max-width: 380px;
+    }
+    .editor-canvas {
+      width: 380px;
+      height: 380px;
+    }
+}
+
+/* ----------- iPad 1 and 2 ----------- */
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .howtoImgContent {
+      max-width: 380px;
+    }
+    .editor-canvas {
+      width: 380px;
+      height: 380px;
+    }
+}
+
+/* ----------- iPad 3 and 4 ----------- */
+/* Portrait */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .howtoImgContent {
+      max-width: 380px;
+    }
+    .editor-canvas {
+      width: 500px;
+      height: 500px;
+    }
+}
+
+/* SHIT DEVICE 540×960 SoftBank 101F*/
+@media only screen
+  and (device-width: 540px)
+  and (device-height: 960px) {
+    .howtoImgContent {
+      max-width: 180px;
+    }
+    .editor-canvas {
+      width: 320px;
+      height: 320px;
+    }
+}
+
+/* SHIT DEVICE 360 x 515SoftBank 101F*/
+@media only screen
+  and (device-width: 360px)
+  and (device-height: 515px) {
+    .howtoImgContent {
+      max-width: 180px;
+    }
+    .editor-canvas {
+      width: 320px;
+      height: 320px;
+    }
+}
+
+
+.toToplink{
+	text-align:center;
+	margin:20px 0;
+	padding-top: 15px;
+}
+.toToplink a{
+	font-size:18px;
+	color:#ff3399;
+}
+
+.toContactlink{
+	text-align:center;
+	margin:20px 0;
+	padding-top: 15px;
+  padding-bottom: 15px;
+}
+.toContactlink a{
+	font-size:10px;
+	color:black;
 }

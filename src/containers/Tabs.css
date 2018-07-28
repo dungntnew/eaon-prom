@@ -1,0 +1,52 @@
+.mytab {
+  text-align: center;
+  min-height: 151px;
+}
+
+.ui.mytab .mytabmenu.menu .item {
+    border: 2px solid red;
+    margin: 2px 2px 2px 2px;
+    border-radius: 0.5em;
+}
+
+.ui.mytab .mytabmenu.menu .active.item{
+  background-color: red;
+  color: white;
+  border-radius: .28571429rem .28571429rem .28571429rem .28571429rem !important;
+}
+
+.ui.mytab .mytabmenu.menu {
+  border: none !important;
+}
+
+.ui.image.label img {
+    margin: 0 !important;
+    background: none !important;
+    border: one !important;
+    cursor: pointer;
+}
+
+.ui.image.label {
+    margin: 0 !important;
+    background: none !important;
+    border: one !important;
+}
+
+
+.mytab.ui.label {
+  background: none !important;
+}
+
+.mytab.ui.image.label {
+    background: none !important;
+}
+.mytab.ui.active.label {
+  background: none !important;
+}
+
+.mytabcontent {
+  max-width: 480px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}

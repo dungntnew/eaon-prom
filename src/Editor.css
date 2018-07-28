@@ -1,0 +1,28 @@
+.canvas-container {
+  margin: 0px auto;
+}
+.canvas-wrapper {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#canvas {
+
+}
+
+.mybuttons {
+  text-align: center;
+  margin-top: 2px;
+}
+
+.ui.button.myconfirm {
+  color: white;
+  background-color: #fc3a99;
+  width: 150px;
+}
+
+.ui.button.myconfirm.active {
+  color: white;
+  background-color: #fc3a99;
+}
