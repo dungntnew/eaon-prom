@@ -2,9 +2,11 @@
 <?php
    // 有効な定数名
    // TODO: fix link of top page
-   define('ABS_TOP_PATH', 'https://www.aeon.com/content/cyberweek/naomi/');
-   define('ABS_UPLOAD_PATH', 'http://hyper-naomi-generator.com/uploads/');
-   define('ABS_SHARE_PATH', 'http://hyper-naomi-generator.com/result.php');
+
+	 define('ABS_TOP_PATH', 'http://eaon-prom.fabbi.com.vn/');
+   define('ABS_UPLOAD_PATH', 'http://dev-php.fabbi.com.vn/eaon-server/uploads/');
+	 define('ABS_SHARE_PATH', 'http://dev-php.fabbi.com.vn/eaon-server/result.php');
+	 
    define('IMG_EXT', 'png');
 
 
@@ -15,7 +17,7 @@
     $tid = $_GET['t'];
 
     $text = "【ハイパーなおみジェネレーター】でハイパーな渡辺直美を作ってみたよ♪
-#ハイパーなおみジェネレーター http://bit.ly/2g1tHih";
+		#ハイパーなおみジェネレーター http://eaon-prom.fabbi.com.vn";
     $hashtags = "ハイパーなおみジェネレーター";
 
     $shareimage = ABS_UPLOAD_PATH. "$tid.".IMG_EXT;
@@ -38,30 +40,21 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<title>ハイパーなおみジェネレーター | AEON.com</title>
+<title>Fabbi Prom Generator Dev Team</title>
 <link rel="shortcut icon" href="/favicon.ico">
-  <meta property="og:title" content="ハイパーなおみジェネレーター | AEON.com" />
+  <meta property="og:title" content="Fabbi Prom Generator Dev Team" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="<?php echo 'http://'. $_SERVER['HTTP_HOST']. $_SERVER['REQUEST_URI']; ?>" />
   <meta property="og:image" content="<?php echo $shareimage ?>" />
-  <meta property="og:site_name" content="ハイパーなおみジェネレーター" />
-  <meta property="og:description" content="サイバーウィークを盛り上げる、ハイパーな渡辺直美をいろんなパーツを組合せて自分好みに作れちゃうジェネレーターです！ハイパーな渡辺直美をつくって豪華プレゼントをゲットしよう！" />
+  <meta property="og:site_name" content="Fabbi Prom Generator Dev Team" />
+  <meta property="og:description" content="Fabbi Prom Generator Dev Team" />
   <meta property="fb:app_id" content="162094920924270" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="ハイパーなおみジェネレーター | AEON.com" />
-  <meta name="twitter:description" content="サイバーウィークを盛り上げる、ハイパーな渡辺直美をいろんなパーツを組合せて自分好みに作れちゃうジェネレーターです！ハイパーな渡辺直美をつくって豪華プレゼントをゲットしよう！" />
+  <meta name="twitter:title" content="Fabbi Prom Generator Dev Team" />
+  <meta name="twitter:description" content="Fabbi Prom Generator Dev Team" />
   <meta name="twitter:image:src" content="<?php echo $shareimage ?>" />
-  <link href="http://hyper-naomi-generator.com/static/css/main.541a2155.css" rel="stylesheet">
+  <link href="http://eaon-prom.fabbi.com.vn/static/css/main.541a2155.css" rel="stylesheet">
 <script>
-
-// TODO: fix redirect behavior, it's broken now >_<
-/*
-if (document.referrer.indexOf('http://hyper-naomi-generator.com')==0) {
-	 }
- else {
-   location.href='https://www.aeon.com/content/cyberweek/naomi/';
- }
- */
 
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

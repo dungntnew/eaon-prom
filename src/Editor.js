@@ -209,6 +209,20 @@ class Editor extends Component {
     const postFunc = (twData)=> {
       console.log("start post data to server...");
 
+      console.log('tw data: ', twData);
+
+      // hide loading.
+      this.hideLoading();
+
+      const preview = new Image();
+      preview.src = twData;
+
+      const w = window.open("", '_blank');
+      w.document.write(preview.outerHTML);
+
+      // skip post data to server.
+      return;
+
       $.ajax({
         type: 'POST',
         url: EditorConfig.UPLOAD_PATH,
