@@ -1,8 +1,8 @@
 {
   "name": "aeon-prom",
   "version": "0.1.0",
-  "private": true,
-  "homepage": "https://dungntnew.github.io/eaon-prom/",
+  "private": false,
+  "homepage": "https://dungntnew.github.io/eaon-prom/build",
   "devDependencies": {
     "gh-pages": "^1.2.0",
     "react-scripts": "0.7.0"
