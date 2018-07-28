@@ -2,7 +2,9 @@
   "name": "aeon-prom",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://dungntnew.github.io/eaon-prom",
   "devDependencies": {
+    "gh-pages": "^1.2.0",
     "react-scripts": "0.7.0"
   },
   "dependencies": {
@@ -36,7 +38,8 @@
     "p": "npm run local_all && npm run sync",
     "gs": "rm -v deploy.zip && zip -r deploy.zip deploy && gsutil cp deploy.zip gs://ean-promotion/deploy.zip",
     "go": "gcloud compute ssh instance-group-2-6hxk --zone asia-northeast1-a",
-    "counti": "gcloud compute ssh instance-group-2-6hxk --zone asia-northeast1-a  -- 'ls /usr/share/nginx/virtualhost/aeon-promotion/uploads/ | grep tw_ | wc -l'"
+    "counti": "gcloud compute ssh instance-group-2-6hxk --zone asia-northeast1-a  -- 'ls /usr/share/nginx/virtualhost/aeon-promotion/uploads/ | grep tw_ | wc -l'",
+    "deploy-gh": "gh-pages -d build"
   },
   "proxy": "http://localhost:8080"
 }
